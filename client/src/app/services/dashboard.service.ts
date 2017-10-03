@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import 'rxjs';
-import { environment } from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
 const BASEURL = environment.BASEURL + "/dashboard";
 
@@ -22,7 +22,7 @@ export class DashboardService {
   }
 
   viewDashboard(){
-    return this.http.get(`${this.BASE_URL}/dashboard`)
+    return this.http.get(`${BASEURL}/dashboard/`, this.options)
        .map((res) => res.json());
   }
 

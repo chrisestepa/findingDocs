@@ -10,7 +10,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RouterModule } from '@angular/router';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import {routes} from './routes';
-import { JobsComponent } from './src/app/jobs/jobs.component';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
   declarations: [
