@@ -6,7 +6,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularauth';
+  title = 'proyecto3';
   constructor(public auth:AuthService) {
   };
 }

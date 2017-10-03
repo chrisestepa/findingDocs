@@ -1,9 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <ul>
-  <li><a [routerLink]="['/']">Home</a></li>
-  <li><a [routerLink]="['/user']">User Profile</a></li>
-  <li><a [routerLink]="['/login']">Login</a></li>
-  </ul>
+<header>
+  <div style="text-align:center">
+    <h1><a [routerLink]="['/']">{{ title }}</a></h1>
+    <div class="menu">
+      <a [routerLink]="['/user']">User Profile</a>
+      <a [routerLink]="['/login']">Login</a>
+    </div>
+  </div>
+</header>
+
+<div class="body">
   <router-outlet></router-outlet>
 </div>
