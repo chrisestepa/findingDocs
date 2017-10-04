@@ -1,0 +1,8 @@
+<h1>JOBS</h1>
+
+<div class="job" *ngFor="let job of jobs">
+  <p>TITLE: {{job.title | json}}</p>
+  <p>CENTER: {{job.center | json}}</p>
+  <p>DATE: {{job.date | json}}</p>
+  <p>DESCRIPTION: {{job.description | json}}</p>
+</div>

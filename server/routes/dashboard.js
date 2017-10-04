@@ -8,7 +8,9 @@ const debug = require('debug')("angularauth:" + path.basename(__filename).split(
 const dashRoute = express.Router();
 
 dashRoute.get('/dashboard', (req, res, next) => {
-  Job.find().populate("center")
+  Job.find()
+  // .populate("center")
+  // .populate("doctor")
     .then(jobs => res.status(200).json(jobs))
     .catch(e => res.status(500).json({
       error: e.message

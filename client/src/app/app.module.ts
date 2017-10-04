@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import {routes} from './routes';
 import { JobsComponent } from './jobs/jobs.component';
+import { SignupformComponent } from './signupform/signupform.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardService } from './services/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { JobsComponent } from './jobs/jobs.component';
     LoginformComponent,
     HomeComponent,
     UserprofileComponent,
-    JobsComponent
+    JobsComponent,
+    SignupformComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { JobsComponent } from './jobs/jobs.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService],
+  providers: [AuthService, IsLoggedInService, DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
