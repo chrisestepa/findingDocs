@@ -1,4 +1,5 @@
 const Job = require("../models/Job");
+const Center = require("../models/Center");
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
@@ -9,8 +10,8 @@ const dashRoute = express.Router();
 
 dashRoute.get('/dashboard', (req, res, next) => {
   Job.find()
-  // .populate("center")
-  // .populate("doctor")
+    .populate("center")
+    .populate("doctor")
     .then(jobs => res.status(200).json(jobs))
     .catch(e => res.status(500).json({
       error: e.message
@@ -23,10 +24,12 @@ dashRoute.post('/dashboard/new', (req, res) => {
   const date = req.body.date;
   const description = req.body.description;
   const doctor = req.body.doctor;
+  const speciality = req.body.speciality;
 
   const newJob = new Job({
       title,
       center,
+      speciality,
       date,
       description,
       doctor
@@ -52,12 +55,14 @@ dashRoute.get('/dashboard/view/:id', (req, res) => {
 dashRoute.put('/dashboard/view/:id', (req, res, next) => {
   const title = req.body.title;
   const center = req.body.center;
+  const speciality = req.body.speciality;
   const date = req.body.date;
   const description = req.body.description;
   const update = {
     title,
     center,
     date,
+    speciality,
     description
   };
 

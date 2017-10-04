@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
   title: String,
-  center: [{type: Schema.Types.ObjectId, ref: "Center"}],
   date: Date,
   description: String,
+  speciality: String,
   doctor: [{type: Schema.Types.ObjectId, ref: "User"}],
+  center: {type: Schema.Types.ObjectId, ref: "Center"},
+
 }, {
   timestamps: {
     createdAt: 'created_at',

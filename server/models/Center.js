@@ -13,11 +13,6 @@ const centerSchema = new Schema({
     longitude: Number
   }
 
-}, {
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-  }
 });
 
 const Center = mongoose.model('Center', centerSchema);
