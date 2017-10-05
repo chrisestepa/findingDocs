@@ -32,6 +32,7 @@ export class JobComponent implements OnInit {
 
   newJob() {
     const { title, center, date, speciality, description } = this.formInfo;
+    console.log(this.formInfo);
     if (title != "" && center != "" && date != "" && speciality != "" && description) {
       this.jobS.createJob(title, center, date, speciality, description)
         .map(job => console.log(job))

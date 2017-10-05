@@ -5,7 +5,7 @@
   <h2> Add a new job </h2>
   <label>Center:</label>
   <select [(ngModel)]="formInfo.center" name="center">
-    <option *ngFor="let center of centers" value="{{center.title}}">{{center.title}}</option>
+    <option *ngFor="let center of centers" value="{{center._id}}">{{center.title}}</option>
   </select>
   <div class="form">
     <form>
@@ -19,7 +19,7 @@
       <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
       <br>
       <label> Description </label>
-      <input type="text" [(ngModel)]="formInfo.text" name="description" />
+      <input type="text" [(ngModel)]="formInfo.description" name="description" />
       <br>
       <button (click)="newJob()"> signup </button>
     </form>

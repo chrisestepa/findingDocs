@@ -13,7 +13,6 @@ jobRoute.post('/job/new', (req, res) => {
   const center = req.body.center;
   const date = req.body.date;
   const description = req.body.description;
-  const doctor = req.body.doctor;
   const speciality = req.body.speciality;
 
   const newJob = new Job({
@@ -22,7 +21,6 @@ jobRoute.post('/job/new', (req, res) => {
       speciality,
       date,
       description,
-      doctor
     });
     return newJob.save()
     .then(job => res.status(200).json({
