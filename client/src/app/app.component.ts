@@ -7,6 +7,11 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'proyecto3';
+  user:object;
   constructor(public auth:AuthService) {
-  };
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );
+  }
+  
 }
