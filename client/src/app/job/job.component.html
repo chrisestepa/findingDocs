@@ -2,11 +2,13 @@
   <!-- <label> Center </label>
     <input type="text" [(ngModel)]="formInfo.center" name="center" />
     <br> -->
-  <h2> Add a new job </h2>
-  <label>Center:</label>
-  <select [(ngModel)]="formInfo.center" name="center">
-    <option *ngFor="let center of centers" value="{{center._id}}">{{center.title}}</option>
-  </select>
+  <div class="select">
+    <h2> Add a new job </h2>
+    <label>Center:</label>
+    <select [(ngModel)]="formInfo.center" name="center">
+      <option *ngFor="let center of centers" value="{{center._id}}">{{center.title}}</option>
+    </select>
+  </div>
   <div class="form">
     <form>
       <label> Title </label>

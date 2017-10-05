@@ -10,7 +10,6 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RouterModule } from '@angular/router';
 import { IsLoggedInService } from './services/isLoggedIn.canactivate.service';
 import {routes} from './routes';
-import { JobsComponent } from './jobs/jobs.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardService } from './services/dashboard.service';
@@ -24,7 +23,6 @@ import { CentersService } from './services/centers.service';
     LoginformComponent,
     HomeComponent,
     UserprofileComponent,
-    JobsComponent,
     SignupformComponent,
     DashboardComponent,
     JobComponent

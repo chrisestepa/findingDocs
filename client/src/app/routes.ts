@@ -9,12 +9,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {JobComponent} from './job/job.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'user', component: UserprofileComponent, canActivate: [ IsLoggedInService ]  },
+    { path: 'home', component: HomeComponent },
+    { path: 'user', component: UserprofileComponent },
     { path: 'login', component: LoginformComponent  },
     { path: 'signup', component: SignupformComponent  },
     { path: 'dashboard', component: DashboardComponent  },
     { path: 'job', component: JobComponent  },
 
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'home' }
 ];

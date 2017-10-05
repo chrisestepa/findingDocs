@@ -2,12 +2,18 @@ select .option {
   width: 40px;
 }
 
+.select {
+  margin: 10px auto;
+  padding: 10px 0px;
+  width: 60%;
+}
+
 .container select {
-  width: 50%;
+  width: 80%;
 }
 
 .form {
-  margin: 10px 0px;
+  margin: 10px auto;
   padding: 10px 0px;
   width: 60%;
 }
@@ -18,9 +24,9 @@ select .option {
 }
 
 .container {
-  margin: 100px auto;
+  margin: 0 auto;
   padding: 20px;
-  width: 50%;
+  width: 40%;
   border: 2px black solid;
 }
 
