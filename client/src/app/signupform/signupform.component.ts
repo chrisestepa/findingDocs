@@ -11,7 +11,12 @@ formInfo = {
   username:"",
   password:""
 }
-  constructor(public auth:AuthService) { }
+user:object;
+constructor(public auth:AuthService) {
+  this.user = this.auth.getUser();
+  this.auth.getLoginEventEmitter()
+      .subscribe( user => this.user=user );
+}
 
   ngOnInit() {
   }

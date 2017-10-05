@@ -9,7 +9,15 @@ const authRoutes = express.Router();
 
 /* GET home page. */
 authRoutes.post('/signup', (req, res, next) => {
-  const { username, password, name, phone, collegiate, speciality, role } = req.body;
+  const {
+    username,
+    password,
+    name,
+    phone,
+    collegiate,
+    speciality,
+    role
+  } = req.body;
 
   if (!username || !password || !name || !phone || !collegiate || !speciality)
     return res.status(400).json({
