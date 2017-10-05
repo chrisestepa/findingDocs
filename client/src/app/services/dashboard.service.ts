@@ -6,18 +6,13 @@ import {environment} from '../../environments/environment';
 @Injectable()
 export class DashboardService {
 
-  public BASEURL = environment.BASEURL + "/dashboard";
+  public BASEURL = environment.BASEURL;
   private options = { withCredentials: true };
 
   constructor(private http: Http) {
 
   }
-
-  // private handleError(e) {
-  //   console.log("AUTH ERROR");
-  //   return Observable.throw(e.json().message);
-  // }
-
+  
   viewDashboard(){
     return this.http.get(`${this.BASEURL}/dashboard`, this.options)
        .map((res) => res.json());

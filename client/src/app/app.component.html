@@ -5,6 +5,7 @@
     <div class="menu">
       <h1 *ngIf="user">USER: {{user.username | json}}</h1>
       <a *ngIf="user" [routerLink]="['/dashboard']">Dashboard</a>
+      <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Create Job</a>
       <a *ngIf="!user"[routerLink]="['/login']">Login</a>
       <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>

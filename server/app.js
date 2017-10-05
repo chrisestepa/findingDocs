@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const debug = require('debug')("angularauth:" + path.basename(__filename).split('.')[0]);
 const authRoutes = require('./routes/auth');
 const dashRoutes = require('./routes/dashboard');
+const jobRoutes = require('./routes/job');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -59,8 +60,13 @@ require('./passport/local');
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authRoutes);
-app.use('/dashboard', dashRoutes);
+// app.use('/auth', authRoutes);
+// app.use('/dashboard', dashRoutes);
+// app.use('/', jobRoute)
+
+app.use('/', authRoutes);
+app.use('/', dashRoutes);
+app.use('/', jobRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

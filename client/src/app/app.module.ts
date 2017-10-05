@@ -14,6 +14,8 @@ import { JobsComponent } from './jobs/jobs.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardService } from './services/dashboard.service';
+import { JobService } from './services/job.service'
+import { JobComponent } from './job/job.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { DashboardService } from './services/dashboard.service';
     UserprofileComponent,
     JobsComponent,
     SignupformComponent,
-    DashboardComponent
+    DashboardComponent,
+    JobComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { DashboardService } from './services/dashboard.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, DashboardService],
+  providers: [AuthService, IsLoggedInService, DashboardService, JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
