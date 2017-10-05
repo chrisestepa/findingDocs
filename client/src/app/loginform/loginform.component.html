@@ -1,4 +1,4 @@
-<form >
+<form *ngIf="!user">
   <h2> Login </h2>
   <label> Username </label>
   <input type="text" [(ngModel)]="formInfo.username" name="username"/>
@@ -8,3 +8,8 @@
 
   <button (click)="login()"> login </button>
 </form>
+
+<div *ngIf="message" class="unauthorized">
+  <p>{{message}}</p>
+  <a [routerLink]="['/dashboard']">Back</a>
+</div>

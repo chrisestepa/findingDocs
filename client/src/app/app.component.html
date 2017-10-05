@@ -8,6 +8,7 @@
       <a *ngIf="!user"[routerLink]="['/login']">Login</a>
       <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
+      <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
     </div>
   </div>
 </header>

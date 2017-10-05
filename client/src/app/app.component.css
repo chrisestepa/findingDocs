@@ -15,12 +15,19 @@ h1 a {
 
 .menu {
   float: right;
+  margin-right: 20px;
 }
 
 .menu a {
   margin: 0 20px;
   text-decoration: none;
   color: 0059b3;
+}
+
+.menu button {
+  height: 30px;
+  margin: 0 10px;
+  font-size: 1vw;
 }
 
 .body {
