@@ -13,3 +13,7 @@
   <p>{{message}}</p>
   <a [routerLink]="['/dashboard']">Back</a>
 </div>
+
+<div *ngIf="user" class="unauthorized">
+  <p>You're already logged in</p>  
+</div>

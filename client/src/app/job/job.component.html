@@ -1,22 +1,30 @@
-<form *ngIf="user && user.role=='admin'">
+<div *ngIf="user && user.role=='admin'" class="container">
+  <!-- <label> Center </label>
+    <input type="text" [(ngModel)]="formInfo.center" name="center" />
+    <br> -->
   <h2> Add a new job </h2>
-  <label> Title </label>
-  <input type="text" [(ngModel)]="formInfo.title" name="title" />
-  <br>
-  <label> Center </label>
-  <input type="text" [(ngModel)]="formInfo.center" name="center" />
-  <br>
-  <label> Date </label>
-  <input type="date" [(ngModel)]="formInfo.date" name="date" />
-  <br>
-  <label> Speciality </label>
-  <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
-  <br>
-  <label> Description </label>
-  <input type="text" [(ngModel)]="formInfo.text" name="description" />
-  <br>
-  <button (click)="newJob()"> signup </button>
-</form>
+  <label>Center:</label>
+  <select [(ngModel)]="formInfo.center" name="center">
+    <option *ngFor="let center of centers" value="{{center.title}}">{{center.title}}</option>
+  </select>
+  <div class="form">
+    <form>
+      <label> Title </label>
+      <input type="text" [(ngModel)]="formInfo.title" name="title" />
+      <br>
+      <label> Date </label>
+      <input type="date" [(ngModel)]="formInfo.date" name="date" />
+      <br>
+      <label> Speciality </label>
+      <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
+      <br>
+      <label> Description </label>
+      <input type="text" [(ngModel)]="formInfo.text" name="description" />
+      <br>
+      <button (click)="newJob()"> signup </button>
+    </form>
+  </div>
+</div>
 
 <div *ngIf="user && user.role!='admin'" class="unauthorized">
   <p>You can't create new users. Please contact with your system administrator.</p>

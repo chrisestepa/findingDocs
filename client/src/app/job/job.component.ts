@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import { JobService } from '../services/job.service';
 import { Router } from '@angular/router';
+import { CentersService } from '../services/centers.service';
 
 @Component({
   selector: 'app-job',
@@ -18,12 +19,15 @@ export class JobComponent implements OnInit {
   }
 
   user:object;
-  constructor(public jobS: JobService, public auth:AuthService, public router: Router) {
+  centers:object;
+  constructor(public jobS: JobService, public centerS:CentersService, public auth:AuthService, public router: Router) {
   this.user = this.auth.getUser();
   this.auth.getLoginEventEmitter()
       .subscribe( user => this.user=user );
   }
   ngOnInit() {
+    this.centerS.getCenters()
+      .subscribe((centers) => this.centers = centers);
   }
 
   newJob() {
