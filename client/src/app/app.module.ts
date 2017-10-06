@@ -16,6 +16,7 @@ import { DashboardService } from './services/dashboard.service';
 import { JobService } from './services/job.service'
 import { JobComponent } from './job/job.component';
 import { CentersService } from './services/centers.service';
+import { InvitationComponent } from './invitation/invitation.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CentersService } from './services/centers.service';
     UserprofileComponent,
     SignupformComponent,
     DashboardComponent,
-    JobComponent
+    JobComponent,
+    InvitationComponent
   ],
   imports: [
     BrowserModule,

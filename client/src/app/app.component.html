@@ -5,6 +5,7 @@
       <a *ngIf="user" [routerLink]="['/dashboard']">Dashboard</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Create Job</a>
       <a *ngIf="!user"[routerLink]="['/login']">Login</a>
+      <a *ngIf="!user" [routerLink]="['/invitation']">Get invitation</a>
       <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
       <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>

@@ -7,6 +7,7 @@ import {IsLoggedInService} from './services/isLoggedIn.canactivate.service';
 import {SignupformComponent} from './signupform/signupform.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {JobComponent} from './job/job.component';
+import {InvitationComponent} from './invitation/invitation.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginformComponent  },
     { path: 'signup', component: SignupformComponent  },
     { path: 'dashboard', component: DashboardComponent  },
+    { path: 'invitation', component: InvitationComponent },
     { path: 'job', component: JobComponent  },
 
     { path: '**', redirectTo: 'home' }

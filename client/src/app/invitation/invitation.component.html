@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="form">
+    <form>
+      <h2> Invitation form </h2>
+      <label> Username </label>
+      <input type="text" [(ngModel)]="formInfo.username" name="username" />
+      <br>
+      <label> Collegiate number </label>
+      <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
+      <br>
+      <label> Speciality </label>
+      <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
+      <br>
+      <label> Password </label>
+      <input type="password" [(ngModel)]="formInfo.password" name="password" />
+      <br>
+      <label> Name </label>
+      <input type="text" [(ngModel)]="formInfo.name" name="name" />
+      <br>
+      <label> Phone </label>
+      <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
+      <br>
+      <button (click)="askForInvitation()"> Ask for Invitation </button>
+    </form>
+</div>
+</div>
+
+<div *ngIf="user && user.role!='admin'" class="unauthorized">
+  <p>You can't create new users. Please contact with your system administrator.</p>
+  <a [routerLink]="['/dashboard']">Back</a>
+</div>
