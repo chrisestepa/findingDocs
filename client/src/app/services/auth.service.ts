@@ -67,7 +67,7 @@ export class AuthService {
     }
 
     upload(username, password, name, phone, collegiate, speciality) {
-      return this.http.put(`${BASEURL}/upload`, {username, password, name, phone, collegiate, speciality}, this.options)
+      return this.http.put(`${BASEURL}/update`, {username, password, name, phone, collegiate, speciality}, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);

@@ -98,6 +98,7 @@ authRoutes.get('/logout', (req, res, next) => {
 authRoutes.put('/update', (req, res, next) => {
     let hashPass = '';
     let password = req.body.password;
+        console.log("ID: " + req.user._id);
 
     if (req.body.password !== "") {
       let salt = bcrypt.genSaltSync(bcryptSalt);
@@ -108,13 +109,16 @@ authRoutes.put('/update', (req, res, next) => {
 
     const update = {
       username,
+      hashPass,
       name,
       phone,
       collegiate,
       speciality,
     } = req.body;
 
-    User.findByIdAndUpdate(req.user._id, updates)
+    console.log("ID: " + req.user._id);
+
+    User.findByIdAndUpdate(req.user._id, update)
       .then(user => {
         req.login(user, (err) => {
           if (err)

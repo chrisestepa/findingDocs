@@ -18,6 +18,7 @@ formInfo = {
   role:""
   }
 
+message: string;
 user:object;
 constructor(public auth:AuthService, public router: Router) {
   this.user = this.auth.getUser();
@@ -35,7 +36,7 @@ constructor(public auth:AuthService, public router: Router) {
       .map(user => console.log(user))
       .subscribe((user) => this.router.navigate(['/dashboard']))
     } else{
-      console.log("You must set a username and a password");
+      this.message="All fields required."
     }
   }
 

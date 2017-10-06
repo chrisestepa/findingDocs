@@ -9,30 +9,36 @@ import { Router } from '@angular/router';
 })
 export class UserprofileComponent implements OnInit {
   formInfo = {
-    username:"",
-    password:"",
-    name:"",
-    phone:"",
-    collegiate:"",
-    speciality:""
-    }
+    username: "",
+    password: "",
+    name: "",
+    phone: "",
+    collegiate: "",
+    speciality: ""
+  }
 
-    user:object;
-  control:boolean = true;
-  constructor(public auth:AuthService, public router: Router) {
+  message: string;
+  user: object;
+  control: boolean = true;
+  constructor(public auth: AuthService, public router: Router) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
-        .subscribe( user => this.user=user );
+      .subscribe(user => this.user = user);
   }
 
   ngOnInit() {
   }
 
-upload(){
-  const { username, password, name, phone, collegiate, speciality } = this.formInfo;
-  this.auth.upload(username, password, name, phone, collegiate, speciality)
-    .map(user => console.log(user))
-    .subscribe((user) => this.router.navigate(['/user']))
-}
+  upload() {
+    const { username, password, name, phone, collegiate, speciality } = this.formInfo;
+    if (username != "" && password != "" && name != "" && phone != "" && collegiate != "" && speciality) {
+      this.auth.upload(username, password, name, phone, collegiate, speciality)
+        .map(user => console.log(user))
+        .subscribe((user) => this.router.navigate(['/user']))
+    } else {
+      this.message = "All fields required";
+    }
+
+  }
 
 }
