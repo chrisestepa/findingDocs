@@ -18,6 +18,7 @@ export class JobComponent implements OnInit {
     description:""
   }
 
+  message: string;
   user:object;
   centers:object;
   constructor(public jobS: JobService, public centerS:CentersService, public auth:AuthService, public router: Router) {
@@ -38,7 +39,7 @@ export class JobComponent implements OnInit {
         .map(job => console.log(job))
         .subscribe((job) => this.router.navigate(['/dashboard']))
     } else {
-      console.log("All fields required");
+      this.message = "All fields required";
     }
   }
 
