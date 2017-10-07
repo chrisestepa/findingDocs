@@ -3,17 +3,18 @@ select .option {
 }
 
 .select {
-  margin: 10px auto;
+  margin: 10px auto 0;
   padding: 10px 0px;
   width: 60%;
 }
 
 .container select {
-  width: 80%;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .form {
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 10px 0px;
   width: 60%;
 }

@@ -4,6 +4,7 @@ const path = require('path');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("angularauth:" + path.basename(__filename).split('.')[0]);
+const bcryptSalt = 10;
 
 const authRoutes = express.Router();
 
@@ -34,7 +35,7 @@ authRoutes.post('/signup', (req, res, next) => {
           message: 'The DNI already exists'
         });
 
-      const salt = bcrypt.genSaltSync(10);
+      const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
       debug('creating user');
       const theUser = new User({
@@ -98,7 +99,6 @@ authRoutes.get('/logout', (req, res, next) => {
 authRoutes.put('/update', (req, res, next) => {
     let hashPass = '';
     let password = req.body.password;
-        console.log("ID: " + req.user._id);
 
     if (req.body.password !== "") {
       let salt = bcrypt.genSaltSync(bcryptSalt);
@@ -108,13 +108,13 @@ authRoutes.put('/update', (req, res, next) => {
     }
 
     const update = {
-      username,
+      username: req.body.username,
       hashPass,
-      name,
-      phone,
-      collegiate,
-      speciality,
-    } = req.body;
+      name:req.body.name,
+      phone: req.body.phone,
+      collegiate: req.body.collegiate,
+      speciality: req.body.speciality
+    }
 
     console.log("ID: " + req.user._id);
 
@@ -125,7 +125,6 @@ authRoutes.put('/update', (req, res, next) => {
             return res.status(500).json({
               message: 'Something went wrong'
             });
-
           res.status(200).json(req.user);
         });
       })

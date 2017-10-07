@@ -9,6 +9,8 @@
     <p>DATE: {{job.date | json}}</p>
     <p>DESCRIPTION: {{job.description | json}}</p>
     <p *ngIf="job.doctor[0]">DOCTOR: {{job.doctor[0].username | json}}</p>
+    <button *ngIf="user && user.role==='doctor'">Get Job</button>
+    <button *ngIf="user && user.role==='manager'">Delete Job</button>
   </div>
 
 </div>

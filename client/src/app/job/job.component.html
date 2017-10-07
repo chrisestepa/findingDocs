@@ -3,27 +3,32 @@
     <input type="text" [(ngModel)]="formInfo.center" name="center" />
     <br> -->
   <div class="select">
-    <h2> Add a new job </h2>
-    <label>Center:</label>
+    <h2> Crear oferta </h2>
+    <label>Centro:</label>
     <select [(ngModel)]="formInfo.center" name="center">
       <option *ngFor="let center of centers" value="{{center._id}}">{{center.title}}</option>
+    </select>
+    <label>Tipo:</label>
+    <select [(ngModel)]="formInfo.title" name="title">
+      <option value="Médico de familia">Médico de familia</option>
+      <option value="Pediatria">Pediatría</option>
+      <option value="Urgencias SUAP">Urgencias SUAP</option>
+    </select>
+    <label>Especialidad:</label>
+    <select [(ngModel)]="formInfo.speciality" name="speciality">
+      <option value="Medicina familiar">Médico de familia</option>
+      <option value="Pediatria">Pediatría</option>
     </select>
   </div>
   <div class="form">
     <form>
-      <label> Title </label>
-      <input type="text" [(ngModel)]="formInfo.title" name="title" />
-      <br>
-      <label> Date </label>
+      <label> Fecha </label>
       <input type="date" [(ngModel)]="formInfo.date" name="date" />
       <br>
-      <label> Speciality </label>
-      <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
-      <br>
-      <label> Description </label>
+      <label> Descripción </label>
       <input type="text" [(ngModel)]="formInfo.description" name="description" />
       <br>
-      <button (click)="newJob()"> signup </button>
+      <button (click)="newJob()"> Crear oferta </button>
     </form>
     <p>{{message}}</p>
   </div>
