@@ -1,5 +1,8 @@
 <header>
-  <div style="text-align:center">
+  <div class="logo-container">
+    <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
+  </div>
+  <div >
     <h1><a *ngIf="user" [routerLink]="['/dashboard']">{{ title }}</a></h1>
     <h1><a *ngIf="!user" [routerLink]="['']">{{ title }}</a></h1>
     <div class="menu">
@@ -10,8 +13,8 @@
       <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
       <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Invitations List</a>
-      <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
     </div>
+    <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
   </div>
 </header>
 
