@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import { Router } from '@angular/router';
+import {InvitationService} from '../services/invitation.service';
 
 @Component({
   selector: 'app-invitation',
@@ -10,16 +11,15 @@ import { Router } from '@angular/router';
 export class InvitationComponent implements OnInit {
   formInfo = {
     username:"",
-    password:"",
-    name:"",
-    phone:"",
     collegiate:"",
     speciality:"",
+    name:"",
+    phone:""
     }
 
   message: string;
   user:object;
-  constructor(public auth:AuthService, public router: Router) {
+  constructor(public auth:AuthService, public invS:InvitationService, public router: Router) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
         .subscribe( user => this.user=user );
@@ -29,7 +29,14 @@ export class InvitationComponent implements OnInit {
   }
 
   askForInvitation(){
-    console.log("I WANT AN INVITATION!");
+    const {username, collegiate, speciality, name, phone} = this.formInfo;
+    if(username != "" && collegiate != "" && speciality != "" && name != "" && phone != ""){
+      this.invS.new(username, collegiate, speciality, name, phone)
+      .map(inv => console.log(inv))
+      .subscribe((inv) => this.router.navigate(['home']))
+    } else{
+      this.message="All fields required."
+    }
   }
 
 }

@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map'
 import {environment} from '../../environments/environment';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class InvitationService {
@@ -13,9 +14,19 @@ export class InvitationService {
 
     }
 
+    private handleError(e) {
+      return Observable.throw(e.json().message);
+    }
+
     getList(){
       return this.http.get(`${this.BASEURL}/invitations`, this.options)
          .map((res) => res.json());
+    }
+
+    new(username, collegiate, speciality, name, phone){
+      return this.http.post(`${this.BASEURL}/ask`, {username, collegiate, speciality, name, phone}, this.options)
+        .map(res => res.json())
+        .catch(this.handleError);
     }
 
     get(id) {
