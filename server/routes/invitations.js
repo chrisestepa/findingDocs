@@ -68,7 +68,6 @@ invitationRoutes.get('/invitations/:id', (req, res) => {
 });
 
 invitationRoutes.get('/deleteinvitation/:id', (req, res, next) => {
-  console.log("ID: ");
   Invitation.findByIdAndRemove(req.params.id)
   .then(i => res.status(200).json(i))
   .catch(e => res.status(500).json({error:e.message}));

@@ -30,11 +30,11 @@ export class JobDetailsComponent implements OnInit {
     });
   }
 
-  // applyJob(id){
-  //   this.jobS.apply(id).subscribe(() => {
-  //     this.router.navigate(['dashboard'])
-  //   });
-  // }
+  applyJob(id, user){
+    this.jobS.apply(id, user).subscribe(() => {
+      this.router.navigate(['dashboard'])
+    });
+  }
 
   deleteJob(id){
     this.jobS.delete(id).subscribe(() => {

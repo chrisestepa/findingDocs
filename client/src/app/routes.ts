@@ -19,7 +19,7 @@ export const routes: Routes = [
     { path: 'signup', component: SignupformComponent  },
     { path: 'dashboard', component: DashboardComponent  },
     { path: 'invitation', component: InvitationComponent },
-    { path: 'invitations/:id', component: DeleteInvitationComponent },
+    { path: 'invitations/:id/:user', component: DeleteInvitationComponent },
     { path: 'job', component: JobComponent  },
     { path: 'invitations', component: InvitationListComponent  },
     { path: 'dashboard/:id', component: JobDetailsComponent},

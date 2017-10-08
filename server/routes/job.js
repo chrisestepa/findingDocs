@@ -16,13 +16,13 @@ jobRoute.post('/job/new', (req, res) => {
   const speciality = req.body.speciality;
 
   const newJob = new Job({
-      title,
-      center,
-      speciality,
-      date,
-      description,
-    });
-    return newJob.save()
+    title,
+    center,
+    speciality,
+    date,
+    description,
+  });
+  return newJob.save()
     .then(job => res.status(200).json({
       message: 'New Job created!',
       job: job
@@ -66,6 +66,40 @@ jobRoute.put('/job/view/:id', (req, res, next) => {
 jobRoute.get('/job/view/delete/:id', (req, res, next) => {
   Job.findByIdAndRemove(req.params.id)
     .then(job => res.status(200).json(job))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
+
+jobRoute.get('/job/:id', (req, res, next) => {
+  Job.findById(req.params.id).populate('center')
+    .populate('doctor')
+    .then(j => res.status(200).json(j))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
+
+jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
+  console.log("USER: " + req.user)
+  Job.findByIdAndUpdate(req.params.id, {
+      $push: {
+        "doctor": req.params.user,
+      }
+    })
+    .then(job => {
+      res.status(200).json(job);
+      })
+    .catch(e => {
+      res.status(400).json({
+        message: 'Something went wrong'
+      })
+    });
+  });
+
+jobRoute.get('/deletejob/:id', (req, res, next) => {
+  Job.findByIdAndRemove(req.params.id)
+    .then(j => res.status(200).json(j))
     .catch(e => res.status(500).json({
       error: e.message
     }));

@@ -30,8 +30,9 @@ export class JobService {
         .map((res) => res.json());
     }
 
-    apply(id){
-
+    apply(id, user){
+      return this.http.put(`${this.BASEURL}/job/apply/${id}/${user}`, "")
+        .map((res) => res.json());
     }
 
     delete(id){

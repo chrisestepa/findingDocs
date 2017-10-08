@@ -1,6 +1,7 @@
 <div *ngIf="user">
 
-  <h1>JOBS</h1>
+  <h1 *ngIf="user.role==='manager'">¿Estás seguro de que quieres eliminar esta oferta?</h1>
+  <h1 *ngIf="user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h1>
 
   <div class="job">
     <p>TITLE: {{job.title | json}}</p>
@@ -8,8 +9,15 @@
     <p>CENTER: {{job.center.title | json}}</p>
     <p>DATE: {{job.date | json}}</p>
     <p>DESCRIPTION: {{job.description | json}}</p>
-    <button *ngIf="user && user.role==='doctor'">Get Job</button>
-    <button (click)=deleteJob(job._id)  *ngIf="user && user.role==='manager'">Delete Job</button>
+    <p *ngIf="job.doctor[0] && user.role!='doctor'">SOLICITUDES: </p>
+    <ul *ngIf="job.doctor[0] && user.role!='doctor'">
+    <li *ngFor="let doc of job.doctor">
+      {{doc.username | json}}
+    </li>
+    </ul>
+    <button (click)="applyJob(job._id, user._id)" *ngIf="user && user.role==='doctor'">Get Job</button>
+    <button (click)="deleteJob(job._id)"  *ngIf="user && user.role==='manager'">Delete Job</button>
+    <a [routerLink]="['/dashboard']">Cancelar</a>
   </div>
 
 </div>
