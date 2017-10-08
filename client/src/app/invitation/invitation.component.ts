@@ -17,6 +17,7 @@ export class InvitationComponent implements OnInit {
     phone:""
     }
 
+  control: string;
   message: string;
   user:object;
   constructor(public auth:AuthService, public invS:InvitationService, public router: Router) {
@@ -32,7 +33,7 @@ export class InvitationComponent implements OnInit {
     const {username, collegiate, speciality, name, phone} = this.formInfo;
     if(username != "" && collegiate != "" && speciality != "" && name != "" && phone != ""){
       this.invS.new(username, collegiate, speciality, name, phone)
-      .map(inv => console.log(inv))
+      .map(inv => this.control = "Invitación enviada.")
       .subscribe((inv) => this.router.navigate(['home']))
     } else{
       this.message="All fields required."

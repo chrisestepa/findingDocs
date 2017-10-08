@@ -18,9 +18,14 @@
       <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
       <br>
       <button (click)="askForInvitation()"> Ask for Invitation </button>
+      <br>
+      <p>{{control}}</p>
+      <p>{{message}}</p>
     </form>
 </div>
 </div>
+
+<a [routerLink]="['']" control=!control>Volver</a>
 
 <div *ngIf="user && user.role!='admin'" class="unauthorized">
   <p>You can't create new users. Please contact with your system administrator.</p>

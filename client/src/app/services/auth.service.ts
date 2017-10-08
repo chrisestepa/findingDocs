@@ -44,13 +44,6 @@ export class AuthService {
         .catch(this.handleError);
     }
 
-    // update(username,password,name,phone,collegiate,speciality,role) {
-    //   return this.http.post(`${BASEURL}/signup`, {username, password, name, phone, collegiate, speciality, role}, this.options)
-    //     .map(res => res.json())
-    //     .map(user => this.emitUserLoginEvent(user))
-    //     .catch(this.handleError);
-    // }
-
     login(username,password) {
       return this.http.post(`${BASEURL}/login`, {username,password}, this.options)
         .map(res => res.json())

@@ -8,7 +8,7 @@
     <p>Especialidad: {{invitation.speciality | json}}</p>
     <p>Nombre: {{invitation.name | json}}</p>
     <p>Teléfono: {{invitation.phone | json}}</p>
-    <a [routerLink]="[invitation._id]"> Delete Invitation </a>
+    <a [routerLink]="[invitation._id, user._id]"> Delete Invitation </a>
   </div>
 
 </div>
