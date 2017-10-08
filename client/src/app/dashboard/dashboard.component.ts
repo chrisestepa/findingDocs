@@ -12,7 +12,8 @@ import { AuthService } from '../services/auth.service';
 export class DashboardComponent implements OnInit {
   jobs;
   user: object;
-  constructor(public dashS:DashboardService, public auth: AuthService) {   this.user = this.auth.getUser();
+  constructor(public dashS:DashboardService, public auth: AuthService) {
+    this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
   }

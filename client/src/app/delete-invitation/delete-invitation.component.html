@@ -1,0 +1,20 @@
+<div *ngIf="user && user.role==='admin'">
+
+  <h1>¿Está seguro de que quiere borrar esta petición?</h1>
+
+  <div class="invitation">
+    <p>Username: {{invitation.username | json}}</p>
+    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>
+    <p>Especialidad: {{invitation.speciality | json}}</p>
+    <p>Nombre: {{invitation.name | json}}</p>
+    <p>Teléfono: {{invitation.phone | json}}</p>
+    <button (click)="deleteInvitation(invitation._id)">Delete</button>
+    <a [routerLink]="['/invitations']">Cancelar</a>
+  </div>
+
+</div>
+
+<div *ngIf="!user" class="unauthorized">
+  <p>Forbidden zone. Please contact with your system administrator.</p>
+  <a [routerLink]="['']">Back</a>
+</div>

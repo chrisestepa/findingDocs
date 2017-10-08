@@ -11,6 +11,7 @@ const debug = require('debug')("angularauth:" + path.basename(__filename).split(
 const authRoutes = require('./routes/auth');
 const centersRoute = require('./routes/centers');
 const dashRoutes = require('./routes/dashboard');
+const invitationRoute = require('./routes/invitations');
 const jobRoutes = require('./routes/job');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -69,6 +70,7 @@ app.use('/', authRoutes);
 app.use('/', dashRoutes);
 app.use('/', jobRoutes);
 app.use('/', centersRoute);
+app.use('/', invitationRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
