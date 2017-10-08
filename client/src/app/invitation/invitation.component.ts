@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invitation',
@@ -6,8 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invitation.component.css']
 })
 export class InvitationComponent implements OnInit {
+  formInfo = {
+    username:"",
+    password:"",
+    name:"",
+    phone:"",
+    collegiate:"",
+    speciality:"",
+    }
 
-  constructor() { }
+  message: string;
+  user:object;
+  constructor(public auth:AuthService, public router: Router) {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );
+  }
 
   ngOnInit() {
   }
