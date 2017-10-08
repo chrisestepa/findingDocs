@@ -1,0 +1,45 @@
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {JobService} from '../services/job.service';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-job-details',
+  templateUrl: './job-details.component.html',
+  styleUrls: ['./job-details.component.css']
+})
+export class JobDetailsComponent implements OnInit {
+  job;
+  user;
+  constructor(public auth:AuthService, private router:Router, private route:ActivatedRoute, private jobS: JobService) {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+      .subscribe(user => this.user = user);
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      console.log(`El parametro recibido es: ${params['id']}`);
+      this.getJob(params['id']);
+    });
+  }
+
+  getJob(id){
+    this.jobS.getJob(id).subscribe((job) => {
+    this.job = job;
+    });
+  }
+
+  // applyJob(id){
+  //   this.jobS.apply(id).subscribe(() => {
+  //     this.router.navigate(['dashboard'])
+  //   });
+  // }
+
+  deleteJob(id){
+    this.jobS.delete(id).subscribe(() => {
+      this.router.navigate(['dashboard'])
+    });
+  }
+
+}

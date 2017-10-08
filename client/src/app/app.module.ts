@@ -20,6 +20,7 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationListComponent } from './invitation-list/invitation-list.component';
 import { InvitationService } from './services/invitation.service';
 import { DeleteInvitationComponent } from './delete-invitation/delete-invitation.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DeleteInvitationComponent } from './delete-invitation/delete-invitation
     JobComponent,
     InvitationComponent,
     InvitationListComponent,
-    DeleteInvitationComponent
+    DeleteInvitationComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,

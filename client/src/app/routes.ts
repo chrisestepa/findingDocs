@@ -10,6 +10,7 @@ import {JobComponent} from './job/job.component';
 import {InvitationComponent} from './invitation/invitation.component';
 import {InvitationListComponent} from './invitation-list/invitation-list.component';
 import {DeleteInvitationComponent} from './delete-invitation/delete-invitation.component';
+import {JobDetailsComponent} from './job-details/job-details.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -21,6 +22,6 @@ export const routes: Routes = [
     { path: 'invitations/:id', component: DeleteInvitationComponent },
     { path: 'job', component: JobComponent  },
     { path: 'invitations', component: InvitationListComponent  },
-
+    { path: 'dashboard/:id', component: JobDetailsComponent},
     { path: '**', redirectTo: 'home' }
 ];

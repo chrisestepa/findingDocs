@@ -2,15 +2,14 @@
 
   <h1>JOBS</h1>
 
-  <div class="job" *ngFor="let job of jobs">
+  <div class="job">
     <p>TITLE: {{job.title | json}}</p>
     <p>SPECIALITY: {{job.speciality | json}}</p>
     <p>CENTER: {{job.center.title | json}}</p>
     <p>DATE: {{job.date | json}}</p>
     <p>DESCRIPTION: {{job.description | json}}</p>
-    <p *ngIf="job.doctor[0]">DOCTOR: {{job.doctor[0].username | json}}</p>
-    <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
-    <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>
+    <button *ngIf="user && user.role==='doctor'">Get Job</button>
+    <button (click)=deleteJob(job._id)  *ngIf="user && user.role==='manager'">Delete Job</button>
   </div>
 
 </div>

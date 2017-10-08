@@ -24,4 +24,18 @@ export class JobService {
         .map(res => res.json())
         .catch(this.handleError);
     }
+
+    getJob(id){
+      return this.http.get(`${this.BASEURL}/job/${id}`)
+        .map((res) => res.json());
+    }
+
+    apply(id){
+
+    }
+
+    delete(id){
+      return this.http.get(`${this.BASEURL}/deletejob/${id}`, this.options)
+    }
+
   }

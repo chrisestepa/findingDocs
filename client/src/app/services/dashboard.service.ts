@@ -12,10 +12,12 @@ export class DashboardService {
   constructor(private http: Http) {
 
   }
-  
+
   viewDashboard(){
     return this.http.get(`${this.BASEURL}/dashboard`, this.options)
        .map((res) => res.json());
   }
+
+
 
 }
