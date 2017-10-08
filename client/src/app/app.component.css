@@ -1,11 +1,12 @@
 header {
   background: #cce6ff;
-  height: 120px;
+  height: 150px;
 }
 
 h1 {
   margin: 0px;
-  padding: 10px;
+  font-family: 'Baloo Tammudu';
+  font-size: 3.5vw;
 }
 
 h1 a {
@@ -28,8 +29,4 @@ h1 a {
   height: 30px;
   margin: 0 10px;
   font-size: 1vw;
-}
-
-.body {
-  margin: 50px 100px;
 }

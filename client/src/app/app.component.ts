@@ -6,7 +6,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto3';
+  title = 'findingDocs';
   user:any;
   constructor(public auth:AuthService) {
     this.user = this.auth.getUser();
