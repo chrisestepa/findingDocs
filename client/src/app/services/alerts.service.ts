@@ -31,4 +31,9 @@ export class AlertsService {
       .catch(this.handleError);
   }
 
+  getUserAlerts(){
+    return this.http.get(`${this.BASEURL}/useralerts`, this.options)
+      .map((res) => res.json());
+  }
+
 }

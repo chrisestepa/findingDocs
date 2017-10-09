@@ -49,4 +49,15 @@ alertRoute.get('/alerts', (req, res) => {
     }));
 });
 
+alertRoute.get('/useralerts', (req, res) => {
+  Alert.find({"doctor" : req.user._id})
+    .populate('doctor')
+    .populate('center')
+    .then(alerts => {
+      res.status(200).json(alerts)})
+    .catch(e => res.status(500).json({
+      error: e.message
+    }))
+});
+
 module.exports = alertRoute;

@@ -9,10 +9,9 @@ const bcryptSalt = 10;
 const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
-  console.log("ese backend guapo")
   const { username, name, phone, collegiate, speciality, role} = req.body;
   const password = "1234";
-  console.log (username, password, name, phone, collegiate, speciality, role);
+
   if (!username || !password || !name || !phone || !collegiate || !speciality)
     return res.status(400).json({
       message: 'All fields required.'
@@ -39,7 +38,6 @@ authRoutes.post('/signup', (req, res, next) => {
       return theUser.save()
         .then(user => res.status(200).json(req.user))
         .catch(e => {
-          console.log(e);
           res.status(400).json({
             message: 'Something went wrong'
           })

@@ -55,7 +55,6 @@ export class AuthService {
     return this.http.get(`${BASEURL}/logout`, this.options)
       .map(res => res.json())
       .map(user => this.emitUserLoginEvent(null))
-      // .catch(this.handleError)
       .subscribe((user) => this.router.navigate(['']))
   }
 

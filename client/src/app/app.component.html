@@ -17,11 +17,11 @@
   <a *ngIf="!user" [routerLink]="['/invitation']">Solicitar invitación</a>
   <a *ngIf="user" [routerLink]="['/user']">Datos de usuario</a>
   <a *ngIf="user && user.role=='doctor'" [routerLink]="['/alerts']">Mis alertas</a>
-  <!-- <div *ngIf="user && user.role=='doctor'">
-    <p>A</p>
-  <div> -->
   <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Añadir usuario</a>
   <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Lista de invitaciones</a>
+  <div class="alerts">
+    <em>{{alerts.length | json}}</em>
+  </div>
   <button *ngIf="user" (click)="auth.logout().subscribe()">Cerrar sesión</button>
 </div>
 
