@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const invitationSchema = new Schema({
+  role:String,
   username: String,
   collegiate: String,
   speciality: String,

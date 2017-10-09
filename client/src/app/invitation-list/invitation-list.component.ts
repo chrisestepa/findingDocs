@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { InvitationService } from '../services/invitation.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,10 +10,13 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './invitation-list.component.html',
   styleUrls: ['./invitation-list.component.css']
 })
+
 export class InvitationListComponent implements OnInit {
   user;
   invitations;
-  constructor(public invS:InvitationService, public auth: AuthService) {
+
+    message: string;
+  constructor(public router: Router, public invS:InvitationService, public auth: AuthService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
@@ -20,6 +24,17 @@ export class InvitationListComponent implements OnInit {
 
   ngOnInit() {
     this.invS.getList().subscribe(e => this.invitations = e);
+  }
+
+  create(inv){
+    const {username, password, name, phone, collegiate, speciality, role} = inv;
+    if(username != "" && password != ""){
+      this.auth.signup(username, password, name, phone, collegiate, speciality, role)
+      .map(user => console.log(user))
+      .subscribe((user) => this.router.navigate(['/dashboard']))
+    } else{
+      this.message="All fields required."
+    }
   }
 
 }

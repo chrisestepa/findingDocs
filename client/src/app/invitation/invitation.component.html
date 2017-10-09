@@ -1,7 +1,15 @@
 <div class="container">
   <div class="form">
+    <h2> Solicitud de invitación </h2>
+    <div class="select">
+      <label class="usertype">Tipo de usuario:</label>
+      <select [(ngModel)]="formInfo.role" name="role">
+        <option value="doctor">Doctor</option>
+        <option value="manager">Gerente</option>
+      </select>
+    </div>
+    <br><br>
     <form>
-      <h2> Solicitud de invitación </h2>
       <label> Nombre de usuario </label>
       <input type="text" [(ngModel)]="formInfo.username" name="username" />
       <br>

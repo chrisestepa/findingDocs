@@ -10,6 +10,7 @@
     <p>Descripción: {{job.description | json}}</p>
     <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
     <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>
+
   </div>
 
 </div>

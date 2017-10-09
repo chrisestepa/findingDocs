@@ -52,6 +52,12 @@ h1 a {
   color: #0059b3;
 }
 
+.menu p {
+  margin: 0 20px;
+  text-decoration: none;
+  float: right;
+}
+
 button {
   height: 30px;
   margin: 0 10px;

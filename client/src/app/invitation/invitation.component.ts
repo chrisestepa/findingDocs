@@ -10,6 +10,7 @@ import {InvitationService} from '../services/invitation.service';
 })
 export class InvitationComponent implements OnInit {
   formInfo = {
+    role:"",
     username:"",
     collegiate:"",
     speciality:"",
@@ -30,9 +31,9 @@ export class InvitationComponent implements OnInit {
   }
 
   askForInvitation(){
-    const {username, collegiate, speciality, name, phone} = this.formInfo;
-    if(username != "" && collegiate != "" && speciality != "" && name != "" && phone != ""){
-      this.invS.new(username, collegiate, speciality, name, phone)
+    const {role, username, collegiate, speciality, name, phone} = this.formInfo;
+    if(role != "" && username != "" && collegiate != "" && speciality != "" && name != "" && phone != ""){
+      this.invS.new(role, username, collegiate, speciality, name, phone)
       .map(inv => this.control = "Invitación enviada.")
       .subscribe((inv) => this.router.navigate(['home']))
     } else{

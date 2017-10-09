@@ -32,6 +32,7 @@ jobRoute.post('/job/new', (req, res) => {
     }));
 });
 
+
 jobRoute.get('/job/view/:id', (req, res) => {
   Job.findById(req.params.id)
     .then(job => res.status(200).json(job))

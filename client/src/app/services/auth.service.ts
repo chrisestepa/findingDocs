@@ -38,9 +38,9 @@ export class AuthService {
   }
 
   signup(username, password, name, phone, collegiate, speciality, role) {
+    console.log("entro en el servicio")
     return this.http.post(`${BASEURL}/signup`, { username, password, name, phone, collegiate, speciality, role }, this.options)
       .map(res => res.json())
-      .map(user => this.emitUserLoginEvent(user))
       .catch(this.handleError);
   }
 

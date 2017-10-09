@@ -9,28 +9,18 @@ const bcryptSalt = 10;
 const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
-  const {
-    username,
-    password,
-    name,
-    phone,
-    collegiate,
-    speciality,
-    role
-  } = req.body;
-
+  console.log("ese backend guapo")
+  const { username, name, phone, collegiate, speciality, role} = req.body;
+  const password = "1234";
+  console.log (username, password, name, phone, collegiate, speciality, role);
   if (!username || !password || !name || !phone || !collegiate || !speciality)
     return res.status(400).json({
       message: 'All fields required.'
     });
 
-  debug('Find user in DB');
-
-  User.findOne({
-      username
-    }, '_id').exec().then(user => {
-      if (user)
-        return res.status(400).json({
+  User.findOne({ username}, '_id')
+    .exec().then(user => {
+      if (user) return res.status(400).json({
           message: 'The DNI already exists'
         });
 
@@ -47,23 +37,15 @@ authRoutes.post('/signup', (req, res, next) => {
         role
       });
       return theUser.save()
-        .then(user => {
-          req.login(user, (err) => {
-            if (err)
-              return res.status(500).json({
-                message: 'Something went wrong'
-              });
-
-            res.status(200).json(req.user);
-          });
-        })
-    })
-    .catch(e => {
-      console.log(e);
-      res.status(400).json({
-        message: 'Something went wrong'
-      })
+        .then(user => res.status(200).json(req.user))
+        .catch(e => {
+          console.log(e);
+          res.status(400).json({
+            message: 'Something went wrong'
+          })
     });
+});
+
 });
 
 authRoutes.post('/login', (req, res, next) => {

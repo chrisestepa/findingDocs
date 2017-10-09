@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../services/dashboard.service';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 
 
@@ -21,5 +21,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.dashS.viewDashboard().subscribe(e => this.jobs = e);
   }
+
+
 
 }

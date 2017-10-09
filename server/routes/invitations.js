@@ -8,14 +8,13 @@ const invitationRoutes = express.Router();
 
 invitationRoutes.post('/ask', (req, res, next) => {
   const inv = {
+    role: req.body.role,
     username: req.body.username,
     collegiate: req.body.collegiate,
     speciality: req.body.speciality,
     name: req.body.name,
     phone: req.body.phone,
   }
-
-  debug('Find user in DB');
 
   Invitation.findOne({
       "username": inv.username
@@ -27,6 +26,7 @@ invitationRoutes.post('/ask', (req, res, next) => {
 
       debug('creating invitation');
       const invitation = new Invitation({
+        role: inv.role,
         username: inv.username,
         name: inv.name,
         phone: inv.phone,
