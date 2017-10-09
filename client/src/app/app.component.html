@@ -11,14 +11,15 @@
 </header>
 
 <div class="menu">
-  <a *ngIf="user" [routerLink]="['/dashboard']">Dashboard</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Create Job</a>
+  <a *ngIf="user" [routerLink]="['/dashboard']">Tablón de ofertas</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Crear oferta</a>
   <a *ngIf="!user" [routerLink]="['/login']">Iniciar sesión</a>
   <a *ngIf="!user" [routerLink]="['/invitation']">Solicitar invitación</a>
-  <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Invitations List</a>
-  <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
+  <a *ngIf="user" [routerLink]="['/user']">Datos de usuario</a>
+  <a *ngIf="user && user.role=='doctor'" [routerLink]="['/alerts']">Alertas</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Añadir usuario</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Lista de invitaciones</a>
+  <button *ngIf="user" (click)="auth.logout().subscribe()">Cerrar sesión</button>
 </div>
 
 <p style="margin: 20px" *ngIf="user">USER: {{user.username | json}}</p>

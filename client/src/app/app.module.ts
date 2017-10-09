@@ -21,6 +21,9 @@ import { InvitationListComponent } from './invitation-list/invitation-list.compo
 import { InvitationService } from './services/invitation.service';
 import { DeleteInvitationComponent } from './delete-invitation/delete-invitation.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { AlertsService } from './services/alerts.service';
+import { NewAlertComponent } from './new-alert/new-alert.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     InvitationComponent,
     InvitationListComponent,
     DeleteInvitationComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
+    AlertsComponent,
+    NewAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, DashboardService, CentersService, JobService, InvitationService],
+  providers: [AuthService, IsLoggedInService, DashboardService, CentersService, JobService, InvitationService, AlertsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

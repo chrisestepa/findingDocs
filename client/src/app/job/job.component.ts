@@ -39,7 +39,7 @@ export class JobComponent implements OnInit {
         .map(job => console.log(job))
         .subscribe((job) => this.router.navigate(['/dashboard']))
     } else {
-      this.message = "All fields required";
+      this.message = "Todos los campos son obligatorios.";
     }
   }
 

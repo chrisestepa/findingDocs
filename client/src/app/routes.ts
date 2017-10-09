@@ -11,6 +11,8 @@ import {InvitationComponent} from './invitation/invitation.component';
 import {InvitationListComponent} from './invitation-list/invitation-list.component';
 import {DeleteInvitationComponent} from './delete-invitation/delete-invitation.component';
 import {JobDetailsComponent} from './job-details/job-details.component';
+import {AlertsComponent} from './alerts/alerts.component';
+import {NewAlertComponent} from './new-alert/new-alert.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -23,5 +25,7 @@ export const routes: Routes = [
     { path: 'job', component: JobComponent  },
     { path: 'invitations', component: InvitationListComponent  },
     { path: 'dashboard/:id', component: JobDetailsComponent},
+    { path: 'alerts', component: AlertsComponent},
+    { path: 'newalert', component: NewAlertComponent},
     { path: '**', redirectTo: 'home' }
 ];

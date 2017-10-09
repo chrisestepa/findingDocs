@@ -1,0 +1,12 @@
+<div class="new">
+  <a [routerLink]="['/newalert']">Crear nueva alerta</a>
+</div>
+
+<div class="container">
+  <div *ngFor="let alert of alerts" class="alert">
+    <h1>{{alert.title}}</h1>
+    <p>Centro: {{alert.center.title | json}}</p>
+    <p>Especialidad: {{alert.speciality | json}}</p>
+    <button>Borrar alerta</button>
+  </div>
+</div>

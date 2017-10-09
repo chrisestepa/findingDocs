@@ -14,6 +14,7 @@ const centersRoute = require('./routes/centers');
 const dashRoutes = require('./routes/dashboard');
 const invitationRoute = require('./routes/invitations');
 const jobRoutes = require('./routes/job');
+const alertRoutes = require('./routes/alerts');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -72,6 +73,7 @@ app.use('/', dashRoutes);
 app.use('/', jobRoutes);
 app.use('/', centersRoute);
 app.use('/', invitationRoute);
+app.use('/', alertRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
