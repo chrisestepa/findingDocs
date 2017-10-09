@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -15,7 +16,6 @@ const invitationRoute = require('./routes/invitations');
 const jobRoutes = require('./routes/job');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').load();
 
 const app = express();
 
