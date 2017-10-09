@@ -2,23 +2,24 @@
   <div class="logo-container">
     <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
   </div>
-  <div >
+  <div class="title">
     <h1><a *ngIf="user" [routerLink]="['/dashboard']">{{ title }}</a></h1>
     <h1><a *ngIf="!user" [routerLink]="['']">{{ title }}</a></h1>
-    <div class="menu">
-      <a *ngIf="user" [routerLink]="['/dashboard']">Dashboard</a>
-      <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Create Job</a>
-      <a *ngIf="!user"[routerLink]="['/login']">Login</a>
-      <a *ngIf="!user" [routerLink]="['/invitation']">Get invitation</a>
-      <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
-      <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
-      <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Invitations List</a>
-    </div>
-    <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
   </div>
 </header>
 
-<p style="margin: 20px"*ngIf="user">USER: {{user.username | json}}</p>
+<div class="menu">
+  <a *ngIf="user" [routerLink]="['/dashboard']">Dashboard</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Create Job</a>
+  <a *ngIf="!user" [routerLink]="['/login']">Iniciar sesión</a>
+  <a *ngIf="!user" [routerLink]="['/invitation']">Solicitar invitación</a>
+  <a *ngIf="user" [routerLink]="['/user']">User Profile</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Add a profile</a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Invitations List</a>
+  <button *ngIf="user" (click)="auth.logout().subscribe()">Logout</button>
+</div>
+
+<p style="margin: 20px" *ngIf="user">USER: {{user.username | json}}</p>
 
 <div class="body">
   <router-outlet></router-outlet>
