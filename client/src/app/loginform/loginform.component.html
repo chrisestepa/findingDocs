@@ -1,13 +1,14 @@
 <div *ngIf="!user" class="container">
   <form class="form">
-    <h2> Login </h2>
-    <label> Username </label>
+    <h2> Inicio de sesión </h2>
+    <label> Usuario </label>
     <input type="text" [(ngModel)]="formInfo.username" name="username"/>
     <br>
-    <label> Password </label>
+    <label> Contraseña </label>
     <input type="password" [(ngModel)]="formInfo.password" name="password"/>
 
-    <button (click)="login()"> login </button>
+    <button (click)="login()"> Iniciar sesión </button>
+    <a class="back" [routerLink]="['']" control=!control>Volver</a>
   </form>
 </div>
 
