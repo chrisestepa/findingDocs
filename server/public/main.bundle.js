@@ -21,7 +21,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "header {\n  background: #cce6ff;\n  height: 120px;\n}\n\nh1 {\n  margin: 0px;\n  padding: 10px;\n}\n\nh1 a {\n  text-decoration: none;\n  color: #003366;\n}\n\n.menu {\n  float: right;\n  margin-right: 20px;\n}\n\n.menu a {\n  margin: 0 20px;\n  text-decoration: none;\n  color: 0059b3;\n}\n\n.menu button {\n  height: 30px;\n  margin: 0 10px;\n  font-size: 1vw;\n}\n\n.body {\n  margin: 50px 100px;\n}\n", ""]);
+exports.push([module.i, "header {\n  background: #cce6ff;\n  height: 150px;\n  display: inline-block;\n  width: 100%;\n  text-align: center;\n}\n\n.logo.container{\n  width: 150px;\n  float: left;\n}\n\n.logo {\n  width: 120px;\n  height: 100px;\n  margin: 20px;\n  float: left;\n}\n\nh1 {\n  width: 75%;\n  float: left;\n  text-align: center;\n  margin: 0px;\n  font-family: 'Baloo Tammudu';\n  font-size: 50px;\n}\n\nh1 a {\n  text-decoration: none;\n  color: #003366;\n}\n\n.menu {\n  width: 75%;\n  display: inline-block;\n}\n\n.menu a {\n  margin: 0 20px;\n  text-decoration: none;\n  color: 0059b3;\n}\n\nbutton {\n  height: 30px;\n  margin: 0 10px;\n  font-size: 1vw;\n}\n", ""]);
 
 // exports
 
@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div style=\"text-align:center\">\n    <h1><a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n    <h1><a *ngIf=\"!user\" [routerLink]=\"['']\">{{ title }}</a></h1>\n    <div class=\"menu\">\n      <a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/job']\">Create Job</a>\n      <a *ngIf=\"!user\"[routerLink]=\"['/login']\">Login</a>\n      <a *ngIf=\"!user\" [routerLink]=\"['/invitation']\">Get invitation</a>\n      <a *ngIf=\"user\" [routerLink]=\"['/user']\">User Profile</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/signup']\">Add a profile</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/invitations']\">Invitations List</a>\n      <button *ngIf=\"user\" (click)=\"auth.logout().subscribe()\">Logout</button>\n    </div>\n  </div>\n</header>\n\n<p style=\"margin: 20px\"*ngIf=\"user\">USER: {{user.username | json}}</p>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<header>\n  <div class=\"logo-container\">\n    <img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\">\n  </div>\n  <div >\n    <h1><a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n    <h1><a *ngIf=\"!user\" [routerLink]=\"['']\">{{ title }}</a></h1>\n    <div class=\"menu\">\n      <a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/job']\">Create Job</a>\n      <a *ngIf=\"!user\"[routerLink]=\"['/login']\">Login</a>\n      <a *ngIf=\"!user\" [routerLink]=\"['/invitation']\">Get invitation</a>\n      <a *ngIf=\"user\" [routerLink]=\"['/user']\">User Profile</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/signup']\">Add a profile</a>\n      <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/invitations']\">Invitations List</a>\n    </div>\n    <button *ngIf=\"user\" (click)=\"auth.logout().subscribe()\">Logout</button>\n  </div>\n</header>\n\n<p style=\"margin: 20px\"*ngIf=\"user\">USER: {{user.username | json}}</p>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -60,7 +60,7 @@ var AppComponent = (function () {
     function AppComponent(auth) {
         var _this = this;
         this.auth = auth;
-        this.title = 'proyecto3';
+        this.title = 'findingDocs';
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
@@ -423,7 +423,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/invitation-list/invitation-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role==='admin'\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Username: {{invitation.username | json}}</p>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <a [routerLink]=\"[invitation._id]\"> Delete Invitation </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>Forbidden zone. Please contact with your system administrator.</p>\n  <a [routerLink]=\"['']\">Back</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role==='admin'\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Username: {{invitation.username | json}}</p>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <a [routerLink]=\"[invitation._id, user._id]\"> Delete Invitation </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>Forbidden zone. Please contact with your system administrator.</p>\n  <a [routerLink]=\"['']\">Back</a>\n</div>\n"
 
 /***/ }),
 
@@ -497,7 +497,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/invitation/invitation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <form>\n      <h2> Invitation form </h2>\n      <label> Username </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Collegiate number </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br>\n      <label> Speciality </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n      <br>\n      <label> Password </label>\n      <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" />\n      <br>\n      <label> Name </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Phone </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <button (click)=\"askForInvitation()\"> Ask for Invitation </button>\n    </form>\n</div>\n</div>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>You can't create new users. Please contact with your system administrator.</p>\n  <a [routerLink]=\"['/dashboard']\">Back</a>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <form>\n      <h2> Invitation form </h2>\n      <label> Username </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Collegiate number </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br>\n      <label> Speciality </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n      <br>\n      <label> Name </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Phone </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <button (click)=\"askForInvitation()\"> Ask for Invitation </button>\n      <br>\n      <p>{{control}}</p>\n      <p>{{message}}</p>\n    </form>\n</div>\n</div>\n\n<a [routerLink]=\"['']\" control=!control>Volver</a>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>You can't create new users. Please contact with your system administrator.</p>\n  <a [routerLink]=\"['/dashboard']\">Back</a>\n</div>\n"
 
 /***/ }),
 
@@ -508,6 +508,7 @@ module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <form>\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_invitation_service__ = __webpack_require__("../../../../../src/app/services/invitation.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InvitationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -521,18 +522,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var InvitationComponent = (function () {
-    function InvitationComponent(auth, router) {
+    function InvitationComponent(auth, invS, router) {
         var _this = this;
         this.auth = auth;
+        this.invS = invS;
         this.router = router;
         this.formInfo = {
             username: "",
-            password: "",
-            name: "",
-            phone: "",
             collegiate: "",
             speciality: "",
+            name: "",
+            phone: ""
         };
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
@@ -541,7 +543,16 @@ var InvitationComponent = (function () {
     InvitationComponent.prototype.ngOnInit = function () {
     };
     InvitationComponent.prototype.askForInvitation = function () {
-        console.log("I WANT AN INVITATION!");
+        var _this = this;
+        var _a = this.formInfo, username = _a.username, collegiate = _a.collegiate, speciality = _a.speciality, name = _a.name, phone = _a.phone;
+        if (username != "" && collegiate != "" && speciality != "" && name != "" && phone != "") {
+            this.invS.new(username, collegiate, speciality, name, phone)
+                .map(function (inv) { return _this.control = "Invitación enviada."; })
+                .subscribe(function (inv) { return _this.router.navigate(['home']); });
+        }
+        else {
+            this.message = "All fields required.";
+        }
     };
     return InvitationComponent;
 }());
@@ -551,10 +562,10 @@ InvitationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/invitation/invitation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/invitation/invitation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_invitation_service__["a" /* InvitationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_invitation_service__["a" /* InvitationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], InvitationComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=invitation.component.js.map
 
 /***/ }),
@@ -950,12 +961,6 @@ var AuthService = (function () {
             .map(function (user) { return _this.emitUserLoginEvent(user); })
             .catch(this.handleError);
     };
-    // update(username,password,name,phone,collegiate,speciality,role) {
-    //   return this.http.post(`${BASEURL}/signup`, {username, password, name, phone, collegiate, speciality, role}, this.options)
-    //     .map(res => res.json())
-    //     .map(user => this.emitUserLoginEvent(user))
-    //     .catch(this.handleError);
-    // }
     AuthService.prototype.login = function (username, password) {
         var _this = this;
         return this.http.post(BASEURL + "/login", { username: username, password: password }, this.options)
@@ -1102,6 +1107,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InvitationService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1116,15 +1123,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var InvitationService = (function () {
     function InvitationService(http) {
         this.http = http;
         this.BASEURL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].BASEURL;
         this.options = { withCredentials: true };
     }
+    InvitationService.prototype.handleError = function (e) {
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(e.json().message);
+    };
     InvitationService.prototype.getList = function () {
         return this.http.get(this.BASEURL + "/invitations", this.options)
             .map(function (res) { return res.json(); });
+    };
+    InvitationService.prototype.new = function (username, collegiate, speciality, name, phone) {
+        return this.http.post(this.BASEURL + "/ask", { username: username, collegiate: collegiate, speciality: speciality, name: name, phone: phone }, this.options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
     };
     InvitationService.prototype.get = function (id) {
         return this.http.get(this.BASEURL + "/invitations/" + id)
@@ -1446,7 +1462,7 @@ var _a, _b;
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 // The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false,
+    production: true,
     BASEURL: 'http://localhost:3000'
 };
 //# sourceMappingURL=environment.js.map
