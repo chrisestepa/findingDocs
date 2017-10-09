@@ -89,13 +89,13 @@ jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
     })
     .then(job => {
       res.status(200).json(job);
-      })
+    })
     .catch(e => {
       res.status(400).json({
         message: 'Something went wrong'
       })
     });
-  });
+});
 
 jobRoute.get('/deletejob/:id', (req, res, next) => {
   Job.findByIdAndRemove(req.params.id)

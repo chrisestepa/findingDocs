@@ -8,7 +8,6 @@ const bcryptSalt = 10;
 
 const authRoutes = express.Router();
 
-/* GET home page. */
 authRoutes.post('/signup', (req, res, next) => {
   const {
     username,
@@ -82,8 +81,6 @@ authRoutes.post('/login', (req, res, next) => {
         return res.status(500).json({
           message: 'Something went wrong'
         });
-
-      // We are now logged in (notice req.user)
       res.status(200).json(req.user);
     });
   })(req, res, next);
@@ -97,43 +94,43 @@ authRoutes.get('/logout', (req, res, next) => {
 });
 
 authRoutes.put('/update', (req, res, next) => {
-    let hashPass = '';
-    let password = req.body.password;
+  let hashPass = '';
+  let password = req.body.password;
 
-    if (req.body.password !== "") {
-      let salt = bcrypt.genSaltSync(bcryptSalt);
-      hashPass = bcrypt.hashSync(password, salt);
-    } else {
-      hashPass = req.user.password;
-    }
+  if (req.body.password !== "") {
+    let salt = bcrypt.genSaltSync(bcryptSalt);
+    hashPass = bcrypt.hashSync(password, salt);
+  } else {
+    hashPass = req.user.password;
+  }
 
-    const update = {
-      username: req.body.username,
-      hashPass,
-      name:req.body.name,
-      phone: req.body.phone,
-      collegiate: req.body.collegiate,
-      speciality: req.body.speciality
-    }
+  const update = {
+    username: req.body.username,
+    hashPass,
+    name: req.body.name,
+    phone: req.body.phone,
+    collegiate: req.body.collegiate,
+    speciality: req.body.speciality
+  }
 
-    console.log("ID: " + req.user._id);
+  console.log("ID: " + req.user._id);
 
-    User.findByIdAndUpdate(req.user._id, update)
-      .then(user => {
-        req.login(user, (err) => {
-          if (err)
-            return res.status(500).json({
-              message: 'Something went wrong'
-            });
-          res.status(200).json(req.user);
-        });
-      })
-      .catch(e => {
-        console.log(e);
-        res.status(400).json({
-          message: 'Something went wrong'
-        })
+  User.findByIdAndUpdate(req.user._id, update)
+    .then(user => {
+      req.login(user, (err) => {
+        if (err)
+          return res.status(500).json({
+            message: 'Something went wrong'
+          });
+        res.status(200).json(req.user);
       });
+    })
+    .catch(e => {
+      console.log(e);
+      res.status(400).json({
+        message: 'Something went wrong'
+      })
+    });
 });
 
 authRoutes.get('/loggedin', (req, res, next) => {

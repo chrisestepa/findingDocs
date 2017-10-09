@@ -63,14 +63,18 @@ invitationRoutes.get('/invitations', (req, res, next) => {
 
 invitationRoutes.get('/invitations/:id', (req, res) => {
   Invitation.findById(req.params.id)
-    .then( i => res.status(200).json(i))
-    .catch(e => res.status(500).json({error:e.message}));
+    .then(i => res.status(200).json(i))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
 });
 
 invitationRoutes.get('/deleteinvitation/:id', (req, res, next) => {
   Invitation.findByIdAndRemove(req.params.id)
-  .then(i => res.status(200).json(i))
-  .catch(e => res.status(500).json({error:e.message}));
+    .then(i => res.status(200).json(i))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
 });
 
 module.exports = invitationRoutes;
