@@ -20,8 +20,12 @@ header {
   left: 0;
 }
 
+.title{
+  width: 100%;
+}
+
 h1 {
-  height: 50px;
+  height: 100px;
   width: 100%;
   float: left;
   text-align: center;
@@ -37,7 +41,7 @@ h1 a {
 
 .menu {
   background: #cce6ff;
-  height: 100px;
+  height: 90px;
   width: 100%;
   text-align: center;
 }
