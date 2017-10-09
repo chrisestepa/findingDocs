@@ -8,6 +8,7 @@ const userSchema = new Schema({
   phone: Number,
   collegiate: String,
   speciality: String,
+  alerts: [{type: Schema.Types.ObjectId, ref: "Alert"}],
   role: {
     type: String,
     enum: ["admin", "doctor", "manager"],

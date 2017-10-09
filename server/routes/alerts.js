@@ -21,15 +21,26 @@ alertRoute.post('/alert/new', (req, res) => {
     center,
     doctor
   });
-  return newAlert.save()
-    .then(alert => res.status(200).json({
-      message: 'New Alert created!',
-      alert: alert
-    }))
+
+  console.log("ID: " + doctor);
+
+  newAlert.save()
+    .then(alert => {
+      User.findByIdAndUpdate(doctor, {
+        $push: {
+          "alerts": alert._id,
+        }
+      })
+      .then(user => {
+        res.status(200).json({
+          message: 'New Alert created!',
+        })
+      })
+    })
     .catch(e => res.status(500).json({
       error: e.message
     }));
-});
+})
 
 alertRoute.get('/alerts', (req, res) => {
   Alert.find().populate('doctor')
@@ -39,22 +50,5 @@ alertRoute.get('/alerts', (req, res) => {
       error: e.message
     }));
 });
-
-// alertRoute.get('/alert/:id', (req, res, next) => {
-//   Job.findById(req.params.id).populate('center')
-//     .populate('doctor')
-//     .then(j => res.status(200).json(j))
-//     .catch(e => res.status(500).json({
-//       error: e.message
-//     }));
-// });
-//
-// alertRoute.get('/deletealert/:id', (req, res, next) => {
-//   Job.findByIdAndRemove(req.params.id)
-//     .then(j => res.status(200).json(j))
-//     .catch(e => res.status(500).json({
-//       error: e.message
-//     }));
-// });
 
 module.exports = alertRoute;
