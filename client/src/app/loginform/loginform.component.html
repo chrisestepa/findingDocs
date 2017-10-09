@@ -1,13 +1,15 @@
-<form *ngIf="!user">
-  <h2> Login </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-  <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+<div *ngIf="!user" class="container">
+  <form class="form">
+    <h2> Login </h2>
+    <label> Username </label>
+    <input type="text" [(ngModel)]="formInfo.username" name="username"/>
+    <br>
+    <label> Password </label>
+    <input type="password" [(ngModel)]="formInfo.password" name="password"/>
 
-  <button (click)="login()"> login </button>
-</form>
+    <button (click)="login()"> login </button>
+  </form>
+</div>
 
 <div *ngIf="message" class="unauthorized">
   <p>{{message}}</p>
@@ -15,5 +17,5 @@
 </div>
 
 <div *ngIf="user" class="unauthorized">
-  <p>You're already logged in</p>  
+  <p>You're already logged in</p>
 </div>

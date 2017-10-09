@@ -1,13 +1,16 @@
 .container {
   margin: 0 auto;
   width: 50%;
-  border: 2px black solid;
 }
 
 .form {
   margin: 10px auto;
   padding: 20px;
   width: 60%;
+}
+
+.form h2 {
+  text-align: center;
 }
 
 .form input {

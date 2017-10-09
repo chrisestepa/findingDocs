@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.form {
+  margin: 10px auto;
+  padding: 20px;
+  width: 60%;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.form button {
+  height: 30px;
+  margin: 10px 0;
+  font-size: 1vw;
+}

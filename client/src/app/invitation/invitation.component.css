@@ -1,7 +1,6 @@
 .container {
   margin: 0 auto;
   width: 50%;
-  border: 2px black solid;
 }
 
 .form {
@@ -15,8 +14,16 @@
   margin: 10px 0;
 }
 
+.form h2 {
+  text-align: center;
+}
+
 .form button {
   height: 30px;
   margin: 10px 0;
   font-size: 1vw;
+}
+
+.back {
+  margin: 0 20px;
 }

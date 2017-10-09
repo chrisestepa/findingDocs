@@ -1,13 +1,13 @@
 <div *ngIf="user">
 
-  <h1>JOBS</h1>
+  <h1>Ofertas:</h1>
 
   <div class="job" *ngFor="let job of jobs">
-    <p>TITLE: {{job.title | json}}</p>
-    <p>SPECIALITY: {{job.speciality | json}}</p>
-    <p>CENTER: {{job.center.title | json}}</p>
-    <p>DATE: {{job.date | json}}</p>
-    <p>DESCRIPTION: {{job.description | json}}</p>
+    <p>Oferta: {{job.title | json}}</p>
+    <p>Especialidad: {{job.speciality | json}}</p>
+    <p>Centro: {{job.center.title | json}}</p>
+    <p>Fecha: {{job.date | json}}</p>
+    <p>Descripción: {{job.description | json}}</p>
     <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
     <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>
   </div>

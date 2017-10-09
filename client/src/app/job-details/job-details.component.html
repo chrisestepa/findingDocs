@@ -4,11 +4,11 @@
   <h1 *ngIf="user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h1>
 
   <div class="job">
-    <p>TITLE: {{job.title | json}}</p>
-    <p>SPECIALITY: {{job.speciality | json}}</p>
-    <p>CENTER: {{job.center.title | json}}</p>
-    <p>DATE: {{job.date | json}}</p>
-    <p>DESCRIPTION: {{job.description | json}}</p>
+    <p>Oferta: {{job.title | json}}</p>
+    <p>Especialidad: {{job.speciality | json}}</p>
+    <p>Centro: {{job.center.title | json}}</p>
+    <p>Fecha: {{job.date | json}}</p>
+    <p>Descripción: {{job.description | json}}</p>
     <p *ngIf="job.doctor[0] && user.role!='doctor'">SOLICITUDES: </p>
     <ul *ngIf="job.doctor[0] && user.role!='doctor'">
     <li *ngFor="let doc of job.doctor">

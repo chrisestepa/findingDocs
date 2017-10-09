@@ -1,29 +1,29 @@
 <div class="container">
   <div class="form">
     <form *ngIf="user && user.role=='admin' ">
-      <h2> Add a new profile </h2>
-      <label> Role </label>
+      <h2> Añadir nuevo usuario </h2>
+      <label> Rol </label>
       <input type="text" [(ngModel)]="formInfo.role" name="role" />
       <br>
-      <label> Username </label>
+      <label> Nombre de usuario </label>
       <input type="text" [(ngModel)]="formInfo.username" name="username" />
       <br>
-      <label> Collegiate number </label>
+      <label> Nº de colegiado </label>
       <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
       <br>
-      <label> Speciality </label>
+      <label> Especialidad </label>
       <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
       <br>
-      <label> Password </label>
+      <label> Contraseña </label>
       <input type="password" [(ngModel)]="formInfo.password" name="password" />
       <br>
-      <label> Name </label>
+      <label> Nombre </label>
       <input type="text" [(ngModel)]="formInfo.name" name="name" />
       <br>
-      <label> Phone </label>
+      <label> Teléfono </label>
       <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
       <br>
-      <button (click)="signup()"> Create User </button>
+      <button (click)="signup()"> Dar de alta usuario </button>
     </form>
     <p>{{message}}</p>
 </div>
