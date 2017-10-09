@@ -22,8 +22,6 @@ alertRoute.post('/alert/new', (req, res) => {
     doctor
   });
 
-  console.log("ID: " + doctor);
-
   newAlert.save()
     .then(alert => {
       User.findByIdAndUpdate(doctor, {

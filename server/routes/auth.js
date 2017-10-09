@@ -113,8 +113,6 @@ authRoutes.put('/update', (req, res, next) => {
     speciality: req.body.speciality
   }
 
-  console.log("ID: " + req.user._id);
-
   User.findByIdAndUpdate(req.user._id, update)
     .then(user => {
       req.login(user, (err) => {
