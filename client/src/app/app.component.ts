@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { DashboardService } from './services/dashboard.service';
 import { AlertsService } from './services/alerts.service';
