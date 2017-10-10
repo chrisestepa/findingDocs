@@ -9,6 +9,12 @@
     <p>Fecha de inicio: {{job.datein | json}}</p>
     <p>Fecha de finalización: {{job.dateout | json}}</p>
     <p>Descripción: {{job.description | json}}</p>
+    <div *ngIf="user.role!='doctor'">
+      <p>Solicitantes: </p>
+      <div *ngFor="let doctor of job.doctor">
+        <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>
+      </div>
+    </div>
     <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
     <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>
 

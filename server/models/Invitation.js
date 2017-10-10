@@ -8,6 +8,7 @@ const invitationSchema = new Schema({
   speciality: String,
   name: String,
   phone: Number,
+  email: String,
 }, {
   timestamps: {
     createdAt: 'created_at',

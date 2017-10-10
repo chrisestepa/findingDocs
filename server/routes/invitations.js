@@ -14,6 +14,7 @@ invitationRoutes.post('/ask', (req, res, next) => {
     speciality: req.body.speciality,
     name: req.body.name,
     phone: req.body.phone,
+    email: req.body.email,
   }
 
   Invitation.findOne({
@@ -30,6 +31,7 @@ invitationRoutes.post('/ask', (req, res, next) => {
         username: inv.username,
         name: inv.name,
         phone: inv.phone,
+        email: inv.email,
         collegiate: inv.collegiate,
         speciality: inv.speciality
       });

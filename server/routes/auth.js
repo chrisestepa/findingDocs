@@ -9,13 +9,17 @@ const bcryptSalt = 10;
 const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
-  const { username, name, phone, collegiate, speciality, role} = req.body;
+  const { username, name, phone, email, collegiate, speciality, role} = req.body;
   const password = "1234";
 
-  if (!username || !password || !name || !phone || !collegiate || !speciality)
+  console.log("SERVER: " + username, name, phone, email, collegiate, speciality, role);
+
+
+  if (!username || !password || !name || !phone || !email || !collegiate || !speciality)
     return res.status(400).json({
       message: 'All fields required.'
     });
+
 
   User.findOne({ username}, '_id')
     .exec().then(user => {
@@ -31,6 +35,7 @@ authRoutes.post('/signup', (req, res, next) => {
         password: hashPass,
         name,
         phone,
+        email,
         collegiate,
         speciality,
         role
@@ -89,6 +94,7 @@ authRoutes.put('/update', (req, res, next) => {
     hashPass,
     name: req.body.name,
     phone: req.body.phone,
+    email: req.body.email,
     collegiate: req.body.collegiate,
     speciality: req.body.speciality
   }
@@ -109,6 +115,15 @@ authRoutes.put('/update', (req, res, next) => {
         message: 'Something went wrong'
       })
     });
+});
+
+authRoutes.get('/userslist', (req, res, next) => {
+  User.find()
+    .populate("alerts")
+    .then(users => res.status(200).json(users))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
 });
 
 authRoutes.get('/loggedin', (req, res, next) => {

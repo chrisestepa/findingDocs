@@ -86,13 +86,19 @@ jobRoute.get('/job/:id', (req, res, next) => {
 });
 
 jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
-  Job.findByIdAndUpdate(req.params.id, {
-      $push: {
-        "doctor": req.params.user,
-      }
-    })
+  Job.findById(req.params.id)
     .then(job => {
-      res.status(200).json(job);
+      if (job.doctor.indexOf(req.params.user) < 0) {
+        Job.findByIdAndUpdate(req.params.id, {
+          $push: {
+            "doctor": req.params.user,
+          }
+        })
+        .then(job => {
+          res.status(200).json(job);
+        })
+      }
+      else {console.log("User already applied.")}
     })
     .catch(e => {
       res.status(400).json({

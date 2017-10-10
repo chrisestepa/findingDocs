@@ -6,6 +6,7 @@ const userSchema = new Schema({
   password: String,
   name: String,
   phone: Number,
+  email: String,
   collegiate: String,
   speciality: String,
   alerts: [{type: Schema.Types.ObjectId, ref: "Alert"}],
