@@ -98,7 +98,9 @@ jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
           res.status(200).json(job);
         })
       }
-      else {console.log("User already applied.")}
+      else {res.status(400).json({
+        message: 'Something went wrong'
+      })}
     })
     .catch(e => {
       res.status(400).json({
