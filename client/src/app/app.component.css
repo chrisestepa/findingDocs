@@ -5,6 +5,16 @@ header {
   text-align: center;
 }
 
+.counter {
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 40px;
+  height: 40px;
+  background: navy;
+  color: white;
+}
+
 .user {
   right: 0;
   top: 0;

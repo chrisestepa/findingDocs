@@ -18,5 +18,4 @@ export class DashboardService {
       .map((res) => res.json());
   }
 
-
 }
