@@ -62,8 +62,11 @@ alertRoute.get('/useralerts', (req, res) => {
 
 alertRoute.get('/deletealert/:id', (req, res) => {
   Alert.findByIdAndRemove(req.params.id)
-    .then(a => res.status(200).json(a))
-    .catch(e => res.status(500).json({
+    .then(a => {User.findByIdAndUpdate(req.user._id, {
+      $pull: { alerts: req.params.id }
+    })
+      .then (a => res.status(200).json(a))})
+      .catch(e => res.status(500).json({
       error: e.message
     }));
 });
