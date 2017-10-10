@@ -19,8 +19,8 @@ export class JobService {
     return Observable.throw(e.json().message);
   }
 
-  createJob(title, center, date, speciality, description) {
-    return this.http.post(`${this.BASEURL}/job/new`, { title, center, date, speciality, description }, this.options)
+  createJob(title, center, datein, dateout, speciality, description) {
+    return this.http.post(`${this.BASEURL}/job/new`, { title, center, datein, dateout, speciality, description }, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }

@@ -1,4 +1,4 @@
-<div *ngIf="user && user.role=='admin'" class="container">
+<div *ngIf="user && user.role!=='doctor'" class="container">
   <div class="select">
     <h2> Crear oferta </h2>
     <label>Centro:</label>
@@ -19,8 +19,11 @@
   </div>
   <div class="form">
     <form>
-      <label> Fecha </label>
-      <input type="date" [(ngModel)]="formInfo.date" name="date" />
+      <label> Fecha de inicio</label>
+      <input type="date" [(ngModel)]="formInfo.datein" name="datein" />
+      <br>
+      <label> Fecha de finalización</label>
+      <input type="date" [(ngModel)]="formInfo.dateout" name="dateout" />
       <br>
       <label> Descripción </label>
       <input type="text" [(ngModel)]="formInfo.description" name="description" />
@@ -31,7 +34,7 @@
   </div>
 </div>
 
-<div *ngIf="user && user.role!='admin'" class="unauthorized">
+<div *ngIf="user && user.role==='doctor'" class="unauthorized">
   <p>You can't create new users. Please contact with your system administrator.</p>
   <a [routerLink]="['/dashboard']">Back</a>
 </div>

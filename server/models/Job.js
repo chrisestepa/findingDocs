@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
   title: String,
-  date: Date,
+  datein: Date,
+  dateout: Date,
   description: String,
   speciality: String,
   doctor: [{type: Schema.Types.ObjectId, ref: "User"}],

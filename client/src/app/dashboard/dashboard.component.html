@@ -6,7 +6,8 @@
     <p>Oferta: {{job.title | json}}</p>
     <p>Especialidad: {{job.speciality | json}}</p>
     <p>Centro: {{job.center.title | json}}</p>
-    <p>Fecha: {{job.date | json}}</p>
+    <p>Fecha de inicio: {{job.datein | json}}</p>
+    <p>Fecha de finalización: {{job.dateout | json}}</p>
     <p>Descripción: {{job.description | json}}</p>
     <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
     <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>

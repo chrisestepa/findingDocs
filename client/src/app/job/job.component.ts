@@ -13,7 +13,8 @@ export class JobComponent implements OnInit {
   formInfo = {
     title:"",
     center:"",
-    date:"",
+    datein:"",
+    dateout:"",
     speciality:"",
     description:""
   }
@@ -32,10 +33,10 @@ export class JobComponent implements OnInit {
   }
 
   newJob() {
-    const { title, center, date, speciality, description } = this.formInfo;
+    const { title, center, datein, dateout, speciality, description } = this.formInfo;
     console.log(this.formInfo);
-    if (title != "" && center != "" && date != "" && speciality != "" && description) {
-      this.jobS.createJob(title, center, date, speciality, description)
+    if (title != "" && center != "" && datein != "" && dateout != "" && speciality != "" && description) {
+      this.jobS.createJob(title, center, datein, dateout, speciality, description)
         .map(job => console.log(job))
         .subscribe((job) => this.router.navigate(['/dashboard']))
     } else {

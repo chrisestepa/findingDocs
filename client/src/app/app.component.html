@@ -12,7 +12,7 @@
 
 <div class="menu">
   <a *ngIf="user" [routerLink]="['/dashboard']">Tablón de ofertas</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/job']">Crear oferta</a>
+  <a *ngIf="user && user.role=='manager'" [routerLink]="['/job']">Crear oferta</a>
   <a *ngIf="!user" [routerLink]="['/login']">Iniciar sesión</a>
   <a *ngIf="!user" [routerLink]="['/invitation']">Solicitar invitación</a>
   <a *ngIf="user" [routerLink]="['/user']">Datos de usuario</a>

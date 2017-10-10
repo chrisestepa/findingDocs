@@ -11,7 +11,8 @@ const jobRoute = express.Router();
 jobRoute.post('/job/new', (req, res) => {
   const title = req.body.title;
   const center = req.body.center;
-  const date = req.body.date;
+  const datein = req.body.datein;
+  const dateout = req.body.dateout;
   const description = req.body.description;
   const speciality = req.body.speciality;
 
@@ -19,7 +20,8 @@ jobRoute.post('/job/new', (req, res) => {
     title,
     center,
     speciality,
-    date,
+    datein,
+    dateout,
     description,
   });
   return newJob.save()
@@ -45,12 +47,14 @@ jobRoute.put('/job/view/:id', (req, res, next) => {
   const title = req.body.title;
   const center = req.body.center;
   const speciality = req.body.speciality;
-  const date = req.body.date;
+  const datein = req.body.datein;
+  const dateout = req.body.dateout;
   const description = req.body.description;
   const update = {
     title,
     center,
-    date,
+    datein,
+    dateout,
     speciality,
     description
   };
