@@ -37,7 +37,7 @@ constructor(public auth:AuthService, public router: Router) {
       .map(user => console.log(user))
       .subscribe((user) => this.router.navigate(['/dashboard']))
     } else{
-      this.message="All fields required."
+      this.message="Todos los campos son obligatorios."
     }
   }
 

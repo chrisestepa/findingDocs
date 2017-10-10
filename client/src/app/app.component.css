@@ -5,6 +5,13 @@ header {
   text-align: center;
 }
 
+.user {
+  right: 0;
+  top: 0;
+  position: absolute;
+  margin-right: 20px;
+}
+
 .logo.container{
   width: 20%;
   float: left;

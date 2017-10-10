@@ -38,7 +38,7 @@ export class InvitationComponent implements OnInit {
       .map(inv => this.control = "Invitación enviada.")
       .subscribe((inv) => this.router.navigate(['home']))
     } else{
-      this.message="All fields required."
+      this.message="Todos los campos son obligatorios."
     }
   }
 

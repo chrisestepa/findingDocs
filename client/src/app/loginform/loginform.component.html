@@ -1,7 +1,7 @@
 <div *ngIf="!user" class="container">
   <form class="form">
     <h2> Inicio de sesión </h2>
-    <label> Usuario </label>
+    <label> DNI </label>
     <input type="text" [(ngModel)]="formInfo.username" name="username"/>
     <br>
     <label> Contraseña </label>
@@ -18,5 +18,5 @@
 </div>
 
 <div *ngIf="user" class="unauthorized">
-  <p>You're already logged in</p>
+  <p>Ya estás conectado.</p>
 </div>

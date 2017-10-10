@@ -28,13 +28,12 @@ export class InvitationListComponent implements OnInit {
 
   create(inv){
     const {username, password, name, phone, collegiate, speciality, role, email} = inv;
-    console.log("INV: " + inv.email);
     if(username != "" && password != ""){
       this.auth.signup(username, password, name, phone, email, collegiate, speciality, role)
       .map(user => console.log(user))
       .subscribe((user) => this.router.navigate(['/dashboard']))
     } else{
-      this.message="All fields required."
+      this.message="Todos los campos son oligatorios."
     }
   }
 

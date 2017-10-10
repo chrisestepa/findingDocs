@@ -7,8 +7,8 @@
     <p>Oferta: {{job.title | json}}</p>
     <p>Especialidad: {{job.speciality | json}}</p>
     <p>Centro: {{job.center.title | json}}</p>
-    <p>Fecha de inicio: {{job.datein | json}}</p>
-    <p>Fecha de finalización: {{job.dateout | json}}</p>
+    <p>Fecha de inicio: {{job.datein | date}}</p>
+    <p>Fecha de finalización: {{job.dateout | date}}</p>
     <p>Descripción: {{job.description | json}}</p>
     <p *ngIf="job.doctor && user.role!='doctor'">SOLICITUDES: </p>
     <ul *ngIf="job.doctor && user.role!='doctor'">
@@ -24,6 +24,6 @@
 </div>
 
 <div *ngIf="!user" class="unauthorized">
-  <p>Forbidden zone. Please contact with your system administrator.</p>
-  <a [routerLink]="['']">Back</a>
+  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>
+  <a [routerLink]="['']">Volver</a>
 </div>

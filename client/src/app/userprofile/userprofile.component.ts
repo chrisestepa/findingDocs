@@ -38,7 +38,7 @@ export class UserprofileComponent implements OnInit {
         .map(user => console.log(user))
         .subscribe((user) => this.router.navigate(['/user']))
     } else {
-      this.message = "All fields required";
+      this.message = "Todos los campos son obligatorios.";
     }
 
   }

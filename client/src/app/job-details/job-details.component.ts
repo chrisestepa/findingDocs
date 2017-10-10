@@ -19,7 +19,6 @@ export class JobDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(`El parametro recibido es: ${params['id']}`);
       this.getJob(params['id']);
     });
   }

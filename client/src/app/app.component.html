@@ -1,4 +1,7 @@
 <header>
+  <div class="user">
+    <p *ngIf="user">Usuario: {{user.username | json}}</p>
+  </div>
   <div class="logo-container">
     <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
   </div>
@@ -22,8 +25,6 @@
   <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Lista de invitaciones</a>
   <button *ngIf="user" (click)="auth.logout().subscribe()">Cerrar sesión</button>
 </div>
-
-<p style="margin: 20px" *ngIf="user">USER: {{user.username | json}}</p>
 
 <div class="body">
   <router-outlet></router-outlet>

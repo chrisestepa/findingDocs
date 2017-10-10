@@ -30,6 +30,6 @@
 </div>
 
 <div *ngIf="user && user.role!='admin'" class="unauthorized">
-  <p>You can't create new users. Please contact with your system administrator.</p>
-  <a [routerLink]="['/dashboard']">Back</a>
+  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>
+  <a [routerLink]="['/dashboard']">Volver</a>
 </div>

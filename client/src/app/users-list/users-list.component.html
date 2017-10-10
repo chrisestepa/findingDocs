@@ -14,6 +14,6 @@
 </div>
 
 <div *ngIf="user.role!='admin'" class="unauthorized">
-  <p>Forbidden zone. Please contact with your system administrator.</p>
-  <a [routerLink]="['']">Back</a>
+  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>
+  <a [routerLink]="['']">Volver</a>
 </div>
