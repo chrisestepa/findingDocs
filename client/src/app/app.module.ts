@@ -25,6 +25,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { AlertsService } from './services/alerts.service';
 import { NewAlertComponent } from './new-alert/new-alert.component';
 import { SingleAlertComponent } from './single-alert/single-alert.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SingleAlertComponent } from './single-alert/single-alert.component';
     JobDetailsComponent,
     AlertsComponent,
     NewAlertComponent,
-    SingleAlertComponent
+    SingleAlertComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

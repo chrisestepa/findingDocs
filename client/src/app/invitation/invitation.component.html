@@ -25,6 +25,9 @@
       <label> Teléfono </label>
       <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
       <br>
+      <label> Email </label>
+      <input type="email" [(ngModel)]="formInfo.email" name="email" />
+      <br>
       <button (click)="askForInvitation()"> Solicitar invitación </button>
       <a class="back" [routerLink]="['']" control=!control>Volver</a>
       <br>

@@ -15,7 +15,8 @@ export class InvitationComponent implements OnInit {
     collegiate:"",
     speciality:"",
     name:"",
-    phone:""
+    phone:"",
+    email:"",
     }
 
   control: string;
@@ -31,9 +32,9 @@ export class InvitationComponent implements OnInit {
   }
 
   askForInvitation(){
-    const {role, username, collegiate, speciality, name, phone} = this.formInfo;
-    if(role != "" && username != "" && collegiate != "" && speciality != "" && name != "" && phone != ""){
-      this.invS.new(role, username, collegiate, speciality, name, phone)
+    const {role, username, collegiate, speciality, name, phone, email} = this.formInfo;
+    if(role != "" && username != "" && collegiate != "" && speciality != "" && name != "" && phone != "" && email != ""){
+      this.invS.new(role, username, collegiate, speciality, name, phone, email)
       .map(inv => this.control = "Invitación enviada.")
       .subscribe((inv) => this.router.navigate(['home']))
     } else{

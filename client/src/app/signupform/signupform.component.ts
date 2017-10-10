@@ -13,6 +13,7 @@ formInfo = {
   password:"",
   name:"",
   phone:"",
+  email:"",
   collegiate:"",
   speciality:"",
   role:""
@@ -30,9 +31,9 @@ constructor(public auth:AuthService, public router: Router) {
   }
 
   signup(){
-    const {username, password, name, phone, collegiate, speciality, role} = this.formInfo;
+    const {username, password, name, phone, email, collegiate, speciality, role} = this.formInfo;
     if(username != "" && password != ""){
-      this.auth.signup(username, password, name, phone, collegiate, speciality, role)
+      this.auth.signup(username, password, name, phone, email, collegiate, speciality, role)
       .map(user => console.log(user))
       .subscribe((user) => this.router.navigate(['/dashboard']))
     } else{

@@ -23,8 +23,8 @@ export class InvitationService {
       .map((res) => res.json());
   }
 
-  new(role, username, collegiate, speciality, name, phone) {
-    return this.http.post(`${this.BASEURL}/ask`, { role, username, collegiate, speciality, name, phone }, this.options)
+  new(role, username, collegiate, speciality, name, phone, email) {
+    return this.http.post(`${this.BASEURL}/ask`, { role, username, collegiate, speciality, name, phone, email }, this.options)
       .map(res => res.json())
       .catch(this.handleError);
   }

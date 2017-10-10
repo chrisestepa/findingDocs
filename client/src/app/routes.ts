@@ -13,6 +13,7 @@ import {DeleteInvitationComponent} from './delete-invitation/delete-invitation.c
 import {JobDetailsComponent} from './job-details/job-details.component';
 import {AlertsComponent} from './alerts/alerts.component';
 import {NewAlertComponent} from './new-alert/new-alert.component';
+import {UsersListComponent} from './users-list/users-list.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -27,5 +28,6 @@ export const routes: Routes = [
     { path: 'dashboard/:id', component: JobDetailsComponent},
     { path: 'alerts', component: AlertsComponent},
     { path: 'newalert', component: NewAlertComponent},
+    { path: 'userslist', component: UsersListComponent},
     { path: '**', redirectTo: 'home' }
 ];

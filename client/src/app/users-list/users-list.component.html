@@ -1,0 +1,19 @@
+<div *ngIf="user.role==='admin'">
+
+  <h1>Listado de usuarios:</h1>
+
+  <div class="user" *ngFor="let user of users">
+    <p>Tipo de usuario: {{user.role | json}}</p>
+    <p>Nombre de usuario: {{user.username | json}}</p>
+    <p>Nombre y apellidos: {{user.name | json}}</p>
+    <p>Teléfono: {{user.phone | json}}</p>
+    <p>Nº de colegiado: {{user.collegiate | json}}</p>
+    <p>Especialidad: {{user.speciality | json}}</p>
+  </div>
+
+</div>
+
+<div *ngIf="user.role!='admin'" class="unauthorized">
+  <p>Forbidden zone. Please contact with your system administrator.</p>
+  <a [routerLink]="['']">Back</a>
+</div>
