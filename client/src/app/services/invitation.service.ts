@@ -30,7 +30,7 @@ export class InvitationService {
   }
 
   get(id) {
-    return this.http.get(`${this.BASEURL}/invitations/${id}`)
+    return this.http.get(`${this.BASEURL}/invitations/${id}`, this.options)
       .map((res) => res.json());
   }
 

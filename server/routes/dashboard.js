@@ -10,8 +10,6 @@ const User = require('../models/User');
 const dashRoute = express.Router();
 
 dashRoute.get('/dashboard', (req, res, next) => {
-  console.log("USER: " + req.user);
-
   Job.find()
     .populate("center")
     .populate("doctor")

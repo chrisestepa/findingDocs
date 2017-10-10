@@ -4,9 +4,6 @@
 
 <div *ngFor="let alert of alerts" class="container">
   <div *ngIf="alert.doctor._id === user._id" class="alert">
-    <h1>{{alert.title}}</h1>
-    <p>Centro: {{alert.center.title | json}}</p>
-    <p>Especialidad: {{alert.speciality | json}}</p>
-    <button>Borrar alerta</button>
+    <app-single-alert [alert]="alert" (onDelete)="deleteAlert($event)"></app-single-alert>
   </div>
 </div>

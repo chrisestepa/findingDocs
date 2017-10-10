@@ -12,9 +12,8 @@ import { AlertsService } from '../services/alerts.service';
 })
 export class AlertsComponent implements OnInit {
   user:object;
-  alerts:object;
-  centers:object;
-  constructor(public alertServ: AlertsService, public auth: AuthService, public centerServ: CentersService) {
+  alerts:any;
+  constructor(public router:Router, public alertServ: AlertsService, public auth: AuthService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
@@ -22,13 +21,13 @@ export class AlertsComponent implements OnInit {
 
   ngOnInit() {
     this.alertServ.getAlerts().subscribe( alerts => this.alerts=alerts);
-
-    // this.centerServ.getCenters()
-    //   .subscribe( centers => this.centers = centers);
-    //
-        // console.log("CENTERS: " + this.centers)
-      // console.log("USER: " + this.user)
-
   }
+
+  deleteAlert(id){
+    this.alertServ.deleteAlert(id).subscribe(() => {
+      this.alerts = this.alerts.filter(
+        (alert) => alert._id !== id)
+      });
+    }
 
 }

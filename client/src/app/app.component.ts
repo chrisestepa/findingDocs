@@ -12,7 +12,6 @@ export class AppComponent {
   title = 'findingDocs';
   user:any;
   jobs:any;
-  alerts:any;
   status:boolean = false;
   constructor(public alertS:AlertsService, public auth:AuthService, public dashS:DashboardService) {
     this.user = this.auth.getUser();
@@ -20,8 +19,6 @@ export class AppComponent {
         .subscribe( user => this.user=user );
 
     this.dashS.viewDashboard().subscribe(e => this.jobs = e);
-
-    this.alertS.getUserAlerts().subscribe( alerts => this.alerts=alerts);
   }
 
 }

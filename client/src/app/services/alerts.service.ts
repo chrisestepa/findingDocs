@@ -36,4 +36,8 @@ export class AlertsService {
       .map((res) => res.json());
   }
 
+  deleteAlert(id){
+    return this.http.get(`${this.BASEURL}/deletealert/${id}`, this.options)
+  }
+
 }

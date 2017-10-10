@@ -26,12 +26,12 @@ export class JobService {
   }
 
   getJob(id) {
-    return this.http.get(`${this.BASEURL}/job/${id}`)
+    return this.http.get(`${this.BASEURL}/job/${id}`, this.options)
       .map((res) => res.json());
   }
 
   apply(id, user) {
-    return this.http.put(`${this.BASEURL}/job/apply/${id}/${user}`, "")
+    return this.http.put(`${this.BASEURL}/job/apply/${id}/${user}`, "", this.options)
       .map((res) => res.json());
   }
 

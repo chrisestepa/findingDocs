@@ -82,7 +82,6 @@ jobRoute.get('/job/:id', (req, res, next) => {
 });
 
 jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
-  console.log("USER: " + req.user)
   Job.findByIdAndUpdate(req.params.id, {
       $push: {
         "doctor": req.params.user,

@@ -19,9 +19,6 @@
   <a *ngIf="user && user.role=='doctor'" [routerLink]="['/alerts']">Mis alertas</a>
   <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Añadir usuario</a>
   <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Lista de invitaciones</a>
-  <div class="alerts">
-    <em>{{alerts.length | json}}</em>
-  </div>
   <button *ngIf="user" (click)="auth.logout().subscribe()">Cerrar sesión</button>
 </div>
 
