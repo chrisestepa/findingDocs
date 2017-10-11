@@ -31,9 +31,6 @@ jobRoute.post('/job/new', (req, res) => {
     .then(job => {
       Alert.update({"center":job.center}, {"status":true})
         .then(alerts => res.status(200).json(alerts))
-      // res.status(200).json({
-      // message: 'New Job created!',
-      // job: job})
     })
     .catch(e => console.log(e));
 });
@@ -115,11 +112,17 @@ jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
 });
 
 jobRoute.get('/deletejob/:id', (req, res, next) => {
+  var center;
+
+  Job.findById(req.params.id)
+  .then (job => center = job.center);
+
   Job.findByIdAndRemove(req.params.id)
-    .then(j => res.status(200).json(j))
-    .catch(e => res.status(500).json({
-      error: e.message
-    }));
+    .then(j => {
+      Alert.update({"center":center}, {"status":false})
+        .then(alerts => res.status(200).json(alerts))
+      })
+    .catch(e => console.log(e));
 });
 
 jobRoute.put('/deleteuser/:id/:user', (req, res, next) => {

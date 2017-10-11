@@ -13,10 +13,15 @@ export class AppComponent {
   user: any;
   jobs: any;
   userAlerts: any;
-  notifications: Array<any> = []
+  notifications: number = 0;
   constructor(public auth: AuthService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
   }
+
+  public refreshNotifications(counter){
+    this.notifications = counter;
+  }
+
 }

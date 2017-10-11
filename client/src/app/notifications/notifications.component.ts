@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AlertsService } from '../services/alerts.service';
 import { AuthService } from '../services/auth.service';
 
@@ -8,12 +8,15 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent implements OnInit {
-alerts:any;
+
+notifications:any;
   constructor(public alertServ: AlertsService, public auth: AuthService) { }
 
   ngOnInit() {
-    this.alertServ.getNotifications().subscribe( alerts => this.alerts=alerts);
-    console.log(this.alerts)
+    this.alertServ.getNotifications().subscribe( notifications => {
+      this.notifications=notifications
+    console.log(this.notifications)});
   }
+
 
 }
