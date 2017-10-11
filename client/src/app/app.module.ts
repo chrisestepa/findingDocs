@@ -26,6 +26,7 @@ import { AlertsService } from './services/alerts.service';
 import { NewAlertComponent } from './new-alert/new-alert.component';
 import { SingleAlertComponent } from './single-alert/single-alert.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,9 @@ import { UsersListComponent } from './users-list/users-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyAEPLF39G3_N8Fdw7J8Q1gLsGWJWk9Wv_E"
+    }),
     RouterModule.forRoot(routes)
   ],
   providers: [AuthService, IsLoggedInService, DashboardService, CentersService, JobService, InvitationService, AlertsService],

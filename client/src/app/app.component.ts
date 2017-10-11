@@ -22,7 +22,6 @@ export class AppComponent {
     this.alertS.getUserAlerts().subscribe(a => {
       this.userAlerts = a;
       this.matchAlerts();
-      console.log(this.matches.length);
     });
   }
 

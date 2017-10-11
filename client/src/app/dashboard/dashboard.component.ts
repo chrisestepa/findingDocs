@@ -12,6 +12,7 @@ import { AlertsService } from '../services/alerts.service';
 export class DashboardComponent implements OnInit {
   jobs;
   user: object;
+  zoom:number = 17;
   constructor(public dashS:DashboardService, public auth: AuthService, public alertS:AlertsService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
