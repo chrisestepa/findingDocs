@@ -5,15 +5,13 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("angularauth:" + path.basename(__filename).split('.')[0]);
 const bcryptSalt = 10;
+const nodemailer = require('nodemailer');
 
 const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
   const { username, name, phone, email, collegiate, speciality, role} = req.body;
   const password = "1234";
-
-  console.log("SERVER: " + username, name, phone, email, collegiate, speciality, role);
-
 
   if (!username || !password || !name || !phone || !email || !collegiate || !speciality)
     return res.status(400).json({
@@ -41,7 +39,31 @@ authRoutes.post('/signup', (req, res, next) => {
         role
       });
       return theUser.save()
-        .then(user => res.status(200).json(req.user))
+        .then(user => {
+            var transporter = nodemailer.createTransport({
+                service: 'Gmail',
+                auth: {
+                    user: 'findingdocs@gmail.com',
+                    pass: 'findingDocs!'
+                }
+            });
+            var text = `Bienvenido a findingDocs, \n Ya ha sido dado de alta con los siguientes datos: \nUsuario: ${req.body.username}\nContraseña: 1234\n\nLe recomendamos que cambie su contraseña en "Datos de usuario".\n\n\nUn saludo.`;
+            var mailOptions = {
+            from: 'findingDocs@gmail.com',
+            to: req.body.email,
+            subject: 'Bienvenido a findingDocs',
+            text: text
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+            if(error){
+                console.log(error);
+              }else{
+                console.log('Message sent: ' + info.response);
+            }
+          });
+          res.status(200).json(req.user)
+        })
         .catch(e => {
           res.status(400).json({
             message: 'Something went wrong'
@@ -133,6 +155,5 @@ authRoutes.get('/loggedin', (req, res, next) => {
     message: 'Unauthorized'
   });
 });
-
 
 module.exports = authRoutes;

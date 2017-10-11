@@ -45,7 +45,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public/index.html')));
 
 app.use(session({
   secret: process.env.PATH_SECRET,
