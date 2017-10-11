@@ -20,7 +20,7 @@ formInfo = {
   }
 
 message: string;
-user:object;
+user:any;
 constructor(public auth:AuthService, public router: Router) {
   this.user = this.auth.getUser();
   this.auth.getLoginEventEmitter()

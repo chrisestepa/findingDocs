@@ -41,13 +41,13 @@ invitationRoutes.post('/ask', (req, res, next) => {
             var transporter = nodemailer.createTransport({
               service: 'Gmail',
               auth: {
-                user: 'findingdocs@gmail.com',
-                pass: 'findingDocs!'
+                user: process.env.PATH_USER,
+                pass: process.env.PATH_PASS
               }
             });
             var text = `Bienvenido a findingDocs, \n Estamos tramitando su petición.\nEn breve nos pondremos en contacto con usted.\nUn saludo.`;
             var mailOptions = {
-              from: 'findingDocs@gmail.com',
+              from: process.env.PATH_USER,
               to: req.body.email,
               subject: 'Bienvenido a findingDocs',
               text: text

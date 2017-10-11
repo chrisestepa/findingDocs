@@ -147,13 +147,13 @@ jobRoute.get('/acceptuser/:id/:user', (req, res, next) => {
       var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-          user: 'findingdocs@gmail.com',
-          pass: 'findingDocs!'
+          user: process.env.PATH_USER,
+          pass: process.env.PATH_PASS
         }
       });
       var text = `Hola,\nHa sido aceptado en una de las ofertas a la que se apuntó.\nEn breve se pondrán en contacto con usted.\n\nUn saludo.`;
       var mailOptions = {
-        from: 'findingDocs@gmail.com',
+        from: process.env.PATH_USER,
         to: user.email,
         subject: 'Bienvenido a findingDocs',
         text: text

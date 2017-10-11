@@ -21,7 +21,7 @@ export class InvitationComponent implements OnInit {
 
   control: string;
   message: string;
-  user:object;
+  user:any;
   constructor(public auth:AuthService, public invS:InvitationService, public router: Router) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()

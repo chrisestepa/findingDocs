@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
-  user: object;
+  user: any;
   users;
   constructor(public auth: AuthService) {
     this.user = this.auth.getUser();

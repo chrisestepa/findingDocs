@@ -20,8 +20,8 @@ export class JobComponent implements OnInit {
   }
 
   message: string;
-  user:object;
-  centers:object;
+  user:any;
+  centers:any;
 
   constructor(public jobS: JobService, public centerS:CentersService, public auth:AuthService, public router: Router) {
   this.user = this.auth.getUser();
