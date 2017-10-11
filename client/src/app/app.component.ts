@@ -13,11 +13,10 @@ export class AppComponent {
   user: any;
   jobs: any;
   userAlerts: any;
-  matches: Array<any> = []
-  constructor(public alertS: AlertsService, public auth: AuthService, public dashS: DashboardService) {
+  notifications: Array<any> = []
+  constructor(public auth: AuthService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
-    }
-
+  }
 }

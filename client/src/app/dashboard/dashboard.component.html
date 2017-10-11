@@ -22,7 +22,7 @@
     </div>
 
     <div class="map">
-      <agm-map [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">
+      <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">
         <agm-marker [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude"></agm-marker>
       </agm-map>
     </div>

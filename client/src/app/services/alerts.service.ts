@@ -25,6 +25,11 @@ export class AlertsService {
       .map((res) => res.json());
   }
 
+  getNotifications() {
+    return this.http.get(`${this.BASEURL}/notifications`, this.options)
+      .map((res) => res.json());
+  }
+
   newAlert(title, center, doctor, speciality){
     return this.http.post(`${this.BASEURL}/alert/new`, { title, center, doctor, speciality}, this.options)
       .map(res => res.json())

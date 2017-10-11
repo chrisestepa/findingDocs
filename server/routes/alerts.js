@@ -41,7 +41,16 @@ alertRoute.post('/alert/new', (req, res) => {
 })
 
 alertRoute.get('/alerts', (req, res) => {
-  Alert.find().populate('doctor')
+  Alert.find({"doctor":req.user._id}).populate('doctor')
+    .populate('center')
+    .then(alerts => res.status(200).json(alerts))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
+
+alertRoute.get('/notifications', (req, res) => {
+  Alert.find({"doctor":req.user._id,"status":true}).populate('doctor')
     .populate('center')
     .then(alerts => res.status(200).json(alerts))
     .catch(e => res.status(500).json({

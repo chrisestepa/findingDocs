@@ -1,5 +1,6 @@
 const Job = require("../models/Job");
 const Center = require("../models/Center");
+const Alert = require("../models/Alert");
 const User = require("../models/User");
 const express = require('express');
 const passport = require('passport');
@@ -27,13 +28,14 @@ jobRoute.post('/job/new', (req, res) => {
     description,
   });
   return newJob.save()
-    .then(job => res.status(200).json({
-      message: 'New Job created!',
-      job: job
-    }))
-    .catch(e => res.status(500).json({
-      error: e.message
-    }));
+    .then(job => {
+      Alert.update({"center":job.center}, {"status":true})
+        .then(alerts => res.status(200).json(alerts))
+      // res.status(200).json({
+      // message: 'New Job created!',
+      // job: job})
+    })
+    .catch(e => console.log(e));
 });
 
 

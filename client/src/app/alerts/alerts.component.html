@@ -3,7 +3,7 @@
 </div>
 
 <div *ngFor="let alert of alerts" class="container">
-  <div *ngIf="alert.doctor._id === user._id" class="alert">
+  <div class="alert">
     <app-single-alert [alert]="alert" (onDelete)="deleteAlert($event)"></app-single-alert>
   </div>
 </div>
