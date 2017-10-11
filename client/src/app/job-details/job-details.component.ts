@@ -41,4 +41,15 @@ export class JobDetailsComponent implements OnInit {
     });
   }
 
+  acceptUser(id, user){
+    this.jobS.acceptUser(id, user).subscribe(() => {
+      this.router.navigate(['dashboard'])
+    })
+  }
+
+  deleteUser(id, user){
+    this.jobS.deleteUser(id, user).subscribe(() => {
+      this.router.navigate(['dashboard'])
+    })
+  }
 }

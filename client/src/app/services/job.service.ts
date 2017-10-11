@@ -39,4 +39,14 @@ export class JobService {
     return this.http.get(`${this.BASEURL}/deletejob/${id}`, this.options)
   }
 
+  acceptUser(id, user){
+    return this.http.get(`${this.BASEURL}/acceptuser/${id}/${user}`, this.options)
+      .map((res) => res.json());
+  }
+
+  deleteUser(id, user){
+    return this.http.put(`${this.BASEURL}/deleteuser/${id}/${user}`, "", this.options)
+      .map((res) => res.json());
+  }
+
 }

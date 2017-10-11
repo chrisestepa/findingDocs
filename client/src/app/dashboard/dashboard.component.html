@@ -18,7 +18,7 @@
         </div>
       </div>
       <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
-      <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Eliminar oferta</a>
+      <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Ver detalles</a>
     </div>
 
     <div class="map">
@@ -28,7 +28,7 @@
     </div>
 
   </div>
-  
+
 </div>
 
 <div *ngIf="!user" class="unauthorized">

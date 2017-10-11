@@ -117,4 +117,26 @@ jobRoute.get('/deletejob/:id', (req, res, next) => {
     }));
 });
 
+jobRoute.put('/deleteuser/:id/:user', (req, res, next) => {
+  Job.findByIdAndUpdate(req.params.id, {
+          $pull: {
+            "doctor": req.params.user,
+          }
+        })
+        .then(job => {
+          res.status(200).json(job);
+        })
+    .catch(e => {
+      res.status(400).json({
+        message: 'Something went wrong'
+      })
+    });
+  });
+
+jobRoute.get('/acceptuser/:id/:user', (req, res, next) => {
+
+
+});
+
+
 module.exports = jobRoute;
