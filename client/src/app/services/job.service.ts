@@ -15,7 +15,6 @@ export class JobService {
   }
 
   private handleError(e) {
-    console.log("CREATE ERROR");
     return Observable.throw(e.json().message);
   }
 

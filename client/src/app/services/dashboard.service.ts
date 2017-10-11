@@ -17,5 +17,4 @@ export class DashboardService {
     return this.http.get(`${this.BASEURL}/dashboard`, this.options)
       .map((res) => res.json());
   }
-
 }

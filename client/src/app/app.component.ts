@@ -18,22 +18,6 @@ export class AppComponent {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
-    this.dashS.viewDashboard().subscribe(e => this.jobs = e);
-    this.alertS.getUserAlerts().subscribe(a => {
-      this.userAlerts = a;
-      this.matchAlerts();
-    });
-  }
-
-  matchAlerts() {
-    for (let job of this.jobs) {
-      for (let alert of this.userAlerts) {
-        if (job.center._id === alert.center._id){
-          this.matches.push(job.center._id)
-        }
-      }
     }
-  }
-
 
 }
