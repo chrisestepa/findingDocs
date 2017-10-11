@@ -1,10 +1,12 @@
 const Job = require("../models/Job");
 const Center = require("../models/Center");
+const User = require("../models/User");
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("angularauth:" + path.basename(__filename).split('.')[0]);
+const nodemailer = require('nodemailer');
 
 const jobRoute = express.Router();
 
@@ -90,17 +92,18 @@ jobRoute.put('/job/apply/:id/:user', (req, res, next) => {
     .then(job => {
       if (job.doctor.indexOf(req.params.user) < 0) {
         Job.findByIdAndUpdate(req.params.id, {
-          $push: {
-            "doctor": req.params.user,
-          }
-        })
-        .then(job => {
-          res.status(200).json(job);
+            $push: {
+              "doctor": req.params.user,
+            }
+          })
+          .then(job => {
+            res.status(200).json(job);
+          })
+      } else {
+        res.status(400).json({
+          message: 'Something went wrong'
         })
       }
-      else {res.status(400).json({
-        message: 'Something went wrong'
-      })}
     })
     .catch(e => {
       res.status(400).json({
@@ -119,23 +122,50 @@ jobRoute.get('/deletejob/:id', (req, res, next) => {
 
 jobRoute.put('/deleteuser/:id/:user', (req, res, next) => {
   Job.findByIdAndUpdate(req.params.id, {
-          $pull: {
-            "doctor": req.params.user,
-          }
-        })
-        .then(job => {
-          res.status(200).json(job);
-        })
+      $pull: {
+        "doctor": req.params.user,
+      }
+    })
+    .then(job => {
+      res.status(200).json(job);
+    })
     .catch(e => {
       res.status(400).json({
         message: 'Something went wrong'
       })
     });
-  });
+});
 
 jobRoute.get('/acceptuser/:id/:user', (req, res, next) => {
+  User.findById(req.params.user)
+    .then(user => {
+      var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: 'findingdocs@gmail.com',
+          pass: 'findingDocs!'
+        }
+      });
+      var text = `Hola,\nHa sido aceptado en una de las ofertas a la que se apuntó.\nEn breve se pondrán en contacto con usted.\n\nUn saludo.`;
+      var mailOptions = {
+        from: 'findingDocs@gmail.com',
+        to: user.email,
+        subject: 'Bienvenido a findingDocs',
+        text: text
+      };
 
-
+      transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Message sent: ' + info.response);
+        }
+      });
+      res.status(200).json(req.user)
+    })
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
 });
 
 
