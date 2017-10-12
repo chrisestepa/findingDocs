@@ -1,62 +1,112 @@
-select .option {
-  width: 40px;
+@media screen and (min-width: 480px) {
+  select .option {
+    width: 40px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .select {
+    margin: 0 auto;
+    padding: 10px 0px;
+    width: 60%;
+  }
+  .container select {
+    width: 100%;
+    margin: 10px 0;
+    height: 20px;
+    background: white;
+    font-size: 15px;
+  }
+  .form {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .dates {
+    display: inline-block;
+  }
+  .dates div {
+    width: 50%;
+    float: left;
+  }
+  .form input {
+    width: 100%;
+    margin: 5px;
+    height: 20px;
+    font-size: 15px;
+  }
+  .dates input {
+    width: 80%;
+  }
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 40%;
+  }
+  .form button {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 1vw;
+  }
+  .a {
+    margin: 0 20px;
+  }
 }
 
-h2 {
-  text-align: center;
-}
-
-.select {
-  margin: 0 auto;
-  padding: 10px 0px;
-  width: 60%;
-}
-
-.container select {
-  width: 100%;
-  margin: 10px 0;
-  height: 20px;
-  background: white;
-  font-size: 15px;
-}
-
-.form {
-  margin: 0 auto;
-  width: 60%;
-}
-
-.dates {
-  display: inline-block;
-}
-
-.dates div {
-  width: 50%;
-  float: left;
-}
-
-.form input {
-  width: 100%;
-  margin: 5px;
-  height: 20px;
-  font-size: 15px;
-}
-
-.dates input {
-  width: 80%;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 20px;
-  width: 40%;
-}
-
-.form button {
-  height: 30px;
-  margin: 10px 0;
-  font-size: 1vw;
-}
-
-.a {
-  margin: 0 20px;
+@media screen and (max-width: 479px) {
+  select .option {
+    width: 40px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .select {
+    margin: 0 auto;
+    padding: 10px 0px;
+    width: 60%;
+  }
+  .container select {
+    border: 2px solid black;
+    width: 100%;
+    margin: 10px 0;
+    height: 20px;
+    background: white;
+    font-size: 15px;
+  }
+  .form {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .dates {
+    display: inline-block;
+  }
+  .dates div {
+    width: 50%;
+    float: left;
+  }
+  .form input {
+    border: 2px solid black;
+    width: 90%;
+    margin: 5px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .dates input {
+    border: 2px solid black;
+    width: 80%;
+  }
+  .container {
+    margin: 110px auto;
+    padding: 20px;
+    width: 90%;
+  }
+  .form button {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 10px;
+    background: navy;
+    color: white;
+  }
+  .a {
+    margin: 0 20px;
+  }
 }

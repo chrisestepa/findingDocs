@@ -1,9 +1,9 @@
-<div class="new">
-  <a [routerLink]="['/newalert']">Crear nueva alerta</a>
-</div>
-
-<div *ngFor="let alert of alerts" class="container">
-  <div class="alert">
-    <app-single-alert [alert]="alert" (onDelete)="deleteAlert($event)"></app-single-alert>
+  <div class="new">
+    <a [routerLink]="['/newalert']">Crear nueva alerta</a>
   </div>
-</div>
+
+  <div *ngFor="let alert of alerts" class="container">
+    <div class="alert">
+      <app-single-alert [alert]="alert" (onDelete)="deleteAlert($event)"></app-single-alert>
+    </div>
+  </div>

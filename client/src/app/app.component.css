@@ -1,7 +1,7 @@
 @media screen and (min-width: 480px) {
   header {
     background: #cce6ff;
-    height: 50px;
+    height: 100px;
     width: 100%;
     text-align: center;
   }
@@ -14,6 +14,7 @@
   .logo.container {
     width: 20%;
     float: left;
+    z-index: 3;
   }
   .logo {
     width: 150px;
@@ -21,7 +22,6 @@
     margin: 10px;
     float: left;
     position: absolute;
-    z-index: 1;
     left: 0;
   }
   .title {
@@ -42,7 +42,7 @@
   }
   .menu {
     background: #cce6ff;
-    height: 90px;
+    height: 70px;
     width: 100%;
     text-align: center;
   }
@@ -70,9 +70,12 @@
 @media screen and (max-width: 479px) {
   header {
     background: #cce6ff;
-    height: 80px;
+    height: 100px;
     width: 100%;
     text-align: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
   }
   .user {
     width: 15%;
@@ -96,7 +99,8 @@
   }
   .title {
     float: left;
-    width: 100%;
+    width: 50%;
+    margin: 0 20px;
   }
   h1 {
     float: left;
@@ -113,10 +117,13 @@
   }
   .menu {
     background: #cce6ff;
-    height: 50px;
+    height: 65px;
     width: 100%;
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
   }
   .menu a {
     margin: 0 15px;
@@ -134,9 +141,5 @@
     margin: 10px;
     font-size: 10px;
   }
-  .body {
-    font-size: 10px;
-    margin: 0;
-    padding: 0;
-  }
+
 }
