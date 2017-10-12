@@ -21,7 +21,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  text-align: center;\n}\n\n.alert {\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.alert button {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.alert button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.new {\n  text-align: center;\n  margin-top: 10px;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  h1 {\n    text-align: center;\n  }\n  .alert {\n    width: 50%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .alert button {\n    background: blue;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .alert button:hover {\n    background: navy;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .new {\n    text-align: center;\n    margin-top: 10px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  h1 {\n    text-align: center;\n    font-size: 17px;\n  }\n\n  .alert {\n    width: 80%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .alert button {\n    background: blue;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .alert button:hover {\n    background: navy;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .new {\n    text-align: center;\n    margin-top: 150px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/alerts/alerts.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"new\">\n  <a [routerLink]=\"['/newalert']\">Crear nueva alerta</a>\n</div>\n\n<div *ngFor=\"let alert of alerts\" class=\"container\">\n  <div class=\"alert\">\n    <app-single-alert [alert]=\"alert\" (onDelete)=\"deleteAlert($event)\"></app-single-alert>\n  </div>\n</div>\n"
+module.exports = "  <div class=\"new\">\n    <a [routerLink]=\"['/newalert']\">Crear nueva alerta</a>\n  </div>\n\n  <div *ngFor=\"let alert of alerts\" class=\"container\">\n    <div class=\"alert\">\n      <app-single-alert [alert]=\"alert\" (onDelete)=\"deleteAlert($event)\"></app-single-alert>\n    </div>\n  </div>\n"
 
 /***/ }),
 
@@ -104,7 +104,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "header {\n  background: #cce6ff;\n  height: 50px;\n  width: 100%;\n  text-align: center;\n}\n\n.counter {\n  position: relative;\n  border-radius: 50%;\n  border: 2px solid black;\n  width: 40px;\n  height: 40px;\n  background: navy;\n  color: white;\n}\n\n.user {\n  right: 0;\n  top: 0;\n  position: absolute;\n  margin-right: 20px;\n}\n\n.logo.container{\n  width: 20%;\n  float: left;\n}\n\n.logo {\n  width: 150px;\n  height: 120px;\n  margin: 10px;\n  float: left;\n  position: absolute;\n  z-index: 1;\n  left: 0;\n}\n\n.title{\n  width: 100%;\n}\n\nh1 {\n  height: 100px;\n  width: 100%;\n  float: left;\n  text-align: center;\n  margin: 0px;\n  font-family: 'Baloo Tammudu';\n  font-size: 60px;\n}\n\nh1 a {\n  text-decoration: none;\n  color: #003366;\n}\n\n.menu {\n  background: #cce6ff;\n  height: 90px;\n  width: 100%;\n  text-align: center;\n}\n\n.menu a {\n  margin: 0 20px;\n  text-decoration: none;\n  color: #0059b3;\n}\n\n.menu p {\n  margin: 0 20px;\n  text-decoration: none;\n  float: right;\n}\n\nbutton {\n  height: 30px;\n  margin: 0 10px;\n  font-size: 1vw;\n}\n\n.body {\n  margin: 0;\n  padding: 0;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  header {\n    background: #cce6ff;\n    height: 100px;\n    width: 100%;\n    text-align: center;\n  }\n  .user {\n    right: 0;\n    top: 0;\n    position: absolute;\n    margin-right: 20px;\n  }\n  .logo.container {\n    width: 20%;\n    float: left;\n    z-index: 3;\n  }\n  .logo {\n    width: 150px;\n    height: 120px;\n    margin: 10px;\n    float: left;\n    position: absolute;\n    left: 0;\n  }\n  .title {\n    width: 100%;\n  }\n  h1 {\n    height: 100px;\n    width: 100%;\n    float: left;\n    text-align: center;\n    margin: 0px;\n    font-family: 'Baloo Tammudu';\n    font-size: 60px;\n  }\n  h1 a {\n    text-decoration: none;\n    color: #003366;\n  }\n  .menu {\n    background: #cce6ff;\n    height: 70px;\n    width: 100%;\n    text-align: center;\n  }\n  .menu a {\n    margin: 0 20px;\n    text-decoration: none;\n    color: #0059b3;\n  }\n  .menu p {\n    margin: 0 20px;\n    text-decoration: none;\n    float: right;\n  }\n  button {\n    height: 30px;\n    margin: 0 10px;\n    font-size: 1vw;\n  }\n  .body {\n    margin: 0;\n    padding: 0;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  header {\n    background: #cce6ff;\n    height: 100px;\n    width: 100%;\n    text-align: center;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n  }\n  .user {\n    width: 15%;\n    right: 0;\n    top: 0;\n    position: absolute;\n    margin-right: 20px;\n    font-size: 10px;\n  }\n  .logo.container {\n    width: 20%;\n    float: left;\n  }\n  .logo {\n    width: 70px;\n    height: 50px;\n    margin: 10px;\n    float: left;\n    z-index: 1;\n    left: 0;\n  }\n  .title {\n    float: left;\n    width: 50%;\n    margin: 0 20px;\n  }\n  h1 {\n    float: left;\n    height: 50px;\n    width: 50%;\n    text-align: center;\n    margin: 0px;\n    font-family: 'Baloo Tammudu';\n    font-size: 30px;\n  }\n  h1 a {\n    text-decoration: none;\n    color: #003366;\n  }\n  .menu {\n    background: #cce6ff;\n    height: 65px;\n    width: 100%;\n    text-align: center;\n    font-size: 12px;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n  }\n  .menu a {\n    margin: 0 15px;\n    text-decoration: none;\n    color: #0059b3;\n  }\n  .menu p {\n    margin: 0 20px;\n    text-decoration: none;\n    float: right;\n  }\n  button {\n    border: 1px solid black;\n    height: 20px;\n    margin: 10px;\n    font-size: 10px;\n  }\n\n}\n", ""]);
 
 // exports
 
@@ -117,7 +117,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"user\">\n    <p *ngIf=\"user\">Usuario: {{user.username | json}}</p>\n    <!-- <div *ngIf=\"matches\" class=\"counter\">\n      <h3>{{matches.length}}</h3>\n    </div> -->\n\n  <app-notifications></app-notifications>\n\n  </div>\n  <div class=\"logo-container\">\n    <img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\">\n  </div>\n  <div *ngIf=\"user\" class=\"title\">\n    <h1><a [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n  </div>\n  <div *ngIf=\"!user\" class=\"title\">\n    <h1><a [routerLink]=\"['']\">{{ title }}</a></h1>\n  </div>\n</header>\n\n<div class=\"menu\">\n  <a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">Tablón de ofertas</a>\n  <a *ngIf=\"user && user.role=='manager'\" [routerLink]=\"['/job']\">Crear oferta</a>\n  <a *ngIf=\"!user\" [routerLink]=\"['/login']\">Iniciar sesión</a>\n  <a *ngIf=\"!user\" [routerLink]=\"['/invitation']\">Solicitar invitación</a>\n  <a *ngIf=\"user\" [routerLink]=\"['/user']\">Datos de usuario</a>\n  <a *ngIf=\"user && user.role=='doctor'\" [routerLink]=\"['/alerts']\">Mis alertas</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/userslist']\">Listado de usuarios</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/signup']\">Añadir usuario</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/invitations']\">Lista de invitaciones</a>\n  <button *ngIf=\"user\" (click)=\"auth.logout().subscribe()\">Cerrar sesión</button>\n</div>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<header>\n  <div class=\"user\">\n    <p *ngIf=\"user\">Conectado como: <b>{{user.username | json}}</b></p>\n  </div>\n  <div class=\"logo-container\">\n    <img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\">\n  </div>\n  <div *ngIf=\"user\" class=\"mititle\">\n    <h1><a [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n  </div>\n  <div *ngIf=\"!user\" class=\"title\">\n    <h1><a [routerLink]=\"['']\">{{ title }}</a></h1>\n  </div>\n</header>\n\n<div class=\"menu\">\n  <a *ngIf=\"user\" [routerLink]=\"['/dashboard']\">Tablón de ofertas</a>\n  <a *ngIf=\"user && user.role=='manager'\" [routerLink]=\"['/job']\">Crear oferta</a>\n  <a *ngIf=\"!user\" [routerLink]=\"['/login']\">Iniciar sesión</a>\n  <a *ngIf=\"!user\" [routerLink]=\"['/invitation']\">Solicitar invitación</a>\n  <a *ngIf=\"user\" [routerLink]=\"['/user']\">Datos de usuario</a>\n  <a *ngIf=\"user && user.role=='doctor'\" [routerLink]=\"['/alerts']\">Mis alertas</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/userslist']\">Listado de usuarios</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/signup']\">Añadir usuario</a>\n  <a *ngIf=\"user && user.role=='admin'\" [routerLink]=\"['/invitations']\">Lista de invitaciones</a>\n  <button *ngIf=\"user\" (click)=\"auth.logout()\">Cerrar sesión</button>\n</div>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -290,7 +290,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\ntext-align: center;}\n\nh1 {\n  text-align: center;\n}\n\n.job {\n  display: inline-block;\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.job button {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.job button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.data {\n  text-align: left;\n  float: left;\n}\n\n.map {\n  float: right;\n}\n\nagm-map {\n  height: 280px;\n  width: 350px;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .container {\n    text-align: center;\n  }\n  h1 {\n    text-align: center;\n  }\n  .job {\n    display: inline-block;\n    width: 50%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .job button {\n    background: blue;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .job button:hover {\n    background: navy;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .data {\n    text-align: left;\n    float: left;\n  }\n  .map {\n    float: right;\n    border: 2px solid navy;\n  }\n  agm-map {\n    height: 280px;\n    width: 350px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .container {\n    margin-top: 140px;\n    text-align: center;\n  }\n  h1 {\n    text-align: center;\n  }\n  .job {\n    display: inline-block;\n    width: 90%;\n    border: 2px solid black;\n    margin: 5px auto;\n    padding: 2px 10px;\n  }\n  .job button {\n    background: blue;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .job button:hover {\n    background: navy;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .data {\n    text-align: left;\n    font-size: 12px;\n    float: left;\n  }\n  .map {\n    float: left;\n    border: 2px solid navy;\n    margin-right: 10px;\n    margin-top: 5px;\n  }\n  agm-map {\n    height: 200px;\n    width: 200px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -303,7 +303,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container\">\n\n  <h1>Ofertas:</h1>\n\n  <div class=\"job\" *ngFor=\"let job of jobs\">\n\n    <div class=\"data\">\n      <p>Oferta: {{job.title | json}}</p>\n      <p>Especialidad: {{job.speciality | json}}</p>\n      <p>Centro: {{job.center.title | json}}</p>\n      <p>Fecha de inicio: {{job.datein | date}}</p>\n      <p>Fecha de finalización: {{job.dateout | date}}</p>\n      <p>Descripción: {{job.description | json}}</p>\n      <div *ngIf=\"user.role!='doctor'\">\n        <p>Solicitantes: </p>\n        <div *ngFor=\"let doctor of job.doctor\">\n          <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>\n        </div>\n      </div>\n      <a *ngIf=\"user.role==='doctor'\" [routerLink]=\"[job._id]\">Solicitar puesto</a>\n      <a *ngIf=\"user.role==='manager'\" [routerLink]=\"[job._id]\">Ver detalles</a>\n    </div>\n\n    <div class=\"map\">\n      <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n        <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n      </agm-map>\n    </div>\n\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user\" class=\"container\">\n\n<div *ngIf=\"jobs\">\n\n  <div *ngIf=\"jobs.length > 0\">\n\n    <h1>Ofertas activas</h1>\n\n    <div class=\"job\" *ngFor=\"let job of jobs\">\n\n      <div class=\"data\">\n        <p><b>Oferta:</b> {{job.title | json}}</p>\n        <p><b>Especialidad:</b> {{job.speciality | json}}</p>\n        <p><b>Centro:</b> {{job.center.title | json}}</p>\n        <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n        <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n        <p><b>Descripción:</b> {{job.description | json}}</p>\n        <div *ngIf=\"user.role!='doctor'\">\n          <p><b>Solicitantes:</b> </p>\n          <div *ngFor=\"let doctor of job.doctor\">\n            <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>\n          </div>\n        </div>\n        <a *ngIf=\"user.role==='doctor'\" [routerLink]=\"[job._id]\">Solicitar puesto</a>\n        <a *ngIf=\"user.role==='manager' || user.role==='admin'\" [routerLink]=\"[job._id]\">Ver detalles</a>\n      </div>\n\n      <div class=\"map\">\n        <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n          <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n        </agm-map>\n      </div>\n\n    </div>\n  </div>\n\n\n  <div *ngIf=\"jobs.length === 0\">\n    <h2>No hay ninguna oferta actualmente.</h2>\n  </div>\n\n\n</div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -339,10 +339,9 @@ var DashboardComponent = (function () {
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
+        this.dashS.viewDashboard().subscribe(function (e) { return _this.jobs = e; });
     }
     DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.dashS.viewDashboard().subscribe(function (e) { return _this.jobs = e; });
     };
     return DashboardComponent;
 }());
@@ -460,7 +459,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".background {\n  background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n  background-size: cover;\n  width: 100%;\n  height: 600px;\n\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .background {\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    background-position: top;\n    width: 100%;\n    height: 600px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .background {\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    position: fixed;\n    width: 100%;\n    height: 600px;\n    margin: 0;\n    padding: 0;\n  }\n}\n", ""]);
 
 // exports
 
@@ -522,7 +521,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  text-align: center;\n}\n\n.invitation {\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.invitation button {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.invitation button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  h1 {\n    text-align: center;\n  }\n  .invitation {\n    width: 50%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .invitation button {\n    background: blue;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .invitation button:hover {\n    background: navy;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .main {\n    margin-top: 150px;\n    width:90%;\n  }\n\n  h1 {\n    text-align: center;\n    font-size: 17px;\n  }\n  .invitation {\n    font-size: 15px;\n    width: 80%;\n    border: 2px solid black;\n    margin: 10px 30px;\n    padding: 5px 20px;\n  }\n  .invitation button {\n    background: blue;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .invitation button:hover {\n    background: navy;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -535,7 +534,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/invitation-list/invitation-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role==='admin'\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Tipo de usuario: {{invitation.role}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"role\" value={{invitation.role}}>\n    <p>Nombre de usuario: {{invitation.username | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"username\" value={{invitation.username}}>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"collegiate\" value={{invitation.collegiate}}>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"speciality\" value={{invitation.speciality}}>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"name\" value={{invitation.name}}>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"phone\" value={{invitation.phone}}>\n    <p>Email: {{invitation.email | json}}</p>\n    <input hidden=\"true\" type=\"email\" name=\"email\" value={{invitation.email}}>\n    <button (click)=\"create(invitation)\">Crear usuario</button>\n    <a [routerLink]=\"[invitation._id, user._id]\"> Borrar invitación </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role==='admin'\" class=\"main\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Tipo de usuario: {{invitation.role}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"role\" value={{invitation.role}}>\n    <p>Nombre de usuario: {{invitation.username | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"username\" value={{invitation.username}}>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"collegiate\" value={{invitation.collegiate}}>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"speciality\" value={{invitation.speciality}}>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"name\" value={{invitation.name}}>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"phone\" value={{invitation.phone}}>\n    <p>Email: {{invitation.email | json}}</p>\n    <input hidden=\"true\" type=\"email\" name=\"email\" value={{invitation.email}}>\n    <button (click)=\"create(invitation)\">Crear usuario</button>\n    <a [routerLink]=\"[invitation._id, user._id]\"> Borrar invitación </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -611,7 +610,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  margin: 0 auto;\n  width: 50%;\n}\n\n.form {\n  margin: 10px auto;\n  padding: 20px;\n  width: 60%;\n}\n\n.select {\nfloat: right;\nmargin: 10px;\n}\n\n.select label {\n  margin: 0 10px;\n}\n\n.select select {\n  float: right;\n}\n\n.form input {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.form h2 {\n  text-align: center;\n}\n\n.form button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n\n.back {\n  margin: 0 20px;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .container {\n    margin: 0 auto;\n    width: 70%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 40%;\n  }\n  .select {\n    float: right;\n    margin: 10px;\n  }\n  .select label {\n    margin: 0 10px;\n    vertical-align: middle;\n  }\n  .select select {\n    float: right;\n    font-size: 15px;\n    height: 25px;\n    background: AliceBlue;\n  }\n  .form input {\n    width: 100%;\n    margin: 10px 0;\n    height: 20px;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 1vw;\n  }\n  .speciality {\n    font-size: 15px;\n    height: 25px;\n    width: 100%;\n    background: white;\n  }\n  .back {\n    margin: 0 20px;\n  }\n  span img {\n    width: 30px;\n    height: 30px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .container {\n    margin: 110px 25px 0;\n    width: 90%;\n  }\n  .form {\n    padding: 10px;\n    width: 80%;\n  }\n  .select {\n    float: right;\n    margin: 10px;\n  }\n  .select label {\n    margin: 0 10px;\n    vertical-align: middle;\n  }\n  .select select {\n    float: right;\n    font-size: 13px;\n    height: 25px;\n    background: AliceBlue;\n    border: 2px solid black;\n  }\n  .form input {\n    width: 100%;\n    margin: 5px 0;\n    height: 20px;\n    border: 2px solid black;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 10px;\n    background: navy;\n    color: white;\n  }\n  .speciality {\n    font-size: 15px;\n    height: 25px;\n    width: 100%;\n    background: white;\n    border: 2px solid black;\n  }\n  .back {\n    margin: 0 20px;\n    font-size: 15px;\n  }\n  span img {\n    width: 30px;\n    height: 30px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -624,7 +623,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/invitation/invitation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <h2> Solicitud de invitación </h2>\n    <div class=\"select\">\n      <label class=\"usertype\">Tipo de usuario:</label>\n      <select [(ngModel)]=\"formInfo.role\" name=\"role\">\n        <option value=\"doctor\">Doctor</option>\n        <option value=\"manager\">Gerente</option>\n      </select>\n    </div>\n    <br><br>\n    <form>\n      <label> Nombre de usuario </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Nª de colegiado </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br>\n      <label> Especialidad </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n      <br>\n      <label> Nombre </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Teléfono </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <label> Email </label>\n      <input type=\"email\" [(ngModel)]=\"formInfo.email\" name=\"email\" />\n      <br>\n      <button (click)=\"askForInvitation()\"> Solicitar invitación </button>\n      <a class=\"back\" [routerLink]=\"['']\" control=!control>Volver</a>\n      <br>\n      <p>{{control}}</p>\n      <p>{{message}}</p>\n    </form>\n</div>\n</div>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <h2> Solicitud de invitación </h2>\n    <div class=\"select\">\n      <label class=\"usertype\">Tipo de usuario:</label>\n      <select [(ngModel)]=\"formInfo.role\" name=\"role\">\n        <option value=\"doctor\">Doctor</option>\n        <option value=\"manager\">Coordinador</option>\n      </select>\n    </div>\n    <br><br><br>\n    <form>\n      <label> DNI </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Nª de colegiado </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br><br>\n      <label> Especialidad </label>\n      <select class=\"speciality\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n        <option value=\"Medicina familiar\">Médico de familia</option>\n        <option value=\"Pediatria\">Pediatría</option>\n        <option value=\"Coordinador\">Coordinador</option>\n      </select>\n      <br><br>\n      <label> Nombre y apellidos</label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Teléfono </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <label> Email </label>\n      <input type=\"email\" [(ngModel)]=\"formInfo.email\" name=\"email\" />\n      <br>\n      <button (click)=\"askForInvitation()\"> Solicitar invitación </button>\n      <a class=\"back\" [routerLink]=\"['']\" control=!control>Volver</a>\n      <br>\n      <p>{{control}}</p>\n      <p>{{message}}</p>\n    </form>\n</div>\n</div>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -707,7 +706,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  text-align: center;\n}\n\n.job {\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.regbutton {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.regbutton:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\nli {\n  margin: 10px 0;\n}\n\n.button {\n  margin: 0 5px;\n  width: 100px;\n  height: 20px;\n  background: red;\n  color: white;\n}\n", ""]);
+exports.push([module.i, ".container {\ntext-align: center;}\n\nh1 {\n  text-align: center;\n}\n\n.job {\n  display: inline-block;\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.job button {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.job button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.data {\n  text-align: left;\n  float: left;\n}\n\n.map {\n  margin-top: 20px;\n  float: right;\n  border: 2px solid navy;\n}\n\nagm-map {\n  height: 280px;\n  width: 350px;\n}\n", ""]);
 
 // exports
 
@@ -720,7 +719,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/job-details/job-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n\n  <h1 *ngIf=\"user && user.role==='doctor'\">¿Estás seguro de que quieres solicitar esta oferta?</h1>\n\n  <div class=\"job\">\n    <p>Oferta: {{job.title | json}}</p>\n    <p>Especialidad: {{job.speciality | json}}</p>\n    <p>Centro: {{job.center.title | json}}</p>\n    <p>Fecha de inicio: {{job.datein | date}}</p>\n    <p>Fecha de finalización: {{job.dateout | date}}</p>\n    <p>Descripción: {{job.description | json}}</p>\n    <p *ngIf=\"job.doctor && user.role!='doctor'\">SOLICITUDES: </p>\n    <ul *ngIf=\"job.doctor && user.role!='doctor'\">\n    <li *ngFor=\"let doc of job.doctor\">\n      {{doc.username | json}}\n      <button class=\"button\" (click)=\"deleteUser(job._id, doc._id)\">Eliminar usuario</button>\n      <button class=\"button\" (click)=\"acceptUser(job._id, doc._id)\">Aceptar usuario</button>\n    </li>\n    </ul>\n    <button class=\"regbutton\" (click)=\"applyJob(job._id, user._id)\" *ngIf=\"user && user.role==='doctor'\">Solicitar puesto</button>\n    <button class=\"regbutton\" (click)=\"deleteJob(job._id)\"  *ngIf=\"user && user.role==='manager'\">Eliminar oferta</button>\n    <a [routerLink]=\"['/dashboard']\">Volver</a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && job\" class=\"container\">\n\n  <h1 *ngIf=\"user && user.role==='doctor'\">¿Estás seguro de que quieres solicitar esta oferta?</h1>\n\n  <h1>{{job.title}}</h1>\n\n  <div class=\"job\">\n    <div class=\"data\">\n      <p><b>Oferta:</b> {{job.title | json}}</p>\n      <p><b>Especialidad:</b> {{job.speciality | json}}</p>\n      <p><b>Centro:</b> {{job.center.title | json}}</p>\n      <li><em>{{job.center.address.streetaddress | json}}</em></li>\n      <li><em>{{job.center.address.locality | json}}</em></li>\n      <li><em>{{job.center.address.postalcode | json}}</em></li>\n      <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n      <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n      <p><b>Descripción:</b> {{job.description | json}}</p>\n      <p *ngIf=\"job.doctor && user.role!='doctor'\"><b>SOLICITUDES:</b> </p>\n      <ul *ngIf=\"job.doctor && user.role!='doctor'\">\n        <li *ngFor=\"let doc of job.doctor\">\n          {{doc.username | json}}\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"deleteUser(job._id, doc._id)\">Eliminar usuario</button>\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"acceptUser(job._id, doc._id)\">Aceptar usuario</button>\n        </li>\n      </ul>\n      <button class=\"regbutton\" (click)=\"applyJob(job._id, user._id)\" *ngIf=\"user && user.role==='doctor'\">Solicitar puesto</button>\n      <button class=\"regbutton\" (click)=\"deleteJob(job._id)\" *ngIf=\"user._id === job.creator\">Eliminar oferta</button>\n      <a [routerLink]=\"['/dashboard']\">Volver</a>\n    </div>\n    <div class=\"map\">\n      <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n        <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n      </agm-map>\n    </div>\n\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -753,6 +752,7 @@ var JobDetailsComponent = (function () {
         this.router = router;
         this.route = route;
         this.jobS = jobS;
+        this.zoom = 15;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "select .option {\n  width: 40px;\n}\n\n.select {\n  margin: 0 auto;\n  padding: 10px 0px;\n  width: 60%;\n}\n\n.container select {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.form {\n  margin: 0 auto;\n  padding: 10px 0px;\n  width: 60%;\n}\n\n.form input {\n  width: 100%;\n  margin: 5px;\n}\n\n.container {\n  margin: 0 auto;\n  padding: 20px;\n  width: 40%;\n}\n\n.form button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  select .option {\n    width: 40px;\n  }\n  h2 {\n    text-align: center;\n  }\n  .select {\n    margin: 0 auto;\n    padding: 10px 0px;\n    width: 60%;\n  }\n  .container select {\n    width: 100%;\n    margin: 10px 0;\n    height: 20px;\n    background: white;\n    font-size: 15px;\n  }\n  .form {\n    margin: 0 auto;\n    width: 60%;\n  }\n  .dates {\n    display: inline-block;\n  }\n  .dates div {\n    width: 50%;\n    float: left;\n  }\n  .form input {\n    width: 100%;\n    margin: 5px;\n    height: 20px;\n    font-size: 15px;\n  }\n  .dates input {\n    width: 80%;\n  }\n  .container {\n    margin: 0 auto;\n    padding: 20px;\n    width: 40%;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 1vw;\n  }\n  .a {\n    margin: 0 20px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  select .option {\n    width: 40px;\n  }\n  h2 {\n    text-align: center;\n  }\n  .select {\n    margin: 0 auto;\n    padding: 10px 0px;\n    width: 60%;\n  }\n  .container select {\n    border: 2px solid black;\n    width: 100%;\n    margin: 10px 0;\n    height: 20px;\n    background: white;\n    font-size: 15px;\n  }\n  .form {\n    margin: 0 auto;\n    width: 60%;\n  }\n  .dates {\n    display: inline-block;\n  }\n  .dates div {\n    width: 50%;\n    float: left;\n  }\n  .form input {\n    border: 2px solid black;\n    width: 90%;\n    margin: 5px;\n    height: 20px;\n    font-size: 10px;\n  }\n  .dates input {\n    border: 2px solid black;\n    width: 80%;\n  }\n  .container {\n    margin: 110px auto;\n    padding: 20px;\n    width: 90%;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 10px;\n    background: navy;\n    color: white;\n  }\n  .a {\n    margin: 0 20px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -830,7 +830,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/job/job.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role!=='doctor'\" class=\"container\">\n  <div class=\"select\">\n    <h2> Crear oferta </h2>\n    <label>Centro:</label>\n    <select [(ngModel)]=\"formInfo.center\" name=\"center\">\n      <option *ngFor=\"let center of centers\" value=\"{{center._id}}\">{{center.title}}</option>\n    </select>\n    <label>Tipo:</label>\n    <select [(ngModel)]=\"formInfo.title\" name=\"title\">\n      <option value=\"Médico de familia\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n      <option value=\"Urgencias SUAP\">Urgencias SUAP</option>\n    </select>\n    <label>Especialidad:</label>\n    <select [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n      <option value=\"Medicina familiar\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n    </select>\n  </div>\n  <div class=\"form\">\n    <form>\n      <label> Fecha de inicio</label>\n      <input type=\"date\" [(ngModel)]=\"formInfo.datein\" name=\"datein\" />\n      <br>\n      <label> Fecha de finalización</label>\n      <input type=\"date\" [(ngModel)]=\"formInfo.dateout\" name=\"dateout\" />\n      <br>\n      <label> Descripción </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.description\" name=\"description\" />\n      <br>\n      <button (click)=\"newJob()\"> Crear oferta </button>\n    </form>\n    <p>{{message}}</p>\n  </div>\n</div>\n\n<div *ngIf=\"user && user.role==='doctor'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role!=='doctor'\" class=\"container\">\n  <div class=\"select\">\n    <h2> Crear oferta </h2>\n    <label>Centro:</label>\n    <select [(ngModel)]=\"formInfo.center\" name=\"center\">\n      <option *ngFor=\"let center of centers\" value=\"{{center._id}}\">{{center.title}}</option>\n    </select>\n    <label>Tipo:</label>\n    <select [(ngModel)]=\"formInfo.title\" name=\"title\">\n      <option value=\"Médico de familia\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n      <option value=\"Urgencias SUAP\">Urgencias SUAP</option>\n    </select>\n    <label>Especialidad:</label>\n    <select [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n      <option value=\"Medicina familiar\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n    </select>\n  </div>\n  <div class=\"form\">\n    <form>\n      <div class=\"dates\">\n        <div class=\"\">\n          <label> Fecha de inicio</label>\n          <input type=\"date\" [(ngModel)]=\"formInfo.datein\" name=\"datein\" />\n          <br>\n        </div>\n        <div class=\"\">\n          <label> Fecha de finalización</label>\n          <input type=\"date\" [(ngModel)]=\"formInfo.dateout\" name=\"dateout\" />\n          <br>\n        </div>\n      </div>\n      <label> Descripción </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.description\" name=\"description\" />\n      <br>\n      <button (click)=\"newJob()\"> Crear oferta </button>\n      <a class=\"a\" [routerLink]=\"['/dashboard']\">Volver</a>\n    </form>\n    <p>{{message}}</p>\n  </div>\n</div>\n\n<div *ngIf=\"user && user.role==='doctor'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -919,7 +919,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  margin: 0 auto;\n  width: 50%;\n}\n\n.form {\n  margin: 10px auto;\n  padding: 20px;\n  width: 60%;\n}\n\n.form h2 {\n  text-align: center;\n}\n\n.form input {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.form button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n\n.back {\n  margin: 0 20px;\n}\n\n.unauthorized {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .container {\n    margin: 0 auto;\n    width: 50%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 50%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    width: 100%;\n    height: 20px;\n    margin: 10px 0;\n    font-size: 15px;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 1vw;\n  }\n  .back {\n    margin: 0 20px;\n  }\n  .unauthorized {\n    text-align: center;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .container {\n    margin: 110px auto;\n    width: 90%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 80%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    width: 100%;\n    height: 20px;\n    margin: 10px 0;\n    font-size: 15px;\n    border: 2px solid black;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 10px;\n    background: navy;\n    color: white;\n  }\n  .back {\n    margin: 0 20px;\n    font-size: 10px;\n  }\n  .unauthorized {\n    text-align: center;\n  }\n}\n", ""]);
 
 // exports
 
@@ -1007,7 +1007,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  margin: 0 auto;\n  padding: 20px;\n  width: 40%;\n  border: 2px solid black;\n}\n\n.container h2 {\n  text-align: center;\n}\n\n.container input {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.container select {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.select {\n  margin: 0 auto;\n  padding: 10px 0px;\n  width: 60%;\n}\n\n.button {\n  text-align: center;\n}\n\n.button button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n", ""]);
+exports.push([module.i, ".container {\n  margin: 0 auto;\n  padding: 20px;\n  width: 40%;\n}\n\n.container h2 {\n  text-align: center;\n}\n\n.container input {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.container select {\n  width: 100%;\n  margin: 10px 0;\n  font-size: 15px;\n  height: 25px;\n  background: white;\n}\n\n.select {\n  margin: 0 auto;\n  padding: 10px 0px;\n  width: 60%;\n}\n\n.button {\n  text-align: center;\n}\n\n.button button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n\na {\n  margin: 0 20px;\n}\n", ""]);
 
 // exports
 
@@ -1020,7 +1020,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/new-alert/new-alert.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role=='doctor'\" class=\"container\">\n  <div class=\"select\">\n    <h2> Crear alerta </h2>\n    <label> Descripción: </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.title\" name=\"title\" />\n    <br>\n    <label>Especialidad:</label>\n    <select [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n      <option value=\"Medicina familiar\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n    </select>\n    <label>Centro:</label>\n    <select [(ngModel)]=\"formInfo.center\" name=\"center\">\n      <option *ngFor=\"let center of centers\" value=\"{{center._id}}\">{{center.title}}</option>\n    </select>\n  </div>\n  <div class=\"button\">\n    <button (click)=\"newAlert()\"> Crear oferta </button>\n  </div>\n  <p>{{message}}</p>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role=='doctor'\" class=\"container\">\n  <div class=\"select\">\n    <h2> Crear alerta </h2>\n    <label> Descripción: </label>\n    <input type=\"text\" [(ngModel)]=\"formInfo.title\" name=\"title\" />\n    <br>\n    <label>Especialidad:</label>\n    <select [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n      <option value=\"Medicina familiar\">Médico de familia</option>\n      <option value=\"Pediatria\">Pediatría</option>\n    </select>\n    <label>Centro:</label>\n    <select [(ngModel)]=\"formInfo.center\" name=\"center\">\n      <option *ngFor=\"let center of centers\" value=\"{{center._id}}\">{{center.title}}</option>\n    </select>\n  </div>\n  <div class=\"button\">\n    <button (click)=\"newAlert()\"> Crear oferta </button>\n    <a [routerLink]=\"['/alerts']\">Volver</a>\n  </div>\n  <p>{{message}}</p>\n</div>\n"
 
 /***/ }),
 
@@ -1119,7 +1119,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/notifications/notifications.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "{{notifications.length}}\n"
+module.exports = ""
 
 /***/ }),
 
@@ -1366,11 +1366,11 @@ var AuthService = (function () {
         return this.http.get(BASEURL + "/logout", this.options)
             .map(function (res) { return res.json(); })
             .map(function (user) { return _this.emitUserLoginEvent(null); })
-            .subscribe(function (user) { return _this.router.navigate(['']); });
+            .subscribe(function () { return _this.router.navigate(['home']); });
     };
-    AuthService.prototype.upload = function (username, password, name, phone, collegiate, speciality) {
+    AuthService.prototype.upload = function (name, phone, email, collegiate, speciality) {
         var _this = this;
-        return this.http.put(BASEURL + "/update", { username: username, password: password, name: name, phone: phone, collegiate: collegiate, speciality: speciality }, this.options)
+        return this.http.put(BASEURL + "/update", { name: name, phone: phone, email: email, collegiate: collegiate, speciality: speciality }, this.options)
             .map(function (res) { return res.json(); })
             .map(function (user) { return _this.emitUserLoginEvent(user); })
             .catch(this.handleError);
@@ -1381,6 +1381,10 @@ var AuthService = (function () {
             .map(function (res) { return res.json(); })
             .map(function (user) { return _this.emitUserLoginEvent(user); })
             .catch(this.handleError);
+    };
+    AuthService.prototype.delete = function (id) {
+        console.log("entro en el serivicio con id: " + id);
+        return this.http.get(BASEURL + "/delete/" + id, this.options);
     };
     return AuthService;
 }());
@@ -1672,7 +1676,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  margin: 0 auto;\n  width: 50%;\n}\n\n.form {\n  margin: 10px auto;\n  padding: 20px;\n  width: 60%;\n}\n\n.form h2 {\n  text-align: center;\n}\n\n.form input {\n  width: 100%;\n  margin: 10px 0;\n}\n\n.form button {\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .container {\n    margin: 0 auto;\n    width: 50%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 60%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    width: 100%;\n    margin: 10px 0;\n    height: 20px;\n    font-size: 15px;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 1vw;\n  }\n  .speciality {\n    font-size: 15px;\n    height: 25px;\n    width: 100%;\n    background: white;\n  }\n  .select {\n    float: right;\n    margin: 10px;\n  }\n  .select label {\n    margin: 0 10px;\n    vertical-align: middle;\n  }\n  .select select {\n    float: right;\n    font-size: 15px;\n    height: 25px;\n    background: AliceBlue;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .container {\n    margin: 110px 25px;\n    width: 90%;\n  }\n  .form {\n    padding: 10px;\n    width: 80%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    border: 2px solid black;\n    width: 100%;\n    margin: 3px 0;\n    height: 20px;\n    font-size: 15px;\n  }\n  .form button {\n    height: 30px;\n    margin: 10px 0;\n    font-size: 10px;\n    background: navy;\n    color: white;\n  }\n  .speciality {\n    font-size: 15px;\n    height: 25px;\n    width: 100%;\n    background: white;\n    border: 2px solid black;\n  }\n  .select {\n    float: right;\n    margin: 10px;\n  }\n  .select label {\n    margin: 0 10px;\n    vertical-align: middle;\n  }\n  .select select {\n    float: right;\n    font-size: 15px;\n    height: 25px;\n    background: AliceBlue;\n    border: 2px solid black;\n  }\n}\n", ""]);
 
 // exports
 
@@ -1685,7 +1689,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/signupform/signupform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <form *ngIf=\"user && user.role=='admin' \">\n      <h2> Añadir nuevo usuario </h2>\n      <label> Rol </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.role\" name=\"role\" />\n      <br>\n      <label> Nombre de usuario </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Nº de colegiado </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br>\n      <label> Especialidad </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n      <br>\n      <label> Contraseña </label>\n      <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" />\n      <br>\n      <label> Nombre </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Teléfono </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <button (click)=\"signup()\"> Dar de alta usuario </button>\n    </form>\n    <p>{{message}}</p>\n</div>\n</div>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"form\">\n    <h2> Añadir nuevo usuario </h2>\n    <div class=\"select\">\n      <label class=\"usertype\">Tipo de usuario:</label>\n      <select [(ngModel)]=\"formInfo.role\" name=\"role\">\n        <option value=\"doctor\">Doctor</option>\n        <option value=\"manager\">Coordinador</option>\n      </select>\n    </div><br><br><br>\n    <form *ngIf=\"user && user.role=='admin' \">\n      <label> DNI </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n      <br>\n      <label> Nº de colegiado </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n      <br><br>\n      <label> Especialidad </label>\n      <select class=\"speciality\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\">\n        <option value=\"Medicina familiar\">Médico de familia</option>\n        <option value=\"Pediatria\">Pediatría</option>\n        <option value=\"Coordinador\">Coordinador</option>\n      </select>\n      <br><br>\n      <label> Contraseña </label>\n      <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" />\n      <br>\n      <label> Nombre </label>\n      <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n      <br>\n      <label> Teléfono </label>\n      <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n      <br>\n      <button (click)=\"signup()\"> Dar de alta usuario </button>\n    </form>\n    <p>{{message}}</p>\n</div>\n</div>\n\n<div *ngIf=\"user && user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['/dashboard']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -1766,7 +1770,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  text-align: center;\n}\n\n.alert {\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\nbutton {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.alert button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.new {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  h1 {\n    text-align: center;\n  }\n  .alert {\n    width: 40%;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  button {\n    background: blue;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .alert button:hover {\n    background: navy;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .new {\n    text-align: center;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  h1 {\n    font-size: 17px;\n    text-align: center;\n  }\n\n  button {\n    background: blue;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .alert button:hover {\n    background: navy;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -1779,7 +1783,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/single-alert/single-alert.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{alert.title}}</h1>\n<p>Centro: {{alert.center.title | json}}</p>\n<p>Especialidad: {{alert.speciality | json}}</p>\n<button (click)=\"deleteAlert()\">Borrar alerta</button>\n"
+module.exports = "<h1>{{alert.title}}</h1>\n<p><b>Centro:</b> {{alert.center.title | json}}</p>\n<p><b>Especialidad:</b> {{alert.speciality | json}}</p>\n<button (click)=\"deleteAlert()\">Borrar alerta</button>\n"
 
 /***/ }),
 
@@ -1838,7 +1842,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container {\n  margin: 0 auto;\n  width: 50%;\n}\n\n.form {\n  margin: 10px auto;\n  padding: 20px;\n  width: 60%;\n}\n\n.form h2 {\n  text-align: center;\n}\n\n.form input {\n  width: 100%;\n  height: 20px;\n  margin: 10px 0;\n}\n\nbutton {\n  width: 120px;\n  height: 30px;\n  margin: 10px 0;\n  font-size: 1vw;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  .container {\n    margin: 0 auto;\n    width: 50%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 60%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    width: 100%;\n    height: 20px;\n    margin: 10px 0;\n    font-size: 15px;\n  }\n  button {\n    width: 120px;\n    height: 30px;\n    margin: 10px 0;\n    font-size: 1vw;\n  }\n  .red {\n    background: grey;\n    color: white;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .container {\n    margin: 110px auto;\n    width: 90%;\n  }\n  .form {\n    margin: 10px auto;\n    padding: 20px;\n    width: 80%;\n  }\n  .form h2 {\n    text-align: center;\n  }\n  .form input {\n    border: 2px solid black;\n    width: 100%;\n    height: 20px;\n    margin: 10px 0;\n    font-size: 10px;\n  }\n  button {\n    background: navy;\n    color: white;\n    width: 90px;\n    height: 40px;\n    margin: 10px 0;\n    font-size: 10px;\n  }\n  .red {\n    background: grey;\n    color: white;\n  }\n\n}\n", ""]);
 
 // exports
 
@@ -1851,7 +1855,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userprofile/userprofile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!user\">\n  <h2>No user logged in.</h2>\n  <a [routerLink]=\"['']\">Back</a>\n</div>\n\n<div *ngIf=\"user\">\n  <div class=\"container\" *ngIf=\"control\">\n    <div class=\"form\">\n      <form>\n        <h2> Cuenta </h2>\n        <label> Usuario </label>\n        <input type=\"text\" value={{user.username}} name=\"username\" disabled/>\n        <br>\n        <label> Nº de colegiado </label>\n        <input type=\"text\" value={{user.collegiate}} name=\"collegiate\" disabled/>\n        <br>\n        <label> Especialidad </label>\n        <input type=\"text\" value={{user.speciality}} name=\"speciality\" disabled/>\n        <br>\n        <label> Nombre </label>\n        <input type=\"text\" value={{user.name}} name=\"name\" disabled/>\n        <br>\n        <label> Teléfono </label>\n        <input type=\"number\" value={{user.phone}} name=\"phone\" disabled/>\n        <button *ngIf=\"control\" (click)=\"control=!control\">Update profile</button>\n      </form>\n    </div>\n\n  </div>\n\n  <div *ngIf=\"!control\" class=\"container\">\n    <div class=\"form\">\n      <form>\n        <h2> Edición de usuario </h2>\n        <label> Nombre de usuario </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.username\" name=\"username\" />\n        <br>\n        <label> Nº de colegiado </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n        <br>\n        <label> Especialidad </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n        <br>\n        <label> Contraseña </label>\n        <input type=\"password\" [(ngModel)]=\"formInfo.password\" name=\"password\" />\n        <br>\n        <label> Nombre </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n        <br>\n        <label> Teléfono </label>\n        <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n        <br>\n        <button (click)=\"upload()\"> Actualizar </button>\n        <button (click)=\"control=!control\"> Volver </button>\n      </form>\n      <p>{{message}}</p>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"!user\">\n  <h2>No user logged in.</h2>\n  <a [routerLink]=\"['']\">Back</a>\n</div>\n\n<div *ngIf=\"user\">\n  <div class=\"container\" *ngIf=\"control\">\n    <div class=\"form\">\n      <form>\n        <h2> Cuenta </h2>\n        <label> DNI </label>\n        <input type=\"text\" value={{user.username}} name=\"username\" disabled/>\n        <br>\n        <label> Nº de colegiado </label>\n        <input type=\"text\" value={{user.collegiate}} name=\"collegiate\" disabled/>\n        <br>\n        <label> Especialidad </label>\n        <input type=\"text\" value={{user.speciality}} name=\"speciality\" disabled/>\n        <br>\n        <label> Nombre </label>\n        <input type=\"text\" value={{user.name}} name=\"name\" disabled/>\n        <br>\n        <label> Teléfono </label>\n        <input type=\"number\" value={{user.phone}} name=\"phone\" disabled/>\n        <label> Email </label>\n        <input type=\"email\" name=\"email\" value={{user.email}} disabled/>\n        <button *ngIf=\"control\" (click)=\"control=!control\">Update profile</button>\n      </form>\n    </div>\n\n  </div>\n\n  <div *ngIf=\"!control\" class=\"container\">\n    <div class=\"form\">\n      <form>\n        <h2> Edición de usuario </h2>\n        <label> Nombre de usuario </label>\n        <input class=\"red\" type=\"text\" value=\"{{user.username}}\" name=\"username\" disabled/>\n        <br>\n        <label> Nº de colegiado </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.collegiate\" name=\"collegiate\" />\n        <br>\n        <label> Especialidad </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.speciality\" name=\"speciality\" />\n        <br>\n        <label> Nombre </label>\n        <input type=\"text\" [(ngModel)]=\"formInfo.name\" name=\"name\" />\n        <br>\n        <label> Teléfono </label>\n        <input type=\"number\" [(ngModel)]=\"formInfo.phone\" name=\"phone\" />\n        <br>\n        <label> Correo electrónico </label>\n        <input type=\"email\" [(ngModel)]=\"formInfo.email\" name=\"email\" />\n        <br>\n        <button (click)=\"upload()\"> Actualizar </button>\n        <button (click)=\"control=!control\"> Volver </button>\n      </form>\n      <p>{{message}}</p>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1881,32 +1885,37 @@ var UserprofileComponent = (function () {
         this.auth = auth;
         this.router = router;
         this.formInfo = {
-            username: "",
-            password: "",
             name: "",
             phone: "",
             collegiate: "",
-            speciality: ""
+            speciality: "",
+            email: ""
         };
         this.control = true;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
+            .subscribe(function (user) {
+            _this.user = user;
+            if (user) {
+                _this.formInfo = {
+                    name: user.name,
+                    phone: user.phone,
+                    collegiate: user.collegiate,
+                    speciality: user.speciality,
+                    email: user.email
+                };
+            }
+        });
     }
     UserprofileComponent.prototype.ngOnInit = function () {
     };
     UserprofileComponent.prototype.upload = function () {
         var _this = this;
-        var _a = this.formInfo, username = _a.username, password = _a.password, name = _a.name, phone = _a.phone, collegiate = _a.collegiate, speciality = _a.speciality;
-        if (username != "" && password != "" && name != "" && phone != "" && collegiate != "" && speciality) {
-            this.control = !this.control;
-            this.auth.upload(username, password, name, phone, collegiate, speciality)
-                .map(function (user) { return console.log(user); })
-                .subscribe(function (user) { return _this.router.navigate(['/user']); });
-        }
-        else {
-            this.message = "Todos los campos son obligatorios.";
-        }
+        var _a = this.formInfo, name = _a.name, phone = _a.phone, email = _a.email, collegiate = _a.collegiate, speciality = _a.speciality;
+        this.control = !this.control;
+        this.auth.upload(name, phone, email, collegiate, speciality)
+            .map(function (user) { return console.log(user); })
+            .subscribe(function (user) { return _this.router.navigate(['/user']); });
     };
     return UserprofileComponent;
 }());
@@ -1932,7 +1941,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  text-align: center;\n}\n\n.user {\n  width: 50%;\n  border: 2px solid black;\n  margin: 10px auto;\n  padding: 5px 20px;\n}\n\n.user button {\n  background: blue;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n\n.user button:hover {\n  background: navy;\n  color: white;\n  font-size: 1vw;\n  width: 100%;\n  height: 30px;\n  margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 480px) {\n  h1 {\n    text-align: center;\n  }\n  .user {\n    width: 50%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .user button {\n    background: blue;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .user button:hover {\n    background: navy;\n    color: white;\n    font-size: 1vw;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  h1 {\n    text-align: center;\n    font-size: 20px;\n  }\n\n  .main {\n    margin: 140px 20px;\n  }\n\n  .user {\n    width: 90%;\n    border: 2px solid black;\n    margin: 10px auto;\n    padding: 5px 20px;\n  }\n  .user button {\n    background: blue;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n  .user button:hover {\n    background: navy;\n    color: white;\n    font-size: 10px;\n    width: 100%;\n    height: 30px;\n    margin-bottom: 10px;\n  }\n}\n", ""]);
 
 // exports
 
@@ -1945,7 +1954,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/users-list/users-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user.role==='admin'\">\n\n  <h1>Listado de usuarios:</h1>\n\n  <div class=\"user\" *ngFor=\"let user of users\">\n    <p>Tipo de usuario: {{user.role | json}}</p>\n    <p>Nombre de usuario: {{user.username | json}}</p>\n    <p>Nombre y apellidos: {{user.name | json}}</p>\n    <p>Teléfono: {{user.phone | json}}</p>\n    <p>Nº de colegiado: {{user.collegiate | json}}</p>\n    <p>Especialidad: {{user.speciality | json}}</p>\n  </div>\n\n</div>\n\n<div *ngIf=\"user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user.role==='admin'\" class=\"main\">\n\n  <h1>Listado de usuarios</h1>\n\n  <div class=\"user\" *ngFor=\"let user of users\">\n    <p><b>Tipo de usuario:</b> {{user.role | json}}</p>\n    <p><b>DNI:</b> {{user.username | json}}</p>\n    <p><b>Nombre y apellidos:</b> {{user.name | json}}</p>\n    <p><b>Teléfono:</b> {{user.phone | json}}</p>\n    <p><b>Nº de colegiado:</b> {{user.collegiate | json}}</p>\n    <p><b>Especialidad:</b> {{user.speciality | json}}</p>\n    <button *ngIf=\"user.role!='admin'\"(click)=deleteUser(user._id)>Eliminar usuario</button>\n  </div>\n\n</div>\n\n<div *ngIf=\"user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -1979,6 +1988,10 @@ var UsersListComponent = (function () {
         var _this = this;
         this.auth.getUsers().subscribe(function (u) { return _this.users = u; });
     };
+    UsersListComponent.prototype.deleteUser = function (id) {
+        console.log("entro en el componente con id: " + id);
+        this.auth.delete(id).subscribe();
+    };
     return UsersListComponent;
 }());
 UsersListComponent = __decorate([
@@ -2009,6 +2022,7 @@ var environment = {
     production: true,
     BASEURL: ''
 };
+//local
 // export const environment = {
 //   production: false,
 //   BASEURL: 'http://localhost:3000'
