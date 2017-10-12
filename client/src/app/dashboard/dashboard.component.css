@@ -38,6 +38,7 @@ h1 {
 
 .map {
   float: right;
+  border: 2px solid navy;
 }
 
 agm-map {

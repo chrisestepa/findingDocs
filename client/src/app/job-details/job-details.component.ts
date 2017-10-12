@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
 export class JobDetailsComponent implements OnInit {
   job;
   user;
+  zoom:number = 15;
   constructor(public auth:AuthService, private router:Router, private route:ActivatedRoute, private jobS: JobService) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()

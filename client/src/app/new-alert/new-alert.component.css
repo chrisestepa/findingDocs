@@ -2,7 +2,6 @@
   margin: 0 auto;
   padding: 20px;
   width: 40%;
-  border: 2px solid black;
 }
 
 .container h2 {
@@ -17,6 +16,9 @@
 .container select {
   width: 100%;
   margin: 10px 0;
+  font-size: 15px;
+  height: 25px;
+  background: white;
 }
 
 .select {
@@ -33,4 +35,8 @@
   height: 30px;
   margin: 10px 0;
   font-size: 1vw;
+}
+
+a {
+  margin: 0 20px;
 }

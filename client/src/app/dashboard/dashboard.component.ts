@@ -17,10 +17,11 @@ export class DashboardComponent implements OnInit {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
+    this.dashS.viewDashboard().subscribe(e => this.jobs = e);
   }
 
   ngOnInit() {
-    this.dashS.viewDashboard().subscribe(e => this.jobs = e);
+
   }
 
 }

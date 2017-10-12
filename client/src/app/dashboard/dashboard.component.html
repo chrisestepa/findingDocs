@@ -1,5 +1,7 @@
 <div *ngIf="user" class="container">
 
+<div *ngIf="jobs">
+
   <div *ngIf="jobs.length > 0">
 
     <h1>Ofertas activas</h1>
@@ -7,14 +9,14 @@
     <div class="job" *ngFor="let job of jobs">
 
       <div class="data">
-        <p>Oferta: {{job.title | json}}</p>
-        <p>Especialidad: {{job.speciality | json}}</p>
-        <p>Centro: {{job.center.title | json}}</p>
-        <p>Fecha de inicio: {{job.datein | date}}</p>
-        <p>Fecha de finalización: {{job.dateout | date}}</p>
-        <p>Descripción: {{job.description | json}}</p>
+        <p><b>Oferta:</b> {{job.title | json}}</p>
+        <p><b>Especialidad:</b> {{job.speciality | json}}</p>
+        <p><b>Centro:</b> {{job.center.title | json}}</p>
+        <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>
+        <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>
+        <p><b>Descripción:</b> {{job.description | json}}</p>
         <div *ngIf="user.role!='doctor'">
-          <p>Solicitantes: </p>
+          <p><b>Solicitantes:</b> </p>
           <div *ngFor="let doctor of job.doctor">
             <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>
           </div>
@@ -32,9 +34,13 @@
     </div>
   </div>
 
+
   <div *ngIf="jobs.length === 0">
     <h2>No hay ninguna oferta actualmente.</h2>
   </div>
+
+
+</div>
 
 </div>
 

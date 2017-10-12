@@ -59,7 +59,7 @@ export class AuthService {
     return this.http.get(`${BASEURL}/logout`, this.options)
       .map(res => res.json())
       .map(user => this.emitUserLoginEvent(null))
-      .subscribe((user) => this.router.navigate(['']))
+      .subscribe(() => this.router.navigate(['home']))
   }
 
   upload(name, phone, email, collegiate, speciality) {

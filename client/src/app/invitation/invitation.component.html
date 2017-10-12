@@ -5,7 +5,7 @@
       <label class="usertype">Tipo de usuario:</label>
       <select [(ngModel)]="formInfo.role" name="role">
         <option value="doctor">Doctor</option>
-        <option value="manager">Gerente</option>
+        <option value="manager">Coordinador</option>
       </select>
     </div>
     <br><br><br>
@@ -15,11 +15,15 @@
       <br>
       <label> Nª de colegiado </label>
       <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
-      <br>
+      <br><br>
       <label> Especialidad </label>
-      <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
-      <br>
-      <label> Nombre </label>
+      <select class="speciality" [(ngModel)]="formInfo.speciality" name="speciality">
+        <option value="Medicina familiar">Médico de familia</option>
+        <option value="Pediatria">Pediatría</option>
+        <option value="Coordinador">Coordinador</option>
+      </select>
+      <br><br>
+      <label> Nombre y apellidos</label>
       <input type="text" [(ngModel)]="formInfo.name" name="name" />
       <br>
       <label> Teléfono </label>

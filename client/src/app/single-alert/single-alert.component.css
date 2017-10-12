@@ -3,8 +3,7 @@ h1 {
 }
 
 .alert {
-  width: 50%;
-  border: 2px solid black;
+  width: 40%;
   margin: 10px auto;
   padding: 5px 20px;
 }

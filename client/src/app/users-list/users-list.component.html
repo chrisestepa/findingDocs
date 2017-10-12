@@ -3,12 +3,12 @@
   <h1>Listado de usuarios</h1>
 
   <div class="user" *ngFor="let user of users">
-    <p>Tipo de usuario: {{user.role | json}}</p>
-    <p>Nombre de usuario: {{user.username | json}}</p>
-    <p>Nombre y apellidos: {{user.name | json}}</p>
-    <p>Teléfono: {{user.phone | json}}</p>
-    <p>Nº de colegiado: {{user.collegiate | json}}</p>
-    <p>Especialidad: {{user.speciality | json}}</p>
+    <p><b>Tipo de usuario:</b> {{user.role | json}}</p>
+    <p><b>DNI:</b> {{user.username | json}}</p>
+    <p><b>Nombre y apellidos:</b> {{user.name | json}}</p>
+    <p><b>Teléfono:</b> {{user.phone | json}}</p>
+    <p><b>Nº de colegiado:</b> {{user.collegiate | json}}</p>
+    <p><b>Especialidad:</b> {{user.speciality | json}}</p>
     <button *ngIf="user.role!='admin'"(click)=deleteUser(user._id)>Eliminar usuario</button>
   </div>
 

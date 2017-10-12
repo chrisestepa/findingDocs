@@ -1,15 +1,19 @@
+.container {
+text-align: center;}
+
 h1 {
   text-align: center;
 }
 
 .job {
+  display: inline-block;
   width: 50%;
   border: 2px solid black;
   margin: 10px auto;
   padding: 5px 20px;
 }
 
-.regbutton {
+.job button {
   background: blue;
   color: white;
   font-size: 1vw;
@@ -18,7 +22,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.regbutton:hover {
+.job button:hover {
   background: navy;
   color: white;
   font-size: 1vw;
@@ -27,14 +31,18 @@ h1 {
   margin-bottom: 10px;
 }
 
-li {
-  margin: 10px 0;
+.data {
+  text-align: left;
+  float: left;
 }
 
-.button {
-  margin: 0 5px;
-  width: 100px;
-  height: 20px;
-  background: red;
-  color: white;
+.map {
+  margin-top: 20px;
+  float: right;
+  border: 2px solid navy;
+}
+
+agm-map {
+  height: 280px;
+  width: 350px;
 }

@@ -1,19 +1,27 @@
 <div class="container">
   <div class="form">
+    <h2> Añadir nuevo usuario </h2>
+    <div class="select">
+      <label class="usertype">Tipo de usuario:</label>
+      <select [(ngModel)]="formInfo.role" name="role">
+        <option value="doctor">Doctor</option>
+        <option value="manager">Coordinador</option>
+      </select>
+    </div><br><br><br>
     <form *ngIf="user && user.role=='admin' ">
-      <h2> Añadir nuevo usuario </h2>
-      <label> Rol </label>
-      <input type="text" [(ngModel)]="formInfo.role" name="role" />
-      <br>
-      <label> Nombre de usuario </label>
+      <label> DNI </label>
       <input type="text" [(ngModel)]="formInfo.username" name="username" />
       <br>
       <label> Nº de colegiado </label>
       <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
-      <br>
+      <br><br>
       <label> Especialidad </label>
-      <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
-      <br>
+      <select class="speciality" [(ngModel)]="formInfo.speciality" name="speciality">
+        <option value="Medicina familiar">Médico de familia</option>
+        <option value="Pediatria">Pediatría</option>
+        <option value="Coordinador">Coordinador</option>
+      </select>
+      <br><br>
       <label> Contraseña </label>
       <input type="password" [(ngModel)]="formInfo.password" name="password" />
       <br>

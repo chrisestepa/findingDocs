@@ -32,13 +32,9 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -64,10 +60,6 @@ require('./passport/local');
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use('/auth', authRoutes);
-// app.use('/dashboard', dashRoutes);
-// app.use('/', jobRoute)
-
 app.use('/', authRoutes);
 app.use('/', dashRoutes);
 app.use('/', jobRoutes);
@@ -75,7 +67,7 @@ app.use('/', centersRoute);
 app.use('/', invitationRoute);
 app.use('/', alertRoutes);
 
-app.use((req, res, next) => {
+app.all((req, res, next) => {
   res.sendfile(__dirname + '/public/index.html')
 });
 

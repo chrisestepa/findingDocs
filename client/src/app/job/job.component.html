@@ -19,16 +19,23 @@
   </div>
   <div class="form">
     <form>
-      <label> Fecha de inicio</label>
-      <input type="date" [(ngModel)]="formInfo.datein" name="datein" />
-      <br>
-      <label> Fecha de finalización</label>
-      <input type="date" [(ngModel)]="formInfo.dateout" name="dateout" />
-      <br>
+      <div class="dates">
+        <div class="">
+          <label> Fecha de inicio</label>
+          <input type="date" [(ngModel)]="formInfo.datein" name="datein" />
+          <br>
+        </div>
+        <div class="">
+          <label> Fecha de finalización</label>
+          <input type="date" [(ngModel)]="formInfo.dateout" name="dateout" />
+          <br>
+        </div>
+      </div>
       <label> Descripción </label>
       <input type="text" [(ngModel)]="formInfo.description" name="description" />
       <br>
       <button (click)="newJob()"> Crear oferta </button>
+      <a class="a" [routerLink]="['/dashboard']">Volver</a>
     </form>
     <p>{{message}}</p>
   </div>

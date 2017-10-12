@@ -24,13 +24,14 @@ export class UserprofileComponent implements OnInit {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => {this.user = user;
+        if(user){
         this.formInfo = {
           name: user.name,
           phone: user.phone,
           collegiate: user.collegiate,
           speciality: user.speciality,
           email: user.email}
-        });
+        }});
   }
 
   ngOnInit() {
