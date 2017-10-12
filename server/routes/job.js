@@ -12,6 +12,8 @@ const nodemailer = require('nodemailer');
 const jobRoute = express.Router();
 
 jobRoute.post('/job/new', (req, res) => {
+  var email = [];
+  const creator = req.user._id;
   const title = req.body.title;
   const center = req.body.center;
   const datein = req.body.datein;
@@ -20,6 +22,7 @@ jobRoute.post('/job/new', (req, res) => {
   const speciality = req.body.speciality;
 
   const newJob = new Job({
+    creator,
     title,
     center,
     speciality,
@@ -29,10 +32,47 @@ jobRoute.post('/job/new', (req, res) => {
   });
   return newJob.save()
     .then(job => {
-      Alert.update({"center":job.center}, {"status":true})
-        .then(alerts => res.status(200).json(alerts))
-    })
-    .catch(e => console.log(e));
+      Alert.find({"center":job.center}).populate("doctor")
+      .then(alert => {
+          alert.forEach(e => email.push(e.doctor.email))
+          console.log(email)
+          Alert.update({
+          "center": alert.center
+          }, {
+          "status": true
+          })
+            .then(alerts => {
+if (email.length > 0){
+                var transporter = nodemailer.createTransport({
+                service: 'Gmail',
+                auth: {
+                  user: process.env.PATH_USER,
+                  pass: process.env.PATH_PASS
+                }
+              });
+              var text = `Hola,\nHa sido publicada una nueva oferta que coincide con una de sus alertas.\nPuede ver los detalles de la misma en nuestra página web.\nUn saludo.`;
+              var mailOptions = {
+                from: process.env.PATH_USER,
+                to: email.join(),
+                subject: 'Nueva oferta en findingDocs',
+                text: text
+              };
+
+          transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Message sent: ' + info.response);
+            }
+          res.status(200).json(alerts);
+            })
+          }
+          else {res.status(200).json(alerts)
+}
+        })
+        })
+      })
+        .catch(e => console.log(e));
 });
 
 

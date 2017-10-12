@@ -1,32 +1,39 @@
 <div *ngIf="user" class="container">
 
-  <h1>Ofertas:</h1>
+  <div *ngIf="jobs.length > 0">
 
-  <div class="job" *ngFor="let job of jobs">
+    <h1>Ofertas:</h1>
 
-    <div class="data">
-      <p>Oferta: {{job.title | json}}</p>
-      <p>Especialidad: {{job.speciality | json}}</p>
-      <p>Centro: {{job.center.title | json}}</p>
-      <p>Fecha de inicio: {{job.datein | date}}</p>
-      <p>Fecha de finalización: {{job.dateout | date}}</p>
-      <p>Descripción: {{job.description | json}}</p>
-      <div *ngIf="user.role!='doctor'">
-        <p>Solicitantes: </p>
-        <div *ngFor="let doctor of job.doctor">
-          <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>
+    <div class="job" *ngFor="let job of jobs">
+
+      <div class="data">
+        <p>Oferta: {{job.title | json}}</p>
+        <p>Especialidad: {{job.speciality | json}}</p>
+        <p>Centro: {{job.center.title | json}}</p>
+        <p>Fecha de inicio: {{job.datein | date}}</p>
+        <p>Fecha de finalización: {{job.dateout | date}}</p>
+        <p>Descripción: {{job.description | json}}</p>
+        <div *ngIf="user.role!='doctor'">
+          <p>Solicitantes: </p>
+          <div *ngFor="let doctor of job.doctor">
+            <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>
+          </div>
         </div>
+        <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
+        <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Ver detalles</a>
       </div>
-      <a *ngIf="user.role==='doctor'" [routerLink]="[job._id]">Solicitar puesto</a>
-      <a *ngIf="user.role==='manager'" [routerLink]="[job._id]">Ver detalles</a>
-    </div>
 
-    <div class="map">
-      <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">
-        <agm-marker [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude"></agm-marker>
-      </agm-map>
-    </div>
+      <div class="map">
+        <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">
+          <agm-marker [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude"></agm-marker>
+        </agm-map>
+      </div>
 
+    </div>
+  </div>
+
+  <div *ngIf="jobs.length === 0">
+    <h2>No hay ninguna oferta actualmente.</h2>
   </div>
 
 </div>

@@ -22,6 +22,8 @@
         <br>
         <label> Teléfono </label>
         <input type="number" value={{user.phone}} name="phone" disabled/>
+        <label> Email </label>
+        <input type="email" name="email" value="{{user.email}}" disabled/>
         <button *ngIf="control" (click)="control=!control">Update profile</button>
       </form>
     </div>

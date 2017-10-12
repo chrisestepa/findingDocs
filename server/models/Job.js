@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const jobSchema = new Schema({
+  creator: {type: Schema.Types.ObjectId, ref: "User"},
   title: String,
   datein: Date,
   dateout: Date,

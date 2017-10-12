@@ -13,12 +13,12 @@
     <ul *ngIf="job.doctor && user.role!='doctor'">
     <li *ngFor="let doc of job.doctor">
       {{doc.username | json}}
-      <button class="button" (click)="deleteUser(job._id, doc._id)">Eliminar usuario</button>
-      <button class="button" (click)="acceptUser(job._id, doc._id)">Aceptar usuario</button>
+      <button *ngIf="user._id === job.creator" class="button" (click)="deleteUser(job._id, doc._id)">Eliminar usuario</button>
+      <button *ngIf="user._id === job.creator" class="button" (click)="acceptUser(job._id, doc._id)">Aceptar usuario</button>
     </li>
     </ul>
     <button class="regbutton" (click)="applyJob(job._id, user._id)" *ngIf="user && user.role==='doctor'">Solicitar puesto</button>
-    <button class="regbutton" (click)="deleteJob(job._id)"  *ngIf="user && user.role==='manager'">Eliminar oferta</button>
+    <button class="regbutton" (click)="deleteJob(job._id)"  *ngIf="user._id === job.creator">Eliminar oferta</button>
     <a [routerLink]="['/dashboard']">Volver</a>
   </div>
 
