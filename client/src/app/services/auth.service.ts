@@ -62,8 +62,8 @@ export class AuthService {
       .subscribe((user) => this.router.navigate(['']))
   }
 
-  upload(username, password, name, phone, collegiate, speciality) {
-    return this.http.put(`${BASEURL}/update`, { username, password, name, phone, collegiate, speciality }, this.options)
+  upload(name, phone, email, collegiate, speciality) {
+    return this.http.put(`${BASEURL}/update`, { name, phone, email, collegiate, speciality }, this.options)
       .map(res => res.json())
       .map(user => this.emitUserLoginEvent(user))
       .catch(this.handleError);

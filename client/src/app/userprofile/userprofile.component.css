@@ -25,3 +25,8 @@ button {
   margin: 10px 0;
   font-size: 1vw;
 }
+
+.red {
+  background: grey;
+  color: white;
+}

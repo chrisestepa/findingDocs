@@ -23,7 +23,7 @@
         <label> Teléfono </label>
         <input type="number" value={{user.phone}} name="phone" disabled/>
         <label> Email </label>
-        <input type="email" name="email" value="{{user.email}}" disabled/>
+        <input type="email" name="email" value={{user.email}} disabled/>
         <button *ngIf="control" (click)="control=!control">Update profile</button>
       </form>
     </div>
@@ -35,7 +35,7 @@
       <form>
         <h2> Edición de usuario </h2>
         <label> Nombre de usuario </label>
-        <input type="text" [(ngModel)]="formInfo.username" name="username" />
+        <input class="red" type="text" value="{{user.username}}" name="username" disabled/>
         <br>
         <label> Nº de colegiado </label>
         <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
@@ -43,14 +43,14 @@
         <label> Especialidad </label>
         <input type="text" [(ngModel)]="formInfo.speciality" name="speciality" />
         <br>
-        <label> Contraseña </label>
-        <input type="password" [(ngModel)]="formInfo.password" name="password" />
-        <br>
         <label> Nombre </label>
         <input type="text" [(ngModel)]="formInfo.name" name="name" />
         <br>
         <label> Teléfono </label>
         <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
+        <br>
+        <label> Correo electrónico </label>
+        <input type="email" [(ngModel)]="formInfo.email" name="email" />
         <br>
         <button (click)="upload()"> Actualizar </button>
         <button (click)="control=!control"> Volver </button>

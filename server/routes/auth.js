@@ -101,42 +101,32 @@ authRoutes.get('/logout', (req, res, next) => {
 });
 
 authRoutes.put('/update', (req, res, next) => {
-  let hashPass = '';
-  let password = req.body.password;
+    const update = {
+      name: req.body.name || req.user.name,
+      phone: req.body.phone || req.user.phone,
+      email: req.body.email || req.user.email,
+      collegiate: req.body.collegiate || req.user.collegiate,
+      speciality: req.body.speciality || req.user.speciality
+    }
 
-  if (req.body.password !== "") {
-    let salt = bcrypt.genSaltSync(bcryptSalt);
-    hashPass = bcrypt.hashSync(password, salt);
-  } else {
-    hashPass = req.user.password;
-  }
+    console.log("COLLEGIATE: " + update.collegiate);
 
-  const update = {
-    username: req.body.username,
-    hashPass,
-    name: req.body.name,
-    phone: req.body.phone,
-    email: req.body.email,
-    collegiate: req.body.collegiate,
-    speciality: req.body.speciality
-  }
-
-  User.findByIdAndUpdate(req.user._id, update)
-    .then(user => {
-      req.login(user, (err) => {
-        if (err)
-          return res.status(500).json({
-            message: 'Something went wrong'
+    User.findByIdAndUpdate(req.user._id, update)
+      .then(user => {
+        req.login(user, (err) => {
+          if (err)
+            return res.status(500).json({
+              message: 'Something went wrong'
+            });
+            res.status(200).json(req.user);
           });
-        res.status(200).json(req.user);
-      });
-    })
-    .catch(e => {
-      console.log(e);
-      res.status(400).json({
-        message: 'Something went wrong'
-      })
-    });
+        })
+        .catch(e => {
+          console.log(e);
+          res.status(400).json({
+            message: 'Something went wrong'
+          })
+        });
 });
 
 authRoutes.get('/userslist', (req, res, next) => {

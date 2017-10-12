@@ -10,37 +10,38 @@ import { FormsModule }   from '@angular/forms';
 })
 export class UserprofileComponent implements OnInit {
   formInfo = {
-    username: "",
-    password: "",
     name: "",
     phone: "",
     collegiate: "",
-    speciality: ""
+    speciality: "",
+    email: ""
   }
 
   message: string;
-  user: object;
+  user: any;
   control: boolean = true;
   constructor(public auth: AuthService, public router: Router) {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
-      .subscribe(user => this.user = user);
+      .subscribe(user => {this.user = user;
+        this.formInfo = {
+          name: user.name,
+          phone: user.phone,
+          collegiate: user.collegiate,
+          speciality: user.speciality,
+          email: user.email}
+        });
   }
 
   ngOnInit() {
   }
 
   upload() {
-    const { username, password, name, phone, collegiate, speciality } = this.formInfo;
-    if (username != "" && password != "" && name != "" && phone != "" && collegiate != "" && speciality) {
-          this.control = !this.control;
-          this.auth.upload(username, password, name, phone, collegiate, speciality)
+  const { name, phone, email, collegiate, speciality } = this.formInfo;
+      this.control = !this.control;
+      this.auth.upload(name, phone, email, collegiate, speciality)
         .map(user => console.log(user))
         .subscribe((user) => this.router.navigate(['/user']))
-    } else {
-      this.message = "Todos los campos son obligatorios.";
-    }
-
   }
 
 }
