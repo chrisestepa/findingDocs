@@ -6,7 +6,7 @@
 .form {
   margin: 10px auto;
   padding: 20px;
-  width: 60%;
+  width: 40%;
 }
 
 .select {
@@ -39,4 +39,9 @@ margin: 10px;
 
 .back {
   margin: 0 20px;
+}
+
+span img {
+  width: 30px;
+  height: 30px;
 }

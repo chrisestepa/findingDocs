@@ -156,4 +156,14 @@ authRoutes.get('/loggedin', (req, res, next) => {
   });
 });
 
+
+authRoutes.get('/delete/:id', (req, res, next) => {
+  console.log("Entro en el back con id: " + req.params.id)
+  User.findByIdAndRemove(req.params.id)
+  .then(user => res.status(200).json(user))
+  .catch(e => res.status(500).json({
+    error: e.message
+  }));
+});
+
 module.exports = authRoutes;

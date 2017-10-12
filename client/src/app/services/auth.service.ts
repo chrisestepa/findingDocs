@@ -75,4 +75,10 @@ export class AuthService {
       .map(user => this.emitUserLoginEvent(user))
       .catch(this.handleError);
   }
+
+  delete(id){
+    console.log("entro en el serivicio con id: " + id)
+    return this.http.get(`${BASEURL}/delete/${id}`, this.options)
+  }
+
 }

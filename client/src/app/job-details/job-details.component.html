@@ -2,6 +2,8 @@
 
   <h1 *ngIf="user && user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h1>
 
+  <h1>{{job.title}}</h1>
+
   <div class="job">
     <p>Oferta: {{job.title | json}}</p>
     <p>Especialidad: {{job.speciality | json}}</p>

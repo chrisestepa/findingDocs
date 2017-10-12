@@ -20,4 +20,9 @@ export class UsersListComponent implements OnInit {
     this.auth.getUsers().subscribe(u => this.users = u);
   }
 
+  deleteUser(id){
+    console.log("entro en el componente con id: " + id)
+    this.auth.delete(id).subscribe();
+  }
+
 }
