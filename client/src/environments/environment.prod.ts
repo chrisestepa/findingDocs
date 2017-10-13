@@ -7,7 +7,7 @@
 
 
 
-//local
+// local
 export const environment = {
   production: true,
   BASEURL: ''
