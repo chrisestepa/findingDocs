@@ -20,11 +20,12 @@ export class NewAlertComponent implements OnInit {
   user:any;
   centers:object;
   constructor(public alertS: AlertsService, public centerS:CentersService, public auth:AuthService, public router: Router) {
-  this.user = this.auth.getUser();
-  this.auth.getLoginEventEmitter()
-      .subscribe( user => this.user=user );
+
   }
   ngOnInit() {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );
     this.centerS.getCenters()
       .subscribe((centers) => this.centers = centers);
   }

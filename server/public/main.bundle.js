@@ -62,16 +62,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AlertsComponent = (function () {
     function AlertsComponent(router, alertServ, auth) {
-        var _this = this;
         this.router = router;
         this.alertServ = alertServ;
         this.auth = auth;
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     AlertsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.alertServ.getAlerts().subscribe(function (alerts) { return _this.alerts = alerts; });
     };
     AlertsComponent.prototype.deleteAlert = function (id) {
@@ -303,7 +302,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container\">\n\n<div *ngIf=\"jobs\">\n\n  <div *ngIf=\"jobs.length > 0\">\n\n    <h1>Ofertas activas</h1>\n\n    <div class=\"job\" *ngFor=\"let job of jobs\">\n\n      <div class=\"data\">\n        <p><b>Oferta:</b> {{job.title | json}}</p>\n        <p><b>Especialidad:</b> {{job.speciality | json}}</p>\n        <p><b>Centro:</b> {{job.center.title | json}}</p>\n        <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n        <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n        <p><b>Descripción:</b> {{job.description | json}}</p>\n        <div *ngIf=\"user.role!='doctor'\">\n          <p><b>Solicitantes:</b> </p>\n          <div *ngFor=\"let doctor of job.doctor\">\n            <p>{{doctor.name | json}}, Nº de colegiado: {{doctor.collegiate}}</p>\n          </div>\n        </div>\n        <a *ngIf=\"user.role==='doctor'\" [routerLink]=\"[job._id]\">Solicitar puesto</a>\n        <a *ngIf=\"user.role==='manager' || user.role==='admin'\" [routerLink]=\"[job._id]\">Ver detalles</a>\n      </div>\n\n      <div class=\"map\">\n        <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n          <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n        </agm-map>\n      </div>\n\n    </div>\n  </div>\n\n\n  <div *ngIf=\"jobs.length === 0\">\n    <h2>No hay ninguna oferta actualmente.</h2>\n  </div>\n\n\n</div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user\" class=\"container\">\n\n<div *ngIf=\"jobs\">\n\n  <div *ngIf=\"jobs.length > 0\">\n\n    <h1>Ofertas activas</h1>\n\n    <div class=\"job\" *ngFor=\"let job of jobs\">\n\n      <div class=\"data\">\n        <p><b>Oferta:</b> {{job.title }}</p>\n        <p><b>Especialidad:</b> {{job.speciality }}</p>\n        <p><b>Centro:</b> {{job.center.title }}</p>\n        <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n        <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n        <p><b>Descripción:</b> {{job.description }}</p>\n        <div *ngIf=\"user.role!='doctor'\">\n          <p><b>Solicitantes:</b> </p>\n          <div *ngFor=\"let doctor of job.doctor\">\n            <p>{{doctor.name }}, Nº de colegiado: {{doctor.collegiate}}</p>\n          </div>\n        </div>\n        <a *ngIf=\"user.role==='doctor'\" [routerLink]=\"[job._id]\">Solicitar puesto</a>\n        <a *ngIf=\"user.role==='manager' || user.role==='admin'\" [routerLink]=\"[job._id]\">Ver detalles</a>\n      </div>\n\n      <div class=\"map\">\n        <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n          <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n        </agm-map>\n      </div>\n\n    </div>\n  </div>\n\n\n  <div *ngIf=\"jobs.length === 0\">\n    <h2>No hay ninguna oferta actualmente.</h2>\n  </div>\n\n\n</div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -331,17 +330,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DashboardComponent = (function () {
     function DashboardComponent(dashS, auth, alertS) {
-        var _this = this;
         this.dashS = dashS;
         this.auth = auth;
         this.alertS = alertS;
         this.zoom = 17;
+    }
+    DashboardComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
         this.dashS.viewDashboard().subscribe(function (e) { return _this.jobs = e; });
-    }
-    DashboardComponent.prototype.ngOnInit = function () {
     };
     return DashboardComponent;
 }());
@@ -380,7 +379,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/delete-invitation/delete-invitation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role==='admin'\">\n\n  <h1>¿Está seguro de que quiere borrar esta petición?</h1>\n\n  <div class=\"invitation\">\n    <p>Usuario: {{invitation.username | json}}</p>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <button (click)=\"deleteInvitation(invitation._id)\">Delete</button>\n    <a [routerLink]=\"['/invitations']\">Cancelar</a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role==='admin'\">\n\n  <h1>¿Está seguro de que quiere borrar esta petición?</h1>\n\n  <div class=\"invitation\">\n    <p>Usuario: {{invitation.username}}</p>\n    <p>Nº de colegiado: {{invitation.collegiate}}</p>\n    <p>Especialidad: {{invitation.speciality}}</p>\n    <p>Nombre: {{invitation.name}}</p>\n    <p>Teléfono: {{invitation.phone}}</p>\n    <button (click)=\"deleteInvitation(invitation._id)\">Delete</button>\n    <a [routerLink]=\"['/invitations']\">Cancelar</a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -408,17 +407,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DeleteInvitationComponent = (function () {
     function DeleteInvitationComponent(auth, router, route, invS) {
-        var _this = this;
         this.auth = auth;
         this.router = router;
         this.route = route;
         this.invS = invS;
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     DeleteInvitationComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.route.params.subscribe(function (params) {
             _this.getInvitation(params['id']);
         });
@@ -534,7 +532,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/invitation-list/invitation-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && user.role==='admin'\" class=\"main\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Tipo de usuario: {{invitation.role}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"role\" value={{invitation.role}}>\n    <p>Nombre de usuario: {{invitation.username | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"username\" value={{invitation.username}}>\n    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"collegiate\" value={{invitation.collegiate}}>\n    <p>Especialidad: {{invitation.speciality | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"speciality\" value={{invitation.speciality}}>\n    <p>Nombre: {{invitation.name | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"name\" value={{invitation.name}}>\n    <p>Teléfono: {{invitation.phone | json}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"phone\" value={{invitation.phone}}>\n    <p>Email: {{invitation.email | json}}</p>\n    <input hidden=\"true\" type=\"email\" name=\"email\" value={{invitation.email}}>\n    <button (click)=\"create(invitation)\">Crear usuario</button>\n    <a [routerLink]=\"[invitation._id, user._id]\"> Borrar invitación </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && user.role==='admin'\" class=\"main\">\n\n  <h1>Invitaciones pendientes</h1>\n\n  <div class=\"invitation\" *ngFor=\"let invitation of invitations\">\n    <p>Tipo de usuario: {{invitation.role}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"role\" value={{invitation.role}}>\n    <p>Nombre de usuario: {{invitation.username}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"username\" value={{invitation.username}}>\n    <p>Nº de colegiado: {{invitation.collegiate}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"collegiate\" value={{invitation.collegiate}}>\n    <p>Especialidad: {{invitation.speciality}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"speciality\" value={{invitation.speciality}}>\n    <p>Nombre: {{invitation.name}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"name\" value={{invitation.name}}>\n    <p>Teléfono: {{invitation.phone}}</p>\n    <input hidden=\"true\" type=\"text\" name=\"phone\" value={{invitation.phone}}>\n    <p>Email: {{invitation.email}}</p>\n    <input hidden=\"true\" type=\"email\" name=\"email\" value={{invitation.email}}>\n    <button (click)=\"create(invitation)\">Crear usuario</button>\n    <a [routerLink]=\"[invitation._id, user._id]\"> Borrar invitación </a>\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -562,16 +560,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var InvitationListComponent = (function () {
     function InvitationListComponent(router, invS, auth) {
-        var _this = this;
         this.router = router;
         this.invS = invS;
         this.auth = auth;
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     InvitationListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.invS.getList().subscribe(function (e) { return _this.invitations = e; });
     };
     InvitationListComponent.prototype.create = function (inv) {
@@ -651,7 +648,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var InvitationComponent = (function () {
     function InvitationComponent(auth, invS, router) {
-        var _this = this;
         this.auth = auth;
         this.invS = invS;
         this.router = router;
@@ -664,11 +660,12 @@ var InvitationComponent = (function () {
             phone: "",
             email: "",
         };
+    }
+    InvitationComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
-    }
-    InvitationComponent.prototype.ngOnInit = function () {
     };
     InvitationComponent.prototype.askForInvitation = function () {
         var _this = this;
@@ -719,7 +716,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/job-details/job-details.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user && job\" class=\"container\">\n\n  <h1 *ngIf=\"user && user.role==='doctor'\">¿Estás seguro de que quieres solicitar esta oferta?</h1>\n\n  <h1>{{job.title}}</h1>\n\n  <div class=\"job\">\n    <div class=\"data\">\n      <p><b>Oferta:</b> {{job.title | json}}</p>\n      <p><b>Especialidad:</b> {{job.speciality | json}}</p>\n      <p><b>Centro:</b> {{job.center.title | json}}</p>\n      <li><em>{{job.center.address.streetaddress | json}}</em></li>\n      <li><em>{{job.center.address.locality | json}}</em></li>\n      <li><em>{{job.center.address.postalcode | json}}</em></li>\n      <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n      <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n      <p><b>Descripción:</b> {{job.description | json}}</p>\n      <p *ngIf=\"job.doctor && user.role!='doctor'\"><b>SOLICITUDES:</b> </p>\n      <ul *ngIf=\"job.doctor && user.role!='doctor'\">\n        <li *ngFor=\"let doc of job.doctor\">\n          {{doc.username | json}}\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"deleteUser(job._id, doc._id)\">Eliminar usuario</button>\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"acceptUser(job._id, doc._id)\">Aceptar usuario</button>\n        </li>\n      </ul>\n      <button class=\"regbutton\" (click)=\"applyJob(job._id, user._id)\" *ngIf=\"user && user.role==='doctor'\">Solicitar puesto</button>\n      <button class=\"regbutton\" (click)=\"deleteJob(job._id)\" *ngIf=\"user._id === job.creator\">Eliminar oferta</button>\n      <a [routerLink]=\"['/dashboard']\">Volver</a>\n    </div>\n    <div class=\"map\">\n      <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n        <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n      </agm-map>\n    </div>\n\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user && job\" class=\"container\">\n\n  <h1 *ngIf=\"user && user.role==='doctor'\">¿Estás seguro de que quieres solicitar esta oferta?</h1>\n\n  <h1>{{job.title}}</h1>\n\n  <div class=\"job\">\n    <div class=\"data\">\n      <p><b>Oferta:</b> {{job.title}}</p>\n      <p><b>Especialidad:</b> {{job.speciality | json}}</p>\n      <p><b>Centro:</b> {{job.center.title}}</p>\n      <li><em>{{job.center.address.streetaddress}}</em></li>\n      <li><em>{{job.center.address.locality}}</em></li>\n      <li><em>{{job.center.address.postalcode}}</em></li>\n      <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>\n      <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>\n      <p><b>Descripción:</b> {{job.description}}</p>\n      <p *ngIf=\"job.doctor && user.role!='doctor'\"><b>SOLICITUDES:</b> </p>\n      <ul *ngIf=\"job.doctor && user.role!='doctor'\">\n        <li *ngFor=\"let doc of job.doctor\">\n          {{doc.username}}\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"deleteUser(job._id, doc._id)\">Eliminar usuario</button>\n          <button *ngIf=\"user._id === job.creator\" class=\"button\" (click)=\"acceptUser(job._id, doc._id)\">Aceptar usuario</button>\n        </li>\n      </ul>\n      <button class=\"regbutton\" (click)=\"applyJob(job._id, user._id)\" *ngIf=\"user && user.role==='doctor'\">Solicitar puesto</button>\n      <button class=\"regbutton\" (click)=\"deleteJob(job._id)\" *ngIf=\"user._id === job.creator\">Eliminar oferta</button>\n      <a [routerLink]=\"['/dashboard']\">Volver</a>\n    </div>\n    <div class=\"map\">\n      <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\">\n        <agm-marker [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n      </agm-map>\n    </div>\n\n  </div>\n\n</div>\n\n<div *ngIf=\"!user\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -747,18 +744,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var JobDetailsComponent = (function () {
     function JobDetailsComponent(auth, router, route, jobS) {
-        var _this = this;
         this.auth = auth;
         this.router = router;
         this.route = route;
         this.jobS = jobS;
         this.zoom = 15;
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     JobDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.route.params.subscribe(function (params) {
             _this.getJob(params['id']);
         });
@@ -860,7 +856,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var JobComponent = (function () {
     function JobComponent(jobS, centerS, auth, router) {
-        var _this = this;
         this.jobS = jobS;
         this.centerS = centerS;
         this.auth = auth;
@@ -873,12 +868,12 @@ var JobComponent = (function () {
             speciality: "",
             description: ""
         };
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     JobComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.centerS.getCenters()
             .subscribe(function (centers) { return _this.centers = centers; });
     };
@@ -958,18 +953,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var LoginformComponent = (function () {
     function LoginformComponent(auth, router) {
-        var _this = this;
         this.auth = auth;
         this.router = router;
         this.formInfo = {
             username: "",
             password: ""
         };
+    }
+    LoginformComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
-    }
-    LoginformComponent.prototype.ngOnInit = function () {
     };
     LoginformComponent.prototype.login = function () {
         var _this = this;
@@ -1050,7 +1045,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var NewAlertComponent = (function () {
     function NewAlertComponent(alertS, centerS, auth, router) {
-        var _this = this;
         this.alertS = alertS;
         this.centerS = centerS;
         this.auth = auth;
@@ -1060,12 +1054,12 @@ var NewAlertComponent = (function () {
             center: "",
             speciality: "",
         };
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     NewAlertComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.centerS.getCenters()
             .subscribe(function (centers) { return _this.centers = centers; });
     };
@@ -1251,7 +1245,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AlertsService = (function () {
     function AlertsService(http) {
         this.http = http;
-        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL;
+        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL + '/api';
         this.options = { withCredentials: true };
     }
     AlertsService.prototype.handleError = function (e) {
@@ -1318,7 +1312,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL;
+var BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL + '/api';
 var AuthService = (function () {
     function AuthService(http, router) {
         this.http = http;
@@ -1427,7 +1421,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CentersService = (function () {
     function CentersService(http) {
         this.http = http;
-        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL;
+        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL + '/api';
         this.options = { withCredentials: true };
     }
     CentersService.prototype.handleError = function (e) {
@@ -1476,7 +1470,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DashboardService = (function () {
     function DashboardService(http) {
         this.http = http;
-        this.BASEURL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].BASEURL;
+        this.BASEURL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].BASEURL + '/api';
         this.options = { withCredentials: true };
     }
     DashboardService.prototype.viewDashboard = function () {
@@ -1524,7 +1518,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var InvitationService = (function () {
     function InvitationService(http) {
         this.http = http;
-        this.BASEURL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].BASEURL;
+        this.BASEURL = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].BASEURL + '/api';
         this.options = { withCredentials: true };
     }
     InvitationService.prototype.handleError = function (e) {
@@ -1626,7 +1620,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var JobService = (function () {
     function JobService(http) {
         this.http = http;
-        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL;
+        this.BASEURL = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].BASEURL + '/api';
         this.options = { withCredentials: true };
     }
     JobService.prototype.handleError = function (e) {
@@ -1715,7 +1709,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SignupformComponent = (function () {
     function SignupformComponent(auth, router) {
-        var _this = this;
         this.auth = auth;
         this.router = router;
         this.formInfo = {
@@ -1728,11 +1721,12 @@ var SignupformComponent = (function () {
             speciality: "",
             role: ""
         };
+    }
+    SignupformComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
-    }
-    SignupformComponent.prototype.ngOnInit = function () {
     };
     SignupformComponent.prototype.signup = function () {
         var _this = this;
@@ -1783,7 +1777,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/single-alert/single-alert.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{alert.title}}</h1>\n<p><b>Centro:</b> {{alert.center.title | json}}</p>\n<p><b>Especialidad:</b> {{alert.speciality | json}}</p>\n<button (click)=\"deleteAlert()\">Borrar alerta</button>\n"
+module.exports = "<h1>{{alert.title}}</h1>\n<p><b>Centro:</b> {{alert.center.title}}</p>\n<p><b>Especialidad:</b> {{alert.speciality}}</p>\n<button (click)=\"deleteAlert()\">Borrar alerta</button>\n"
 
 /***/ }),
 
@@ -1881,7 +1875,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UserprofileComponent = (function () {
     function UserprofileComponent(auth, router) {
-        var _this = this;
         this.auth = auth;
         this.router = router;
         this.formInfo = {
@@ -1892,6 +1885,9 @@ var UserprofileComponent = (function () {
             email: ""
         };
         this.control = true;
+    }
+    UserprofileComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) {
@@ -1906,8 +1902,6 @@ var UserprofileComponent = (function () {
                 };
             }
         });
-    }
-    UserprofileComponent.prototype.ngOnInit = function () {
     };
     UserprofileComponent.prototype.upload = function () {
         var _this = this;
@@ -1954,7 +1948,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/users-list/users-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user.role==='admin'\" class=\"main\">\n\n  <h1>Listado de usuarios</h1>\n\n  <div class=\"user\" *ngFor=\"let user of users\">\n    <p><b>Tipo de usuario:</b> {{user.role | json}}</p>\n    <p><b>DNI:</b> {{user.username | json}}</p>\n    <p><b>Nombre y apellidos:</b> {{user.name | json}}</p>\n    <p><b>Teléfono:</b> {{user.phone | json}}</p>\n    <p><b>Nº de colegiado:</b> {{user.collegiate | json}}</p>\n    <p><b>Especialidad:</b> {{user.speciality | json}}</p>\n    <button *ngIf=\"user.role!='admin'\"(click)=deleteUser(user._id)>Eliminar usuario</button>\n  </div>\n\n</div>\n\n<div *ngIf=\"user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
+module.exports = "<div *ngIf=\"user.role==='admin'\" class=\"main\">\n\n  <h1>Listado de usuarios</h1>\n\n  <div class=\"user\" *ngFor=\"let user of users\">\n    <p><b>Tipo de usuario:</b> {{user.role}}</p>\n    <p><b>DNI:</b> {{user.username}}</p>\n    <p><b>Nombre y apellidos:</b> {{user.name}}</p>\n    <p><b>Teléfono:</b> {{user.phone}}</p>\n    <p><b>Nº de colegiado:</b> {{user.collegiate}}</p>\n    <p><b>Especialidad:</b> {{user.speciality}}</p>\n    <button *ngIf=\"user.role!='admin'\"(click)=deleteUser(user._id)>Eliminar usuario</button>\n  </div>\n\n</div>\n\n<div *ngIf=\"user.role!='admin'\" class=\"unauthorized\">\n  <p>No tiene permiso para ver esta página. Por favor, póngase en contacto con el administrador del sistema.</p>\n  <a [routerLink]=\"['']\">Volver</a>\n</div>\n"
 
 /***/ }),
 
@@ -1978,14 +1972,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UsersListComponent = (function () {
     function UsersListComponent(auth) {
-        var _this = this;
         this.auth = auth;
-        this.user = this.auth.getUser();
-        this.auth.getLoginEventEmitter()
-            .subscribe(function (user) { return _this.user = user; });
     }
     UsersListComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
         this.auth.getUsers().subscribe(function (u) { return _this.users = u; });
     };
     UsersListComponent.prototype.deleteUser = function (id) {
@@ -2017,16 +2010,16 @@ var _a;
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
+// export const environment = {
+//   production: true,
+//   BASEURL: ''
+// };
+//local
 // The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    BASEURL: ''
+    production: false,
+    BASEURL: 'http://localhost:3000'
 };
-//local
-// export const environment = {
-//   production: false,
-//   BASEURL: 'http://localhost:3000'
-// };
 //# sourceMappingURL=environment.js.map
 
 /***/ }),

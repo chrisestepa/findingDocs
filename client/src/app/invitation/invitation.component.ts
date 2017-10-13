@@ -23,12 +23,13 @@ export class InvitationComponent implements OnInit {
   message: string;
   user:any;
   constructor(public auth:AuthService, public invS:InvitationService, public router: Router) {
-    this.user = this.auth.getUser();
-    this.auth.getLoginEventEmitter()
-        .subscribe( user => this.user=user );
+
   }
 
   ngOnInit() {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user=user );
   }
 
   askForInvitation(){

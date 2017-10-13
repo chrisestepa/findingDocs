@@ -14,14 +14,14 @@ export class DashboardComponent implements OnInit {
   user: object;
   zoom:number = 17;
   constructor(public dashS:DashboardService, public auth: AuthService, public alertS:AlertsService) {
+
+  }
+
+  ngOnInit() {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => this.user = user);
     this.dashS.viewDashboard().subscribe(e => this.jobs = e);
-  }
-
-  ngOnInit() {
-
   }
 
 }

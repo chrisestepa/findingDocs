@@ -5,17 +5,17 @@
   <div class="invitation" *ngFor="let invitation of invitations">
     <p>Tipo de usuario: {{invitation.role}}</p>
     <input hidden="true" type="text" name="role" value={{invitation.role}}>
-    <p>Nombre de usuario: {{invitation.username | json}}</p>
+    <p>Nombre de usuario: {{invitation.username}}</p>
     <input hidden="true" type="text" name="username" value={{invitation.username}}>
-    <p>Nº de colegiado: {{invitation.collegiate | json}}</p>
+    <p>Nº de colegiado: {{invitation.collegiate}}</p>
     <input hidden="true" type="text" name="collegiate" value={{invitation.collegiate}}>
-    <p>Especialidad: {{invitation.speciality | json}}</p>
+    <p>Especialidad: {{invitation.speciality}}</p>
     <input hidden="true" type="text" name="speciality" value={{invitation.speciality}}>
-    <p>Nombre: {{invitation.name | json}}</p>
+    <p>Nombre: {{invitation.name}}</p>
     <input hidden="true" type="text" name="name" value={{invitation.name}}>
-    <p>Teléfono: {{invitation.phone | json}}</p>
+    <p>Teléfono: {{invitation.phone}}</p>
     <input hidden="true" type="text" name="phone" value={{invitation.phone}}>
-    <p>Email: {{invitation.email | json}}</p>
+    <p>Email: {{invitation.email}}</p>
     <input hidden="true" type="email" name="email" value={{invitation.email}}>
     <button (click)="create(invitation)">Crear usuario</button>
     <a [routerLink]="[invitation._id, user._id]"> Borrar invitación </a>

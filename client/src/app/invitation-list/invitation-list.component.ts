@@ -17,12 +17,13 @@ export class InvitationListComponent implements OnInit {
 
     message: string;
   constructor(public router: Router, public invS:InvitationService, public auth: AuthService) {
-    this.user = this.auth.getUser();
-    this.auth.getLoginEventEmitter()
-      .subscribe(user => this.user = user);
+
   }
 
   ngOnInit() {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+      .subscribe(user => this.user = user);
     this.invS.getList().subscribe(e => this.invitations = e);
   }
 

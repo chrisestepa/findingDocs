@@ -6,19 +6,19 @@
 
   <div class="job">
     <div class="data">
-      <p><b>Oferta:</b> {{job.title | json}}</p>
+      <p><b>Oferta:</b> {{job.title}}</p>
       <p><b>Especialidad:</b> {{job.speciality | json}}</p>
-      <p><b>Centro:</b> {{job.center.title | json}}</p>
-      <li><em>{{job.center.address.streetaddress | json}}</em></li>
-      <li><em>{{job.center.address.locality | json}}</em></li>
-      <li><em>{{job.center.address.postalcode | json}}</em></li>
+      <p><b>Centro:</b> {{job.center.title}}</p>
+      <li><em>{{job.center.address.streetaddress}}</em></li>
+      <li><em>{{job.center.address.locality}}</em></li>
+      <li><em>{{job.center.address.postalcode}}</em></li>
       <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>
       <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>
-      <p><b>Descripción:</b> {{job.description | json}}</p>
+      <p><b>Descripción:</b> {{job.description}}</p>
       <p *ngIf="job.doctor && user.role!='doctor'"><b>SOLICITUDES:</b> </p>
       <ul *ngIf="job.doctor && user.role!='doctor'">
         <li *ngFor="let doc of job.doctor">
-          {{doc.username | json}}
+          {{doc.username}}
           <button *ngIf="user._id === job.creator" class="button" (click)="deleteUser(job._id, doc._id)">Eliminar usuario</button>
           <button *ngIf="user._id === job.creator" class="button" (click)="acceptUser(job._id, doc._id)">Aceptar usuario</button>
         </li>

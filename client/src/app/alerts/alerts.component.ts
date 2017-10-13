@@ -14,12 +14,13 @@ export class AlertsComponent implements OnInit {
   user:object;
   alerts:any;
   constructor(public router:Router, public alertServ: AlertsService, public auth: AuthService) {
-    this.user = this.auth.getUser();
-    this.auth.getLoginEventEmitter()
-      .subscribe(user => this.user = user);
+
   }
 
   ngOnInit() {
+    this.user = this.auth.getUser();
+    this.auth.getLoginEventEmitter()
+      .subscribe(user => this.user = user);
     this.alertServ.getAlerts().subscribe( alerts => this.alerts=alerts);
   }
 

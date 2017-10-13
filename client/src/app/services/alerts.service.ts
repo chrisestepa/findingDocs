@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class AlertsService {
 
-  public BASEURL = environment.BASEURL;
+  public BASEURL = environment.BASEURL + '/api';
   private options = { withCredentials: true };
 
   constructor(private http: Http) {

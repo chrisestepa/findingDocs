@@ -18,20 +18,19 @@ const alertRoutes = require('./routes/alerts');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const app = express();
 
 require('./config/database');
+const app = express();
 
 var whitelist = ['http://localhost:4200'];
+
+
+
 var corsOptions = {
-  origin: function(origin, callback) {
-    var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-    callback(null, originIsWhitelisted);
-  },
-  credentials: true
+    origin: true,
+    credentials: true
 };
 app.use(cors(corsOptions));
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -41,7 +40,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: process.env.PATH_SECRET,
@@ -60,16 +59,16 @@ require('./passport/local');
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', authRoutes);
-app.use('/', dashRoutes);
-app.use('/', jobRoutes);
-app.use('/', centersRoute);
-app.use('/', invitationRoute);
-app.use('/', alertRoutes);
+app.use('/api', authRoutes);
+app.use('/api', dashRoutes);
+app.use('/api', jobRoutes);
+app.use('/api', centersRoute);
+app.use('/api', invitationRoute);
+app.use('/api', alertRoutes);
 
-app.all((req, res, next) => {
-  res.sendfile(__dirname + '/public/index.html')
-});
+app.all('/*', function (req, res) {
+   res.sendFile(__dirname + '/public/index.html');
+ });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

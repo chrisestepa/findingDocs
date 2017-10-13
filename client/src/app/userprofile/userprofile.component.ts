@@ -21,6 +21,9 @@ export class UserprofileComponent implements OnInit {
   user: any;
   control: boolean = true;
   constructor(public auth: AuthService, public router: Router) {
+  }
+
+  ngOnInit() {
     this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter()
       .subscribe(user => {this.user = user;
@@ -32,9 +35,7 @@ export class UserprofileComponent implements OnInit {
           speciality: user.speciality,
           email: user.email}
         }});
-  }
 
-  ngOnInit() {
   }
 
   upload() {

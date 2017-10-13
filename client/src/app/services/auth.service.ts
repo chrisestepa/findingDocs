@@ -5,7 +5,7 @@ import 'rxjs';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 
-const BASEURL = environment.BASEURL;
+const BASEURL = environment.BASEURL + '/api';
 
 @Injectable()
 export class AuthService {

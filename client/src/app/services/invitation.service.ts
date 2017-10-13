@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class InvitationService {
 
-  public BASEURL = environment.BASEURL;
+  public BASEURL = environment.BASEURL + '/api';
   private options = { withCredentials: true };
 
   constructor(private http: Http) {
