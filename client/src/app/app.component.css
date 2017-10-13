@@ -120,13 +120,14 @@
     height: 65px;
     width: 100%;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     position: fixed;
     z-index: 1;
     top: 70px;
+    padding: 0 5px;
   }
   .menu a {
-    margin: 0 15px;
+    margin: 30px 20px;
     text-decoration: none;
     color: #0059b3;
   }
@@ -138,7 +139,7 @@
   button {
     border: 1px solid black;
     height: 20px;
-    margin: 10px;
+    margin: 5px;
     font-size: 10px;
   }
 

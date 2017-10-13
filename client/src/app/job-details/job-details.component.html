@@ -1,8 +1,8 @@
 <div *ngIf="user && job" class="container">
 
-  <h1 *ngIf="user && user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h1>
+  <h2 *ngIf="user && user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h2>
 
-  <h1>{{job.title}}</h1>
+  <h2>{{job.title}}</h2>
 
   <div class="job">
     <div class="data">

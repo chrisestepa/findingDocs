@@ -1,5 +1,5 @@
 @media screen and (min-width: 480px) {
-  h1 {
+  h2 {
     text-align: center;
   }
   .alert {
@@ -29,8 +29,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  h1 {
-    font-size: 17px;
+  h2 {
     text-align: center;
   }
 

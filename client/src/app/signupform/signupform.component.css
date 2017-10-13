@@ -12,6 +12,7 @@
     text-align: center;
   }
   .form input {
+    background: rgba(204, 230, 255, 0.2);
     width: 100%;
     margin: 10px 0;
     height: 20px;
@@ -26,7 +27,7 @@
     font-size: 15px;
     height: 25px;
     width: 100%;
-    background: white;
+    background: rgba(204, 230, 255, 0.2);
   }
   .select {
     float: right;

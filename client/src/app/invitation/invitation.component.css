@@ -17,12 +17,14 @@
     vertical-align: middle;
   }
   .select select {
+    background: rgba(204, 230, 255, 0.2);
     float: right;
     font-size: 15px;
     height: 25px;
     background: AliceBlue;
   }
   .form input {
+    background: rgba(204, 230, 255, 0.2);
     width: 100%;
     margin: 10px 0;
     height: 20px;
@@ -36,10 +38,10 @@
     font-size: 1vw;
   }
   .speciality {
+    background: rgba(204, 230, 255, 0.2);
     font-size: 15px;
     height: 25px;
     width: 100%;
-    background: white;
   }
   .back {
     margin: 0 20px;
@@ -75,6 +77,7 @@
     border: 2px solid black;
   }
   .form input {
+    background: rgba(204, 230, 255, 0.2);
     width: 100%;
     margin: 5px 0;
     height: 20px;
@@ -94,7 +97,7 @@
     font-size: 15px;
     height: 25px;
     width: 100%;
-    background: white;
+    background: rgba(204, 230, 255, 0.2);
     border: 2px solid black;
   }
   .back {

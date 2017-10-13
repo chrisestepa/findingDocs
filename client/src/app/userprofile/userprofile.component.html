@@ -5,9 +5,9 @@
 
 <div *ngIf="user">
   <div class="container" *ngIf="control">
+    <h2> Cuenta </h2>
     <div class="form">
       <form>
-        <h2> Cuenta </h2>
         <label> DNI </label>
         <input type="text" value={{user.username}} name="username" disabled/>
         <br>
@@ -31,9 +31,9 @@
   </div>
 
   <div *ngIf="!control" class="container">
+    <h2> Edición de usuario </h2>
     <div class="form">
       <form>
-        <h2> Edición de usuario </h2>
         <label> Nombre de usuario </label>
         <input class="red" type="text" value="{{user.username}}" name="username" disabled/>
         <br>

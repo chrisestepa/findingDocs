@@ -14,7 +14,7 @@
     width: 100%;
     margin: 10px 0;
     height: 20px;
-    background: white;
+    background: rgba(204, 230, 255, 0.2);
     font-size: 15px;
   }
   .form {
@@ -29,6 +29,7 @@
     float: left;
   }
   .form input {
+    background: rgba(204, 230, 255, 0.2);
     width: 100%;
     margin: 5px;
     height: 20px;
@@ -69,7 +70,7 @@
     width: 100%;
     margin: 10px 0;
     height: 20px;
-    background: white;
+    background: rgba(204, 230, 255, 0.2);
     font-size: 15px;
   }
   .form {
@@ -84,6 +85,7 @@
     float: left;
   }
   .form input {
+    background: rgba(204, 230, 255, 0.2);
     border: 2px solid black;
     width: 90%;
     margin: 5px;

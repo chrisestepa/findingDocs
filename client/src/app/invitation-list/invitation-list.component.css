@@ -1,10 +1,12 @@
 @media screen and (min-width: 480px) {
-  h1 {
+  h2 {
     text-align: center;
   }
   .invitation {
-    width: 50%;
+    background: rgba(204, 230, 255, 0.2);
+    width: 30%;
     border: 2px solid black;
+    border-radius: 15px;
     margin: 10px auto;
     padding: 5px 20px;
   }
@@ -32,14 +34,16 @@
     width:90%;
   }
 
-  h1 {
+  h2 {
     text-align: center;
     font-size: 17px;
   }
   .invitation {
+    background: rgba(204, 230, 255, 0.2);
     font-size: 15px;
     width: 80%;
     border: 2px solid black;
+    border-radius: 15px;
     margin: 10px 30px;
     padding: 5px 20px;
   }

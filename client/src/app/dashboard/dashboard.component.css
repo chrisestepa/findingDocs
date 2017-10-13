@@ -2,13 +2,15 @@
   .container {
     text-align: center;
   }
-  h1 {
+  h2 {
     text-align: center;
   }
   .job {
+    background: rgba(204, 230, 255, 0.2);
     display: inline-block;
     width: 50%;
     border: 2px solid black;
+    border-radius: 15px;
     margin: 10px auto;
     padding: 5px 20px;
   }
@@ -34,7 +36,7 @@
   }
   .map {
     float: right;
-    border: 2px solid navy;
+    border: 2px solid blue;
   }
   agm-map {
     height: 280px;
@@ -47,13 +49,15 @@
     margin-top: 140px;
     text-align: center;
   }
-  h1 {
+  h2 {
     text-align: center;
   }
   .job {
+    background: rgba(204, 230, 255, 0.2);
     display: inline-block;
     width: 90%;
     border: 2px solid black;
+    border-radius: 15px;
     margin: 5px auto;
     padding: 2px 10px;
   }

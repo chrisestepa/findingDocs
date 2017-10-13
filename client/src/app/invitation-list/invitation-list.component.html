@@ -1,6 +1,6 @@
 <div *ngIf="user && user.role==='admin'" class="main">
 
-  <h1>Invitaciones pendientes</h1>
+  <h2>Invitaciones pendientes</h2>
 
   <div class="invitation" *ngFor="let invitation of invitations">
     <p>Tipo de usuario: {{invitation.role}}</p>

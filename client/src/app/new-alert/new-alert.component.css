@@ -1,42 +1,79 @@
-.container {
-  margin: 0 auto;
-  padding: 20px;
-  width: 40%;
+@media screen and (min-width: 480px) {
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 40%;
+  }
+  .container h2 {
+    text-align: center;
+  }
+  .container input {
+    background: rgba(204, 230, 255, 0.2);
+    width: 100%;
+    margin: 10px 0;
+  }
+  .container select {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+    height: 25px;
+    background: rgba(204, 230, 255, 0.2);
+  }
+  .select {
+    margin: 0 auto;
+    padding: 10px 0px;
+    width: 60%;
+  }
+  .button {
+    text-align: center;
+  }
+  .button button {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 1vw;
+  }
+  a {
+    margin: 0 20px;
+  }
 }
 
-.container h2 {
-  text-align: center;
-}
-
-.container input {
-  width: 100%;
-  margin: 10px 0;
-}
-
-.container select {
-  width: 100%;
-  margin: 10px 0;
-  font-size: 15px;
-  height: 25px;
-  background: white;
-}
-
-.select {
-  margin: 0 auto;
-  padding: 10px 0px;
-  width: 60%;
-}
-
-.button {
-  text-align: center;
-}
-
-.button button {
-  height: 30px;
-  margin: 10px 0;
-  font-size: 1vw;
-}
-
-a {
-  margin: 0 20px;
+@media screen and (max-width: 479px) {
+  .container {
+    margin: 100px auto;
+    padding: 20px;
+    width: 80%;
+  }
+  .container h2 {
+    text-align: center;
+  }
+  .container input {
+    background: rgba(204, 230, 255, 0.2);
+    width: 100%;
+    margin: 10px 0;
+  }
+  .container select {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+    height: 25px;
+    background: rgba(204, 230, 255, 0.2);
+  }
+  .select {
+    margin: 0 auto;
+    padding: 10px 0px;
+    width: 60%;
+  }
+  .button {
+    text-align: center;
+  }
+  .button button {
+    height: 30px;
+    margin: 10px 0;
+    font-size: 15px;
+    background: navy;
+    color: white;
+  }
+  a {
+    margin: 0 20px;
+  }
 }

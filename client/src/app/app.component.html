@@ -14,15 +14,15 @@
 </header>
 
 <div class="menu">
-  <a *ngIf="user" [routerLink]="['/dashboard']">Tablón de ofertas</a>
-  <a *ngIf="user && user.role=='manager'" [routerLink]="['/job']">Crear oferta</a>
-  <a *ngIf="!user" [routerLink]="['/login']">Iniciar sesión</a>
-  <a *ngIf="!user" [routerLink]="['/invitation']">Solicitar invitación</a>
-  <a *ngIf="user" [routerLink]="['/user']">Datos de usuario</a>
-  <a *ngIf="user && user.role=='doctor'" [routerLink]="['/alerts']">Mis alertas</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/userslist']">Listado de usuarios</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']">Añadir usuario</a>
-  <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']">Lista de invitaciones</a>
+  <a *ngIf="user" [routerLink]="['/dashboard']"><b>Tablón de ofertas</b></a>
+  <a *ngIf="user && user.role=='manager'" [routerLink]="['/job']"><b>Crear oferta</b></a>
+  <a *ngIf="!user" [routerLink]="['/login']"><b>Iniciar sesión</b></a>
+  <a *ngIf="!user" [routerLink]="['/invitation']"><b>Solicitar invitación</b></a>
+  <a *ngIf="user" [routerLink]="['/user']"><b>Datos de usuario</b></a>
+  <a *ngIf="user && user.role=='doctor'" [routerLink]="['/alerts']"><b>Mis alertas</b></a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/userslist']"><b>Listado de usuarios</b></a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/signup']"><b>Añadir usuario</b></a>
+  <a *ngIf="user && user.role=='admin'" [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a>
   <button *ngIf="user" (click)="auth.logout()">Cerrar sesión</button>
 </div>
 
