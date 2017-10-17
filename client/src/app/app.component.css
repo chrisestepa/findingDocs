@@ -29,7 +29,7 @@ header {
 .title h1 {
   padding: 20px;
   font-family: 'Baloo Tammudu';
-  font-size: 60px;
+  font-size: 6vw;
   color: #003366;
 }
 
@@ -38,7 +38,8 @@ header {
   color: #003366;
 }
 
-.menu {
+.navbar {
+  border: 0px;
   width: 100%;
   background: #115599;
   text-align: center;
@@ -48,16 +49,22 @@ header {
   font-family: 'Montserrat', sans-serif;
 }
 
-.menu li {
-  display: inline-block;
+#myNavbar ul {
+  border: 0px;
+  text-align: center;
+  background: #115599;
+  color: white;
+  width: 100%;
 }
 
-.menu a {
-  text-decoration: none;
-  font-weight: lighter;
-  padding: 17px;
+li b {
+  text-align: center;
   color: white;
-  margin: 10px;
+}
+
+.navbar {
+  border: 0px;
+  border-radius: 0;
 }
 
 .user button {
@@ -74,8 +81,7 @@ header {
 }
 
 .logo-container img {
-  width: 130px;
-  height: 110px;
+  width: 50%;
   margin: 10px 0;
 }
 
