@@ -2,14 +2,19 @@
 
   <h2>Listado de usuarios</h2>
 
-  <div class="user" *ngFor="let user of users">
-    <p><b>Tipo de usuario:</b> {{user.role}}</p>
-    <p><b>DNI:</b> {{user.username}}</p>
-    <p><b>Nombre y apellidos:</b> {{user.name}}</p>
-    <p><b>Teléfono:</b> {{user.phone}}</p>
-    <p><b>Nº de colegiado:</b> {{user.collegiate}}</p>
-    <p><b>Especialidad:</b> {{user.speciality}}</p>
-    <button *ngIf="user.role!='admin'"(click)=deleteUser(user._id)>Eliminar usuario</button>
+  <div *ngFor="let user of users">
+    <section *ngIf="user.name != 'admin'">
+      <div class="user">
+        <p><b>Tipo de usuario:</b> {{user.role}}</p>
+        <p><b>DNI:</b> {{user.username}}</p>
+        <p><b>Nombre y apellidos:</b> {{user.name}}</p>
+        <p><b>Teléfono:</b> {{user.phone}}</p>
+        <p><b>Nº de colegiado:</b> {{user.collegiate}}</p>
+        <p><b>Especialidad:</b> {{user.speciality}}</p>
+        <a class="delete" *ngIf="user.role!='admin'" (click)=deleteUser(user._id)>Eliminar usuario</a>
+        <br>
+      </div>
+    </section>
   </div>
 
 </div>

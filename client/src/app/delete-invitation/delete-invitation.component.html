@@ -1,15 +1,15 @@
 <div *ngIf="user && user.role==='admin'">
 
-  <h2>¿Está seguro de que quiere borrar esta petición?</h2>
+  <h3>¿Está seguro de que quiere borrar esta petición?</h3>
 
   <div class="invitation">
-    <p>Usuario: {{invitation.username}}</p>
-    <p>Nº de colegiado: {{invitation.collegiate}}</p>
-    <p>Especialidad: {{invitation.speciality}}</p>
-    <p>Nombre: {{invitation.name}}</p>
-    <p>Teléfono: {{invitation.phone}}</p>
-    <button (click)="deleteInvitation(invitation._id)">Delete</button>
-    <a [routerLink]="['/invitations']">Cancelar</a>
+    <p><b>Usuario:</b> {{invitation.username}}</p>
+    <p><b>Nº de colegiado:</b> {{invitation.collegiate}}</p>
+    <p><b>Especialidad:</b> {{invitation.speciality}}</p>
+    <p><b>Nombre:</b> {{invitation.name}}</p>
+    <p><b>Teléfono:</b> {{invitation.phone}}</p>
+    <a (click)="deleteInvitation(invitation._id)">Borrar petición</a>
+    <a class="anchor" [routerLink]="['/invitations']">Cancelar</a>
   </div>
 
 </div>

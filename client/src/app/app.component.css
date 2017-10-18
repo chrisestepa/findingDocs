@@ -13,23 +13,25 @@
     padding: 0;
   }
   .title img {
-    width: 7vw;
+    width: 5vw;
     margin: 5px;
+    padding-bottom: 10px;
   }
   .title {
+    display: inline-block;
     width: 100%;
     margin: 0;
     padding: 0;
+    vertical-align: middle;
   }
   .title h1 {
     padding: 0px;
     font-family: 'Baloo Tammudu';
-    font-size: 5vw;
+    font-size: 4vw;
     color: #003366;
     text-align: center;
   }
   .title a {
-    text-align: right;
     text-decoration: none;
     color: #003366;
   }
@@ -43,18 +45,18 @@
   }
   .navbar-nav {
     width: 100%;
-    text-align: center;
+    /*text-align: center;*/
   }
   .navbar-nav > li {
     float: none;
     display: inline-block;
   }
   .navbar .navbar-collapse {
-    text-align: center;
+    /*text-align: center;*/
   }
   #myNavbar ul {
     border: 0px;
-    text-align: center;
+    /*text-align: center;*/
     background: #115599;
     color: white;
     margin: 0;

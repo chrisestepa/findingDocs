@@ -5,27 +5,21 @@
   .invitation {
     background: rgba(204, 230, 255, 0.2);
     width: 30%;
-    border: 2px solid black;
     border-radius: 15px;
     margin: 10px auto;
     padding: 5px 20px;
+    font-family: 'Montserrat';
+    font-size: 17px;
+    color: navy;
   }
-  .invitation button {
-    background: blue;
-    color: white;
-    font-size: 1vw;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
+  .invitation b {
+    color: black;
+    font-weight: bolder;
   }
-  .invitation button:hover {
-    background: navy;
-    color: white;
-    font-size: 1vw;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
+  .anchor {
+    float: right;
   }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -42,25 +36,9 @@
     background: rgba(204, 230, 255, 0.2);
     font-size: 15px;
     width: 80%;
-    border: 2px solid black;
     border-radius: 15px;
     margin: 10px 30px;
     padding: 5px 20px;
   }
-  .invitation button {
-    background: blue;
-    color: white;
-    font-size: 10px;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-  }
-  .invitation button:hover {
-    background: navy;
-    color: white;
-    font-size: 10px;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-  }
+
 }

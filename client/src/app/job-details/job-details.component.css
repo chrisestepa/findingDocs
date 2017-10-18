@@ -1,15 +1,14 @@
-h2 {
+h2, h3 {
   text-align: center;
 }
 .job {
   background: rgba(204, 230, 255, 0.2);
-  width: 70%;
+  width: 60%;
   border-radius: 15px;
   margin: 10px auto;
   padding: 5px 20px;
   font-family: 'Montserrat';
   font-size: 17px;
-  border: 2px solid navy;
 }
 .data {
   text-align: left;
@@ -20,16 +19,38 @@ b {
   font-weight: bolder;
   color: black;
 }
+.doctors {
+  padding-left: 20px;
+}
+.anchor {
+  float: right;
+}
+.anchor a {
+  margin: 0 0 0 20px;
+}
 .map {
   margin: 15px 0 0 0 ;
   padding: 0px;
-  border: 2px solid blue;
+}
+li {
+  padding-left: 20px;
+  list-style: none;
+}
+hr {
+  border: 1px solid lightgrey;
 }
 agm-map {
   padding: 0;
   margin: 0;
   height: 250px;
   width: 100%;
+}
+.back {
+  float: right;
+}
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /*@media screen and (min-width: 480px) {

@@ -2,30 +2,33 @@
 
   <h2 *ngIf="user && user.role==='doctor'">¿Estás seguro de que quieres solicitar esta oferta?</h2>
 
-  <h2>{{job.title}}</h2>
+  <h3>{{job.title}}</h3>
 
   <div class="job">
     <div class="data">
       <p><b>Oferta:</b> {{job.title}}</p>
       <p><b>Especialidad:</b> {{job.speciality | json}}</p>
       <p><b>Centro:</b> {{job.center.title}}</p>
-      <li><em>{{job.center.address.streetaddress}}</em></li>
-      <li><em>{{job.center.address.locality}}</em></li>
-      <li><em>{{job.center.address.postalcode}}</em></li>
+      <li>{{job.center.address.streetaddress}}</li>
+      <li>{{job.center.address.locality}}</li>
+      <li>{{job.center.address.postalcode}}</li>
       <p><b>Fecha de inicio:</b> {{job.datein | date}}</p>
       <p><b>Fecha de finalización:</b> {{job.dateout | date}}</p>
       <p><b>Descripción:</b> {{job.description}}</p>
       <p *ngIf="job.doctor && user.role!='doctor'"><b>SOLICITUDES:</b> </p>
       <ul *ngIf="job.doctor && user.role!='doctor'">
-        <li *ngFor="let doc of job.doctor">
+        <li class="doctors" *ngFor="let doc of job.doctor">
           {{doc.username}}
-          <button *ngIf="user._id === job.creator" class="button" (click)="deleteUser(job._id, doc._id)">Eliminar usuario</button>
-          <button *ngIf="user._id === job.creator" class="button" (click)="acceptUser(job._id, doc._id)">Aceptar usuario</button>
+          <div class="anchor">
+            <a class="anchor" *ngIf="user._id === job.creator" (click)="deleteUser(job._id, doc._id)">Eliminar solicitante</a>
+            <a class="anchor" *ngIf="user._id === job.creator" (click)="acceptUser(job._id, doc._id)">Aceptar solicitante</a>
+          </div>
         </li>
       </ul>
-      <button class="regbutton" (click)="applyJob(job._id, user._id)" *ngIf="user && user.role==='doctor'">Solicitar puesto</button>
-      <button class="regbutton" (click)="deleteJob(job._id)" *ngIf="user._id === job.creator">Eliminar oferta</button>
-      <a [routerLink]="['/dashboard']">Volver</a>
+      <hr>
+      <a (click)="applyJob(job._id, user._id)" *ngIf="user && user.role==='doctor'">Solicitar puesto</a>
+      <a (click)="deleteJob(job._id)" *ngIf="user._id === job.creator">Eliminar oferta</a>
+      <a class="back" [routerLink]="['/dashboard']">Volver</a>
     </div>
     <div class="map">
       <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">

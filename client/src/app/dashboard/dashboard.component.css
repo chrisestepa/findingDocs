@@ -9,7 +9,6 @@ h2 {
   padding: 5px 20px;
   font-family: 'Montserrat';
   font-size: 17px;
-  border: 2px solid navy;
 }
 .data {
   text-align: left;
@@ -23,7 +22,6 @@ b {
 .map {
   margin: 15px 0 0 0 ;
   padding: 0px;
-  border: 2px solid blue;
 }
 agm-map {
   padding: 0;

@@ -24,39 +24,12 @@
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
-        <li class="navbar-right"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></li>
         <li class="navbar-right"><a (click)=auth.logout()><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li class="navbar-right"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></li>
       </ul>
-      <!-- <ul *ngIf="user" class="user nav navbar-nav navbar-right">
-    </ul> -->
     </div>
   </div>
 </nav>
-
-<!-- <nav class="navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="menu collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li *ngIf="user"><a [routerLink]="['/dashboard']"><b>Tablón de ofertas</b></a></li>
-        <li *ngIf="user && user.role=='manager'"><a [routerLink]="['/job']"><b>Crear oferta</b></a></li>
-        <li *ngIf="!user"><a [routerLink]="['/login']"><b>Iniciar sesión</b></a></li>
-        <li *ngIf="!user"><a [routerLink]="['/invitation']"><b>Solicitar invitación</b></a></li>
-        <li *ngIf="user && user.role=='doctor'"><a [routerLink]="['/alerts']"><b>Mis alertas</b></a></li>
-        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
-        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
-        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
 
 <div class="body">
   <router-outlet></router-outlet>

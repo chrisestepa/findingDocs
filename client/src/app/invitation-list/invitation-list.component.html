@@ -3,22 +3,22 @@
   <h2>Invitaciones pendientes</h2>
 
   <div class="invitation" *ngFor="let invitation of invitations">
-    <p>Tipo de usuario: {{invitation.role}}</p>
+    <p><b>Tipo de usuario:</b> {{invitation.role}}</p>
     <input hidden="true" type="text" name="role" value={{invitation.role}}>
-    <p>Nombre de usuario: {{invitation.username}}</p>
+    <p><b>Nombre de usuario:</b> {{invitation.username}}</p>
     <input hidden="true" type="text" name="username" value={{invitation.username}}>
-    <p>Nº de colegiado: {{invitation.collegiate}}</p>
+    <p><b>Nº de colegiado:</b> {{invitation.collegiate}}</p>
     <input hidden="true" type="text" name="collegiate" value={{invitation.collegiate}}>
-    <p>Especialidad: {{invitation.speciality}}</p>
+    <p><b>Especialidad:</b> {{invitation.speciality}}</p>
     <input hidden="true" type="text" name="speciality" value={{invitation.speciality}}>
-    <p>Nombre: {{invitation.name}}</p>
+    <p><b>Nombre:</b> {{invitation.name}}</p>
     <input hidden="true" type="text" name="name" value={{invitation.name}}>
-    <p>Teléfono: {{invitation.phone}}</p>
+    <p><b>Teléfono:</b> {{invitation.phone}}</p>
     <input hidden="true" type="text" name="phone" value={{invitation.phone}}>
-    <p>Email: {{invitation.email}}</p>
+    <p><b>Email:</b> {{invitation.email}}</p>
     <input hidden="true" type="email" name="email" value={{invitation.email}}>
-    <button (click)="create(invitation)">Crear usuario</button>
-    <a [routerLink]="[invitation._id, user._id]"> Borrar invitación </a>
+    <a (click)="create(invitation)">Crear usuario</a>
+    <a class="anchor" [routerLink]="[invitation._id, user._id]"> Borrar invitación </a>
   </div>
 
 </div>
