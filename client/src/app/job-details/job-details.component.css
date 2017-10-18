@@ -1,4 +1,38 @@
-@media screen and (min-width: 480px) {
+h2 {
+  text-align: center;
+}
+.job {
+  background: rgba(204, 230, 255, 0.2);
+  width: 70%;
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 5px 20px;
+  font-family: 'Montserrat';
+  font-size: 17px;
+  border: 2px solid navy;
+}
+.data {
+  text-align: left;
+  padding: 10px;
+  color: navy;
+}
+b {
+  font-weight: bolder;
+  color: black;
+}
+.map {
+  margin: 15px 0 0 0 ;
+  padding: 0px;
+  border: 2px solid blue;
+}
+agm-map {
+  padding: 0;
+  margin: 0;
+  height: 250px;
+  width: 100%;
+}
+
+/*@media screen and (min-width: 480px) {
   .container {
     text-align: center;
   }
@@ -93,4 +127,4 @@
     height: 200px;
     width: 200px;
   }
-}
+}*/

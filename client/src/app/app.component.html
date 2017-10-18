@@ -1,21 +1,12 @@
-<div class="logo-container">
-  <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
-</div>
 <header class="row container">
-  <div *ngIf="user" class="title">
-    <h1><a [routerLink]="['/dashboard']">{{ title }}</a></h1>
-    <div class="user">
-      <p *ngIf="user"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></p>
-      <button *ngIf="user" (click)="auth.logout()">Logout</button>
-    </div>
-  </div>
-  <div *ngIf="!user" class="title">
-    <h1><a [routerLink]="['']">{{ title }}</a></h1>
+  <div class="title">
+    <h1 *ngIf="user"><img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs"><a [routerLink]="['/dashboard']">{{ title }}</a></h1>
+    <h1 *ngIf="!user"><img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs"><a [routerLink]="['']">{{ title }}</a></h1>
   </div>
 </header>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
@@ -33,7 +24,11 @@
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
+        <li class="navbar-right"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></li>
+        <li class="navbar-right"><a (click)=auth.logout()><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
+      <!-- <ul *ngIf="user" class="user nav navbar-nav navbar-right">
+    </ul> -->
     </div>
   </div>
 </nav>

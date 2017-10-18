@@ -4,16 +4,6 @@
     background: #cce6ff;
     margin: 0;
     padding: 0;
-    text-align: center;
-  }
-  .user {
-    margin: 0px;
-    width: 6.5%;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    color: #003366;
-    font-weight: bolder;
-    margin-bottom: 5px;
   }
   .logo-container {
     position: absolute;
@@ -22,7 +12,7 @@
     margin: 0;
     padding: 0;
   }
-  .logo-container img {
+  .title img {
     width: 7vw;
     margin: 5px;
   }
@@ -45,22 +35,29 @@
   }
   .navbar {
     border: 0px;
-    width: 100%;
     background: #115599;
-    text-align: center;
     height: 50px;
     font-size: 17px;
     line-height: 50px;
     font-family: 'Montserrat', sans-serif;
+  }
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
   }
   #myNavbar ul {
     border: 0px;
     text-align: center;
     background: #115599;
     color: white;
-    width: 100%;
     margin: 0;
-    padding-left: 320px;
   }
   li b {
     color: white;
@@ -70,13 +67,6 @@
     border-radius: 0;
     margin: 0;
     z-index: 1;
-  }
-  .user button {
-    color: white;
-    background: #003366;
-    line-height: 25px;
-    font-size: 12px;
-    margin: 0;
   }
   .body {
     margin: 0;

@@ -21,12 +21,15 @@ b {
   color: black;
 }
 .map {
-  margin-top: 15px;
+  margin: 15px 0 0 0 ;
+  padding: 0px;
+  border: 2px solid blue;
 }
 agm-map {
-
+  padding: 0;
+  margin: 0;
   height: 250px;
-  width: 300px;
+  width: 100%;
 }
 
 
