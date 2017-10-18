@@ -6,9 +6,9 @@
 
     <h2>Ofertas activas</h2>
 
-    <div class="job" *ngFor="let job of jobs">
+    <div class="job row container" *ngFor="let job of jobs">
 
-      <div class="data">
+      <div class="data col-sm-7">
         <p><b>Oferta:</b> {{job.title }}</p>
         <p><b>Especialidad:</b> {{job.speciality }}</p>
         <p><b>Centro:</b> {{job.center.title }}</p>
@@ -25,7 +25,7 @@
         <a *ngIf="user.role==='manager' || user.role==='admin'" [routerLink]="[job._id]">Ver detalles</a>
       </div>
 
-      <div class="map">
+      <div class="map col-sm-5">
         <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude">
           <agm-marker [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude"></agm-marker>
         </agm-map>

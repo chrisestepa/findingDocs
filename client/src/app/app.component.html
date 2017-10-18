@@ -1,41 +1,41 @@
+<div class="logo-container">
+  <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
+</div>
 <header class="row container">
-  <div class="logo-container col-sm-2">
-    <img class="logo" src="https://preview.ibb.co/gr7rQb/logo.png" alt="findingDocs">
-  </div>
-  <div *ngIf="user" class="title col-sm-8">
+  <div *ngIf="user" class="title">
     <h1><a [routerLink]="['/dashboard']">{{ title }}</a></h1>
+    <div class="user">
+      <p *ngIf="user"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></p>
+      <button *ngIf="user" (click)="auth.logout()">Logout</button>
+    </div>
   </div>
-  <div *ngIf="!user" class="title col-sm-8">
+  <div *ngIf="!user" class="title">
     <h1><a [routerLink]="['']">{{ title }}</a></h1>
-  </div>
-  <div class="user col-md-2">
-    <p *ngIf="user"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></p>
-    <button *ngIf="user" (click)="auth.logout()">Logout</button>
   </div>
 </header>
 
 <nav class="navbar navbar-inverse">
-<div class="container-fluid">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="li" *ngIf="user"><a [routerLink]="['/dashboard']"><b>Tablón de ofertas</b></a></li>
+        <li *ngIf="user && user.role=='manager'"><a [routerLink]="['/job']"><b>Crear oferta</b></a></li>
+        <li *ngIf="!user"><a [routerLink]="['/login']"><b>Iniciar sesión</b></a></li>
+        <li *ngIf="!user"><a [routerLink]="['/invitation']"><b>Solicitar invitación</b></a></li>
+        <li *ngIf="user && user.role=='doctor'"><a [routerLink]="['/alerts']"><b>Mis alertas</b></a></li>
+        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
+        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
+        <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
+      </ul>
+    </div>
   </div>
-  <div class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav">
-      <li class="li" *ngIf="user"><a [routerLink]="['/dashboard']"><b>Tablón de ofertas</b></a></li>
-      <li *ngIf="user && user.role=='manager'"><a [routerLink]="['/job']"><b>Crear oferta</b></a></li>
-      <li *ngIf="!user"><a [routerLink]="['/login']"><b>Iniciar sesión</b></a></li>
-      <li *ngIf="!user"><a [routerLink]="['/invitation']"><b>Solicitar invitación</b></a></li>
-      <li *ngIf="user && user.role=='doctor'"><a [routerLink]="['/alerts']"><b>Mis alertas</b></a></li>
-      <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
-      <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
-      <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
-    </ul>
-  </div>
-</div>
 </nav>
 
 <!-- <nav class="navbar-default">

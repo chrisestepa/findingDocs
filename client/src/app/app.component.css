@@ -1,89 +1,87 @@
-header {
-  width: 100%;
-  background: #cce6ff;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
 
-.user {
-  margin: 0;
-  padding-top: 10px;
-  padding-left: 170px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: left;
-  color: #003366;
-  font-weight: bolder;
-}
-
-.logo-container {
-  margin: 0;
-  padding: 0;
-}
-
-.title {
-  margin: 0;
-  padding: 0;
-}
-
-.title h1 {
-  padding: 20px;
-  font-family: 'Baloo Tammudu';
-  font-size: 6vw;
-  color: #003366;
-}
-
-.title a {
-  text-decoration: none;
-  color: #003366;
-}
-
-.navbar {
-  border: 0px;
-  width: 100%;
-  background: #115599;
-  text-align: center;
-  height: 50px;
-  font-size: 17px;
-  line-height: 50px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#myNavbar ul {
-  border: 0px;
-  text-align: center;
-  background: #115599;
-  color: white;
-  width: 100%;
-}
-
-li b {
-  text-align: center;
-  color: white;
-}
-
-.navbar {
-  border: 0px;
-  border-radius: 0;
-}
-
-.user button {
-  color: white;
-  background: #003366;
-  line-height: 25px;
-  font-size: 12px;
-  margin: 0;
-}
-
-.body {
-  margin: 0;
-  padding: 0;
-}
-
-.logo-container img {
-  width: 50%;
-  margin: 10px 0;
-}
+  header {
+    width: 100%;
+    background: #cce6ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .user {
+    margin: 0px;
+    width: 6.5%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #003366;
+    font-weight: bolder;
+    margin-bottom: 5px;
+  }
+  .logo-container {
+    position: absolute;
+    left: 0;
+    width: 6%;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-container img {
+    width: 7vw;
+    margin: 5px;
+  }
+  .title {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .title h1 {
+    padding: 0px;
+    font-family: 'Baloo Tammudu';
+    font-size: 5vw;
+    color: #003366;
+    text-align: center;
+  }
+  .title a {
+    text-align: right;
+    text-decoration: none;
+    color: #003366;
+  }
+  .navbar {
+    border: 0px;
+    width: 100%;
+    background: #115599;
+    text-align: center;
+    height: 50px;
+    font-size: 17px;
+    line-height: 50px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #myNavbar ul {
+    border: 0px;
+    text-align: center;
+    background: #115599;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding-left: 320px;
+  }
+  li b {
+    color: white;
+  }
+  .navbar {
+    border: 0px;
+    border-radius: 0;
+    margin: 0;
+    z-index: 1;
+  }
+  .user button {
+    color: white;
+    background: #003366;
+    line-height: 25px;
+    font-size: 12px;
+    margin: 0;
+  }
+  .body {
+    margin: 0;
+    padding: 0;
+  }
 
 /*@media screen and (min-width: 480px) {
   header {
