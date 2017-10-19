@@ -1,12 +1,12 @@
 @media screen and (min-width: 480px) {
   h2 {
     text-align: center;
+    margin: 30px 0;
   }
   .alert {
     background: rgba(204, 230, 255, 0.2);
     border-radius: 15px;
     width: 50%;
-    /*border: 2px solid black;*/
     margin: 10px auto;
     padding: 5px 20px;
   }
@@ -15,6 +15,7 @@
     margin-top: 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
+    font-weight: 200;
   }
 }
 

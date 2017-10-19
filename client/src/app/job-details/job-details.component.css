@@ -1,19 +1,26 @@
-h2, h3 {
+h2 {
   text-align: center;
+  margin: 30px 0;
+}
+
+h3 {
+  text-align: center;
+  margin: 30px 0;
 }
 .job {
-  background: rgba(204, 230, 255, 0.2);
+  background: AliceBlue;
   width: 60%;
   border-radius: 15px;
   margin: 10px auto;
   padding: 5px 20px;
   font-family: 'Montserrat';
   font-size: 17px;
+  font-weight: 200;
 }
 .data {
   text-align: left;
   padding: 10px;
-  color: navy;
+  color: black;
 }
 b {
   font-weight: bolder;

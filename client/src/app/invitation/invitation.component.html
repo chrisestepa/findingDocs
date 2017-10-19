@@ -1,6 +1,6 @@
 <div class="container">
+  <h2> Solicitud de invitación </h2>
   <div class="form">
-    <h2> Solicitud de invitación </h2>
     <div class="select">
       <label class="usertype">Tipo de usuario:</label>
       <select [(ngModel)]="formInfo.role" name="role">
@@ -11,10 +11,16 @@
     <br><br><br>
     <form>
       <label> DNI </label>
-      <input type="text" [(ngModel)]="formInfo.username" name="username" />
+      <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-user"></span>
+        <input type="text" [(ngModel)]="formInfo.username" name="username" />
+      </div>
       <br>
       <label> Nª de colegiado </label>
+      <div class="input-group">
+      <span class="input-group-addon glyphicon glyphicon-credit-card"></span>
       <input type="text" [(ngModel)]="formInfo.collegiate" name="collegiate" />
+      </div>
       <br><br>
       <label> Especialidad </label>
       <select class="speciality" [(ngModel)]="formInfo.speciality" name="speciality">
@@ -24,13 +30,22 @@
       </select>
       <br><br>
       <label> Nombre y apellidos</label>
+      <div class="input-group">
+      <span class="input-group-addon glyphicon glyphicon-user"></span>
       <input type="text" [(ngModel)]="formInfo.name" name="name" />
+      </div>
       <br>
       <label> Teléfono </label>
+      <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
       <input type="number" [(ngModel)]="formInfo.phone" name="phone" />
+      </div>
       <br>
       <label> Email </label>
+      <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">@</span>
       <input type="email" [(ngModel)]="formInfo.email" name="email" />
+      </div>
       <br>
       <button (click)="askForInvitation()"> Solicitar invitación </button>
       <a class="back" [routerLink]="['']" control=!control>Volver</a>

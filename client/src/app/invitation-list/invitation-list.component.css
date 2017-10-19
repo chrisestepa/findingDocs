@@ -1,16 +1,17 @@
 @media screen and (min-width: 480px) {
   h2 {
     text-align: center;
+    margin: 30px 0;
   }
   .invitation {
     background: rgba(204, 230, 255, 0.2);
     width: 30%;
-    border-radius: 15px;
     margin: 10px auto;
     padding: 5px 20px;
     font-family: 'Montserrat';
     font-size: 17px;
-    color: navy;
+    font-weight: 200;
+    color: black;
   }
   .invitation b {
     color: black;

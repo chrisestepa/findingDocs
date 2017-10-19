@@ -1,6 +1,6 @@
+<h2> Crear oferta </h2>
 <div *ngIf="user && user.role!=='doctor'" class="container">
   <div class="select">
-    <h2> Crear oferta </h2>
     <label>Centro:</label>
     <select [(ngModel)]="formInfo.center" name="center">
       <option *ngFor="let center of centers" value="{{center._id}}">{{center.title}}</option>

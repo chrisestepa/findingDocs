@@ -7,30 +7,37 @@
     margin: 10px auto;
     padding: 20px;
     width: 40%;
+    background: AliceBlue;
+    font-family: 'Montserrat';
+    font-size: 17px;
+  }
+  .form label {
+    font-weight: 400;
   }
   .select {
     float: right;
     margin: 10px;
   }
   .select label {
+    font-weight: 400;
     margin: 0 10px;
     vertical-align: middle;
   }
   .select select {
-    background: rgba(204, 230, 255, 0.2);
+    background: AliceBlue;
     float: right;
     font-size: 15px;
     height: 25px;
-    background: AliceBlue;
+    background: white;
   }
   .form input {
-    background: rgba(204, 230, 255, 0.2);
     width: 100%;
-    margin: 10px 0;
-    height: 20px;
+    background: white;
+    margin: 1px;
   }
-  .form h2 {
+  h2 {
     text-align: center;
+    margin: 30px 0;
   }
   .form button {
     height: 30px;
@@ -38,10 +45,11 @@
     font-size: 1vw;
   }
   .speciality {
-    background: rgba(204, 230, 255, 0.2);
+    background: AliceBlue;
     font-size: 15px;
     height: 25px;
     width: 100%;
+    background: white;
   }
   .back {
     margin: 0 20px;

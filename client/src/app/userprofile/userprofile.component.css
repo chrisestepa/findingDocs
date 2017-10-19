@@ -1,18 +1,23 @@
 @media screen and (min-width: 480px) {
   .container {
     margin: 0 auto;
-    width: 30%;
+    width: 50%;
   }
   h2 {
     text-align: center;
   }
   .form {
-    background: rgba(204, 230, 255, 0.2);
-    border: 2px solid black;
+    background: AliceBlue;
     border-radius: 15px;
     margin: 10px auto;
     padding: 20px;
-    width: 60%;
+    width: 80%;
+    background: AliceBlue;
+    font-family: 'Montserrat';
+    font-size: 17px;
+  }
+  .form label {
+    font-weight: 400;
   }
   .form h2 {
     text-align: center;

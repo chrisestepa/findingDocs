@@ -1,12 +1,18 @@
 <div *ngIf="!user" class="container">
+  <h2> Inicio de sesión </h2>
   <form class="form">
-    <h2> Inicio de sesión </h2>
     <label> DNI </label>
-    <input type="text" [(ngModel)]="formInfo.username" name="username"/>
+    <div class="input-group">
+      <span class="input-group-addon glyphicon glyphicon-user"></span>
+      <input type="text" [(ngModel)]="formInfo.username" name="username"/>
+    </div>
     <br>
     <label> Contraseña </label>
-    <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-
+    <div class="input-group">
+      <span class="input-group-addon glyphicon glyphicon-check"></span>
+      <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+    </div>
+    <br>
     <button (click)="login()"> Iniciar sesión </button>
     <a class="back" [routerLink]="['']" control=!control>Volver</a>
   </form>

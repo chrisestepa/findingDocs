@@ -45,23 +45,19 @@
   }
   .navbar-nav {
     width: 100%;
-    /*text-align: center;*/
   }
   .navbar-nav > li {
     float: none;
     display: inline-block;
   }
-  .navbar .navbar-collapse {
-    /*text-align: center;*/
-  }
   #myNavbar ul {
     border: 0px;
-    /*text-align: center;*/
     background: #115599;
     color: white;
     margin: 0;
   }
   li b {
+    font-weight: normal;
     color: white;
   }
   .navbar {
