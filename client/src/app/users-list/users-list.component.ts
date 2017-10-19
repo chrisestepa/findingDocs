@@ -22,8 +22,10 @@ export class UsersListComponent implements OnInit {
   }
 
   deleteUser(id){
-    console.log("entro en el componente con id: " + id)
-    this.auth.delete(id).subscribe();
+    this.auth.delete(id).subscribe(() => {
+      this.users = this.users.filter(
+        (user) => user._id !== id)
+    });
   }
 
 }
