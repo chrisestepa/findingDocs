@@ -24,8 +24,8 @@
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/userslist']"><b>Listado de usuarios</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/signup']"><b>Añadir usuario</b></a></li>
         <li *ngIf="user && user.role=='admin'"><a [routerLink]="['/invitations']"><b>Lista de invitaciones</b></a></li>
-        <li class="navbar-right"><a *ngIf="user" (click)=auth.logout()><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        <li class="navbar-right"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></li>
+        <li class="navbar-right logout"><a *ngIf="user" (click)=auth.logout()><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li class="navbar-right delete"><a *ngIf="user" [routerLink]="['/user']"><b>{{user.username}}</b></a></li>
       </ul>
     </div>
   </div>

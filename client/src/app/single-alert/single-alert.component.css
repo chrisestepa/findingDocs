@@ -24,6 +24,9 @@
   .new {
     text-align: center;
   }
+  .delete {
+    color: #FF6B6B;
+  }
 }
 
 @media screen and (max-width: 479px) {

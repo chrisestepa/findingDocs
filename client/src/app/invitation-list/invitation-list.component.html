@@ -18,7 +18,7 @@
     <p><b>Email:</b> {{invitation.email}}</p>
     <input hidden="true" type="email" name="email" value={{invitation.email}}>
     <a (click)="create(invitation)">Crear usuario</a>
-    <a class="anchor" [routerLink]="[invitation._id, user._id]"> Borrar invitación </a>
+    <a class="anchor delete" [routerLink]="[invitation._id, user._id]"> Borrar invitación </a>
   </div>
 
 </div>

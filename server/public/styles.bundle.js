@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: 'Montserrat', sans-serif;\n}\n\na:hover {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: 'Montserrat', sans-serif;\n}\n\na:hover {\n  cursor: pointer;\n  font-weight: 500;\n  text-decoration: none;\n}\n\nfooter {\n  background: blue;\n  height: 10px;\n}\n", ""]);
 
 // exports
 

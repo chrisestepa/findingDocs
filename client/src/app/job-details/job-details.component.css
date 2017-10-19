@@ -59,6 +59,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+.delete {
+    color: #FF6B6B;
+}
+
 
 /*@media screen and (min-width: 480px) {
   .container {

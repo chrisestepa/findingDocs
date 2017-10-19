@@ -1,5 +1,6 @@
 @media screen and (min-width: 480px) {
   h3 {
+    margin: 30px 0;
     text-align: center;
   }
   .invitation {
@@ -9,15 +10,19 @@
     margin: 10px auto;
     padding: 5px 20px;
     font-family: 'Montserrat';
+    font-weight: 300;
     font-size: 17px;
-    color: navy;
   }
   .invitation b {
+    font-weight: 400;
     color: black;
     font-weight: bolder;
   }
   .anchor {
     float: right;
+  }
+  .delete {
+    color: #FF6B6B;
   }
 
 }

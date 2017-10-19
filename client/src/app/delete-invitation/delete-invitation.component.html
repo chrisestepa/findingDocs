@@ -8,7 +8,7 @@
     <p><b>Especialidad:</b> {{invitation.speciality}}</p>
     <p><b>Nombre:</b> {{invitation.name}}</p>
     <p><b>Teléfono:</b> {{invitation.phone}}</p>
-    <a (click)="deleteInvitation(invitation._id)">Borrar petición</a>
+    <a class="delete" (click)="deleteInvitation(invitation._id)">Borrar petición</a>
     <a class="anchor" [routerLink]="['/invitations']">Cancelar</a>
   </div>
 

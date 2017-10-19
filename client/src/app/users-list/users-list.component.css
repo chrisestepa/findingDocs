@@ -22,7 +22,9 @@
     padding: 0;
     margin: 0;
     float: right;
+    color: #FF6B6B;
   }
+
 }
 
 @media screen and (max-width: 479px) {

@@ -27,7 +27,7 @@
       </ul>
       <hr>
       <a (click)="applyJob(job._id, user._id)" *ngIf="user && user.role==='doctor'">Solicitar puesto</a>
-      <a (click)="deleteJob(job._id)" *ngIf="user._id === job.creator">Eliminar oferta</a>
+      <a class="delete" (click)="deleteJob(job._id)" *ngIf="user._id === job.creator">Eliminar oferta</a>
       <a class="back" [routerLink]="['/dashboard']">Volver</a>
     </div>
     <div class="map">
