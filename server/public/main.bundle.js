@@ -457,7 +457,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@media screen and (min-width: 480px) {\n  .background {\n    margin: 0;\n    padding: 0;\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    background-position: top;\n    width: 100%;\n    height: 600px;\n  }\n}\n\n@media screen and (max-width: 479px) {\n  .background {\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    position: fixed;\n    width: 100%;\n    height: 600px;\n    margin: 0;\n    padding: 0;\n  }\n}\n", ""]);
+exports.push([module.i, "  .background {\n    margin: 0;\n    padding: 0;\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    background-position: top;\n    width: 100%;\n    height: 700px;\n  }\n", ""]);
 
 // exports
 
