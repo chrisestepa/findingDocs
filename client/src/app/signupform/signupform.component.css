@@ -1,4 +1,4 @@
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 901px) {
   .container {
     margin: 0 auto;
     width: 60%;
@@ -49,38 +49,41 @@
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 900px) {
   .container {
-    margin: 110px 25px;
-    width: 90%;
+    margin: 0 auto;
+    width: 100%;
   }
   .form {
-    padding: 10px;
-    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    width: 100%;
+    background: AliceBlue;
+    font-family: 'Montserrat';
+    font-size: 17px;
   }
-  .form h2 {
+  .form label {
+    font-weight: 400;
+  }
+  h2 {
     text-align: center;
+    font-size: 30px;
+    margin: 10px 0 10px 0;
   }
   .form input {
-    border: 2px solid black;
+    background: white;
     width: 100%;
-    margin: 3px 0;
-    height: 20px;
-    font-size: 15px;
   }
   .form button {
     height: 30px;
     margin: 10px 0;
-    font-size: 10px;
-    background: navy;
-    color: white;
+    border: 1px solid grey;
   }
   .speciality {
     font-size: 15px;
     height: 25px;
     width: 100%;
     background: white;
-    border: 2px solid black;
   }
   .select {
     float: right;
@@ -94,7 +97,6 @@
     float: right;
     font-size: 15px;
     height: 25px;
-    background: AliceBlue;
-    border: 2px solid black;
+    background: white;
   }
 }

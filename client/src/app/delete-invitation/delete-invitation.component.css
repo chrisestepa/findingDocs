@@ -1,4 +1,4 @@
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 901px) {
   h3 {
     margin: 30px 0;
     text-align: center;
@@ -27,16 +27,22 @@
 
 }
 
-@media screen and (max-width: 479px) {
-  h2 {
-    margin-top: 140px;
+@media screen and (max-width: 900px) {
+  h3 {
     text-align: center;
+    font-size: 20px;
+    margin: 10px 0 10px 0;
   }
   .invitation {
-    background: rgba(204, 230, 255, 0.2);
-    width: 80%;
-    border-radius: 15px;
-    margin: auto;
-    padding: 5px 20px;
+    background: AliceBlue;
+    width: 100%;
+    padding: 2px 10px;
+    font-size: 20px;
+  }
+  .anchor {
+  float: right;
+  }
+  .delete {
+  color: #FF6B6B;
   }
 }

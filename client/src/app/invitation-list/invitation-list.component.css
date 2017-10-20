@@ -1,4 +1,4 @@
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 901px) {
   h2 {
     text-align: center;
     margin: 30px 0;
@@ -25,23 +25,26 @@
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 900px) {
   .main {
-    margin-top: 150px;
-    width:90%;
+    width: 100%;
   }
-
   h2 {
     text-align: center;
-    font-size: 17px;
+    font-size: 30px;
+    margin: 10px 0 10px 0;
   }
   .invitation {
-    background: rgba(204, 230, 255, 0.2);
+    background: AliceBlue;
     font-size: 15px;
-    width: 80%;
-    border-radius: 15px;
-    margin: 10px 30px;
-    padding: 5px 20px;
+    width: 100%;
+    padding: 2px 10px;
+  }
+  .anchor {
+    float: right;
+  }
+  .delete {
+    color: #FF6B6B;
   }
 
 }

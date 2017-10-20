@@ -27,7 +27,7 @@ import { NewAlertComponent } from './new-alert/new-alert.component';
 import { SingleAlertComponent } from './single-alert/single-alert.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { AgmCoreModule } from '@agm/core';
-import { NotificationsComponent } from './notifications/notifications.component';
+
 
 @NgModule({
   declarations: [
@@ -45,8 +45,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     AlertsComponent,
     NewAlertComponent,
     SingleAlertComponent,
-    UsersListComponent,
-    NotificationsComponent
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
