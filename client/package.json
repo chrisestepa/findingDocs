@@ -23,8 +23,6 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
-    "ng2-filter-pipe": "^0.1.10",
-    "ng2-search-filter": "^0.3.1",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14"
   },

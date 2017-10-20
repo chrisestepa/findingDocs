@@ -108,9 +108,7 @@ authRoutes.put('/update', (req, res, next) => {
       collegiate: req.body.collegiate || req.user.collegiate,
       speciality: req.body.speciality || req.user.speciality
     }
-
-    console.log("COLLEGIATE: " + update.collegiate);
-
+    
     User.findByIdAndUpdate(req.user._id, update)
       .then(user => {
         req.login(user, (err) => {
