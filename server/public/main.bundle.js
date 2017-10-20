@@ -103,7 +103,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n  header {\n    width: 100%;\n    background: #cce6ff;\n    margin: 0;\n    padding: 0;\n  }\n  .logo-container {\n    position: absolute;\n    left: 0;\n    width: 6%;\n    margin: 0;\n    padding: 0;\n  }\n  .title img {\n    width: 5vw;\n    margin: 5px;\n    padding-bottom: 10px;\n  }\n  .title {\n    display: inline-block;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    vertical-align: middle;\n  }\n  .title h1 {\n    padding: 0px;\n    font-family: 'Baloo Tammudu';\n    font-size: 4vw;\n    color: #003366;\n    text-align: center;\n  }\n  .title a {\n    text-decoration: none;\n    color: #003366;\n  }\n  .navbar {\n    border: 0px;\n    background: #115599;\n    height: 50px;\n    font-size: 17px;\n    line-height: 50px;\n    font-family: 'Montserrat', sans-serif;\n  }\n  .navbar-nav {\n    width: 100%;\n  }\n  .navbar-nav > li {\n    float: none;\n    display: inline-block;\n  }\n  #myNavbar ul {\n    border: 0px;\n    background: #115599;\n    color: white;\n    margin: 0;\n  }\n  li b {\n    font-weight: normal;\n    color: white;\n  }\n  .navbar {\n    border: 0px;\n    border-radius: 0;\n    margin: 0;\n    z-index: 1;\n  }\n  .body {\n    margin: 0;\n    padding: 0;\n  }\n.navbar-nav > li > a {\n    color: white;\n  }\n.navbar-nav > li > a:hover {\n    font-weight: 400;\n  }\n\n@media screen and (max-width: 900px) {\n    header {\n      width: 100%;\n      background: #cce6ff;\n      margin: 0;\n      padding: 0;\n    }\n    .logo-container {\n      position: absolute;\n      left: 0;\n      width: 6%;\n      margin: 0;\n      padding: 0;\n    }\n    .title img {\n      width: 10vw;\n      margin: 5px;\n      padding-bottom: 10px;\n    }\n    .title {\n      display: inline-block;\n      width: 100%;\n      margin: 0;\n      padding: 0;\n      vertical-align: middle;\n    }\n    .title h1 {\n      padding: 0px;\n      font-family: 'Baloo Tammudu';\n      font-size: 8vw;\n      color: #003366;\n      text-align: center;\n    }\n    .title a {\n      text-decoration: none;\n      color: #003366;\n    }\n\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 901px) {\n  header {\n    width: 100%;\n    background: #cce6ff;\n    margin: 0;\n    padding: 0;\n  }\n  .logo-container {\n    position: absolute;\n    left: 0;\n    width: 6%;\n    margin: 0;\n    padding: 0;\n  }\n  .title img {\n    width: 5vw;\n    margin: 5px;\n    padding-bottom: 10px;\n  }\n  .title {\n    display: inline-block;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    vertical-align: middle;\n  }\n  .title h1 {\n    padding: 0px;\n    font-family: 'Baloo Tammudu';\n    font-size: 4vw;\n    color: #003366;\n    text-align: center;\n  }\n  .title a {\n    text-decoration: none;\n    color: #003366;\n  }\n  .navbar {\n    border: 0px;\n    background: #115599;\n    height: 50px;\n    font-size: 17px;\n    line-height: 50px;\n    font-family: 'Montserrat', sans-serif;\n  }\n  .navbar-nav {\n    width: 100%;\n  }\n  .navbar-nav>li {\n    float: none;\n    display: inline-block;\n  }\n  #myNavbar ul {\n    border: 0px;\n    background: #115599;\n    color: white;\n    margin: 0;\n  }\n  li b {\n    font-weight: normal;\n    color: white;\n  }\n  .navbar {\n    border: 0px;\n    border-radius: 0;\n    margin: 0;\n    z-index: 1;\n  }\n  .body {\n    margin: 0;\n    padding: 0;\n  }\n  .navbar-nav>li>a {\n    color: white;\n  }\n  .navbar-nav>li>a:hover {\n    font-weight: 400;\n  }\n}\n\n@media screen and (max-width: 900px) {\n  header {\n    width: 100%;\n    background: #cce6ff;\n    margin: 0;\n    padding: 0;\n  }\n  .logo-container {\n    position: absolute;\n    left: 0;\n    width: 6%;\n    margin: 0;\n    padding: 0;\n  }\n  .title img {\n    width: 10vw;\n    margin: 5px;\n    padding-bottom: 10px;\n  }\n  .title {\n    display: inline-block;\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    vertical-align: middle;\n  }\n  .title h1 {\n    padding: 0px;\n    font-family: 'Baloo Tammudu';\n    font-size: 8vw;\n    color: #003366;\n    text-align: center;\n  }\n  .title a {\n    text-decoration: none;\n    color: #003366;\n  }\n  .navbar {\n    border: 0px;\n    background: #115599;\n    height: 50px;\n    font-size: 17px;\n    line-height: 50px;\n    font-family: 'Montserrat', sans-serif;\n  }\n  .navbar-nav {\n    width: 100%;\n  }\n  .navbar-nav>li {\n    float: none;\n    display: inline-block;\n  }\n  #myNavbar ul {\n    border: 0px;\n    background: #115599;\n    color: white;\n    margin: 0;\n  }\n  li b {\n    font-weight: normal;\n    color: white;\n  }\n  .navbar {\n    border: 0px;\n    border-radius: 0;\n    margin: 0;\n    z-index: 1;\n  }\n  .body {\n    margin: 0;\n    padding: 0;\n  }\n  .navbar-nav>li>a {\n    color: white;\n  }\n  .navbar-nav>li>a:hover {\n    font-weight: 400;\n  }\n}\n", ""]);
 
 // exports
 
@@ -116,7 +116,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"row container\">\n  <div class=\"title\">\n    <h1 *ngIf=\"user\"><img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\"><a [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n    <h1 *ngIf=\"!user\"><img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\"><a [routerLink]=\"['']\">{{ title }}</a></h1>\n  </div>\n</header>\n\n<nav class=\"navbar navbar-inverse\">\n  <div>\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n    </button>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"li\" *ngIf=\"user\"><a [routerLink]=\"['/dashboard']\"><b>Tablón de ofertas</b></a></li>\n        <li *ngIf=\"user && user.role=='manager'\"><a [routerLink]=\"['/job']\"><b>Crear oferta</b></a></li>\n        <li *ngIf=\"!user\"><a [routerLink]=\"['/login']\"><b>Iniciar sesión</b></a></li>\n        <li *ngIf=\"!user\"><a [routerLink]=\"['/invitation']\"><b>Solicitar invitación</b></a></li>\n        <li *ngIf=\"user && user.role=='doctor'\"><a [routerLink]=\"['/alerts']\"><b>Mis alertas</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/userslist']\"><b>Listado de usuarios</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/signup']\"><b>Añadir usuario</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/invitations']\"><b>Lista de invitaciones</b></a></li>\n        <li class=\"navbar-right logout\"><a *ngIf=\"user\" (click)=auth.logout()><span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\n        <li class=\"navbar-right delete\"><a *ngIf=\"user\" [routerLink]=\"['/user']\"><b>{{user.username}}</b></a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<header class=\"row container\">\n  <div class=\"title\">\n    <h1 *ngIf=\"user\"><img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\"><a [routerLink]=\"['/dashboard']\">{{ title }}</a></h1>\n    <h1 *ngIf=\"!user\"><img class=\"logo\" src=\"https://preview.ibb.co/gr7rQb/logo.png\" alt=\"findingDocs\"><a [routerLink]=\"['']\">{{ title }}</a></h1>\n  </div>\n</header>\n\n<nav class=\"navbar navbar-inverse\">\n  <div>\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n      <span class=\"icon-bar\"></span>\n    </button>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"li\" *ngIf=\"user\"><a [routerLink]=\"['/dashboard']\"><b>Tablón de ofertas</b></a></li>\n        <li class=\"li\" *ngIf=\"user && user.role=='doctor'\"><a [routerLink]=\"['/map']\"><b>Mapa</b></a></li>\n        <li *ngIf=\"user && user.role=='manager'\"><a [routerLink]=\"['/job']\"><b>Crear oferta</b></a></li>\n        <li *ngIf=\"!user\"><a [routerLink]=\"['/login']\"><b>Iniciar sesión</b></a></li>\n        <li *ngIf=\"!user\"><a [routerLink]=\"['/invitation']\"><b>Solicitar invitación</b></a></li>\n        <li *ngIf=\"user && user.role=='doctor'\"><a [routerLink]=\"['/alerts']\"><b>Mis alertas</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/userslist']\"><b>Listado de usuarios</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/signup']\"><b>Añadir usuario</b></a></li>\n        <li *ngIf=\"user && user.role=='admin'\"><a [routerLink]=\"['/invitations']\"><b>Lista de invitaciones</b></a></li>\n        <li class=\"navbar-right logout\"><a *ngIf=\"user\" (click)=auth.logout()><span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\n        <li class=\"navbar-right delete\"><a *ngIf=\"user\" [routerLink]=\"['/user']\"><b>{{user.username}}</b></a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"body\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -200,6 +200,8 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__single_alert_single_alert_component__ = __webpack_require__("../../../../../src/app/single-alert/single-alert.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__users_list_users_list_component__ = __webpack_require__("../../../../../src/app/users-list/users-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__mapinfo_mapinfo_component__ = __webpack_require__("../../../../../src/app/mapinfo/mapinfo.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -207,6 +209,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -258,7 +262,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_23__alerts_alerts_component__["a" /* AlertsComponent */],
             __WEBPACK_IMPORTED_MODULE_25__new_alert_new_alert_component__["a" /* NewAlertComponent */],
             __WEBPACK_IMPORTED_MODULE_26__single_alert_single_alert_component__["a" /* SingleAlertComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__users_list_users_list_component__["a" /* UsersListComponent */]
+            __WEBPACK_IMPORTED_MODULE_27__users_list_users_list_component__["a" /* UsersListComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__map_map_component__["a" /* MapComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__mapinfo_mapinfo_component__["a" /* MapinfoComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -991,6 +997,186 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/map/map.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "@media screen and (min-width: 901px) {\n\n  .map {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n\n}\nagm-map {\n  margin: 0;\n  padding: 0;\n  height: 900px;\n  width: 100%;\n}\n\n.jobs {\n  margin: 10px 0;\n  top: 190px;\n  left: 10px;\n  background: rgba(240, 248, 255, 0.8);\n  /*height: 900px;*/\n  width: 350px;\n  position: absolute;\n}\n\n.container {\n  position: relative;\n  max-height:100%;\n  overflow: scroll;\n}\n\n}\n\n@media screen and (max-width: 900px) {\n  .map {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n\n  }\n  agm-map {\n    margin: 0;\n    padding: 0;\n    height: 900px;\n    width: 100%;\n  }\n\n  .jobs {\n    top: 150px;\n    left: 10px;\n    background: rgba(240, 248, 255, 0.8);\n    width: 200px;\n    font-size: 10px;\n    position: absolute;\n  }\n\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"jobs\">\n\n  <div class=\"map\">\n    <agm-map [scrollwheel]=\"false\" [zoom]=\"zoom\" [latitude]=40.415363 [longitude]=-3.707398>\n      <div *ngFor=\"let job of jobs\">\n        <agm-marker *ngIf=\"control\" [latitude]=\"job.center.location.latitude\" [longitude]=\"job.center.location.longitude\"></agm-marker>\n      </div>\n      <agm-marker *ngIf=\"!control\" [latitude]=\"singleJob.center.location.latitude\" [longitude]=\"singleJob.center.location.longitude\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"jobs\">\n    <div *ngFor=\"let job of jobs\" class=\"container\">\n      <app-mapinfo [job]=\"job\" (onClick)=\"getJobInfo($event)\" (onApply)=\"apply($event)\"></app-mapinfo>\n    </div>\n  </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__ = __webpack_require__("../../../../../src/app/services/dashboard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_alerts_service__ = __webpack_require__("../../../../../src/app/services/alerts.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_job_service__ = __webpack_require__("../../../../../src/app/services/job.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MapComponent = (function () {
+    function MapComponent(jobS, router, route, dashS, auth, alertS) {
+        this.jobS = jobS;
+        this.router = router;
+        this.route = route;
+        this.dashS = dashS;
+        this.auth = auth;
+        this.alertS = alertS;
+        this.control = true;
+        this.zoom = 11;
+    }
+    MapComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user = this.auth.getUser();
+        this.auth.getLoginEventEmitter()
+            .subscribe(function (user) { return _this.user = user; });
+        this.dashS.viewDashboard().subscribe(function (e) { return _this.jobs = e; });
+    };
+    MapComponent.prototype.getJobInfo = function (id) {
+        var _this = this;
+        this.dashS.viewSingleJob(id).subscribe(function (e) {
+            _this.singleJob = e;
+            _this.control = !_this.control;
+        });
+    };
+    MapComponent.prototype.apply = function (id) {
+        var _this = this;
+        this.jobS.apply(id, this.user._id).subscribe(function () {
+            _this.router.navigate(['dashboard']);
+        });
+    };
+    return MapComponent;
+}());
+MapComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+        selector: 'app-map',
+        template: __webpack_require__("../../../../../src/app/map/map.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/map/map.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__services_job_service__["a" /* JobService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_job_service__["a" /* JobService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__["a" /* DashboardService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_dashboard_service__["a" /* DashboardService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__services_alerts_service__["a" /* AlertsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_alerts_service__["a" /* AlertsService */]) === "function" && _f || Object])
+], MapComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=map.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/mapinfo/mapinfo.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".data {\n  margin: 10px 0 10px 0;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/mapinfo/mapinfo.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <h4>{{job.title}}</h4>\n  <p>{{job.center.title}}</p>\n  <a *ngIf=\"control\" (click)=getInfo()>Mostrar</a>\n  <a *ngIf=\"!control\" (click)=getInfo()>Cerrar</a>\n  <div *ngIf=\"!control\" class=\"data\">\n    <p>Especialidad: {{job.speciality}}</p>\n    <p>Dirección: {{job.center.address.streetaddress}}</p>\n    <p>Localidad: {{job.center.address.locality}}</p>\n    <p>Código postal: {{job.center.address.postalcode}}</p>\n    <p>Fecha de inicio: {{job.datein | date}}</p>\n    <p>Fecha de finalización: {{job.dateout | date}}</p>\n    <p>Descripción: {{job.description}}</p>\n    <a (click)=\"apply(job._id)\">Solicitar puesto</a>\n    <hr>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/mapinfo/mapinfo.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapinfoComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MapinfoComponent = (function () {
+    function MapinfoComponent() {
+        this.onClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this.onApply = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* EventEmitter */]();
+        this.control = true;
+    }
+    MapinfoComponent.prototype.ngOnInit = function () { };
+    MapinfoComponent.prototype.getInfo = function () {
+        this.onClick.emit(this.job._id);
+        this.control = !this.control;
+    };
+    MapinfoComponent.prototype.apply = function (id) {
+        this.onApply.emit(this.job._id);
+    };
+    return MapinfoComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
+    __metadata("design:type", Object)
+], MapinfoComponent.prototype, "job", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Output */])(),
+    __metadata("design:type", Object)
+], MapinfoComponent.prototype, "onClick", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Output */])(),
+    __metadata("design:type", Object)
+], MapinfoComponent.prototype, "onApply", void 0);
+MapinfoComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* Component */])({
+        selector: 'app-mapinfo',
+        template: __webpack_require__("../../../../../src/app/mapinfo/mapinfo.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/mapinfo/mapinfo.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], MapinfoComponent);
+
+//# sourceMappingURL=mapinfo.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/new-alert/new-alert.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1106,7 +1292,9 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__alerts_alerts_component__ = __webpack_require__("../../../../../src/app/alerts/alerts.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__new_alert_new_alert_component__ = __webpack_require__("../../../../../src/app/new-alert/new-alert.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__users_list_users_list_component__ = __webpack_require__("../../../../../src/app/users-list/users-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
+
 
 
 
@@ -1134,6 +1322,7 @@ var routes = [
     { path: 'alerts', component: __WEBPACK_IMPORTED_MODULE_10__alerts_alerts_component__["a" /* AlertsComponent */] },
     { path: 'newalert', component: __WEBPACK_IMPORTED_MODULE_11__new_alert_new_alert_component__["a" /* NewAlertComponent */] },
     { path: 'userslist', component: __WEBPACK_IMPORTED_MODULE_12__users_list_users_list_component__["a" /* UsersListComponent */] },
+    { path: 'map', component: __WEBPACK_IMPORTED_MODULE_13__map_map_component__["a" /* MapComponent */] },
     { path: '**', redirectTo: 'home' }
 ];
 //# sourceMappingURL=routes.js.map
@@ -1399,6 +1588,10 @@ var DashboardService = (function () {
     }
     DashboardService.prototype.viewDashboard = function () {
         return this.http.get(this.BASEURL + "/dashboard", this.options)
+            .map(function (res) { return res.json(); });
+    };
+    DashboardService.prototype.viewSingleJob = function (id) {
+        return this.http.get(this.BASEURL + "/dashboard/" + id, this.options)
             .map(function (res) { return res.json(); });
     };
     return DashboardService;
@@ -1941,7 +2134,7 @@ var environment = {
     production: true,
     BASEURL: ''
 };
-//local
+// //local
 // export const environment = {
 //   production: false,
 //   BASEURL: 'http://localhost:3000'
