@@ -17,6 +17,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="li" *ngIf="user"><a [routerLink]="['/dashboard']"><b>Tablón de ofertas</b></a></li>
+        <li class="li" *ngIf="user && user.role=='doctor'"><a [routerLink]="['/map']"><b>Mapa</b></a></li>
         <li *ngIf="user && user.role=='manager'"><a [routerLink]="['/job']"><b>Crear oferta</b></a></li>
         <li *ngIf="!user"><a [routerLink]="['/login']"><b>Iniciar sesión</b></a></li>
         <li *ngIf="!user"><a [routerLink]="['/invitation']"><b>Solicitar invitación</b></a></li>

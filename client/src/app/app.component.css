@@ -1,4 +1,4 @@
-
+@media screen and (min-width: 901px) {
   header {
     width: 100%;
     background: #cce6ff;
@@ -46,7 +46,7 @@
   .navbar-nav {
     width: 100%;
   }
-  .navbar-nav > li {
+  .navbar-nav>li {
     float: none;
     display: inline-block;
   }
@@ -70,49 +70,90 @@
     margin: 0;
     padding: 0;
   }
-.navbar-nav > li > a {
+  .navbar-nav>li>a {
     color: white;
   }
-.navbar-nav > li > a:hover {
+  .navbar-nav>li>a:hover {
     font-weight: 400;
   }
+}
 
 @media screen and (max-width: 900px) {
-    header {
-      width: 100%;
-      background: #cce6ff;
-      margin: 0;
-      padding: 0;
-    }
-    .logo-container {
-      position: absolute;
-      left: 0;
-      width: 6%;
-      margin: 0;
-      padding: 0;
-    }
-    .title img {
-      width: 10vw;
-      margin: 5px;
-      padding-bottom: 10px;
-    }
-    .title {
-      display: inline-block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      vertical-align: middle;
-    }
-    .title h1 {
-      padding: 0px;
-      font-family: 'Baloo Tammudu';
-      font-size: 8vw;
-      color: #003366;
-      text-align: center;
-    }
-    .title a {
-      text-decoration: none;
-      color: #003366;
-    }
-
+  header {
+    width: 100%;
+    background: #cce6ff;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-container {
+    position: absolute;
+    left: 0;
+    width: 6%;
+    margin: 0;
+    padding: 0;
+  }
+  .title img {
+    width: 10vw;
+    margin: 5px;
+    padding-bottom: 10px;
+  }
+  .title {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  .title h1 {
+    padding: 0px;
+    font-family: 'Baloo Tammudu';
+    font-size: 8vw;
+    color: #003366;
+    text-align: center;
+  }
+  .title a {
+    text-decoration: none;
+    color: #003366;
+  }
+  .navbar {
+    border: 0px;
+    background: #115599;
+    height: 50px;
+    font-size: 17px;
+    line-height: 50px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .navbar-nav {
+    width: 100%;
+  }
+  .navbar-nav>li {
+    float: none;
+    display: inline-block;
+  }
+  #myNavbar ul {
+    border: 0px;
+    background: #115599;
+    color: white;
+    margin: 0;
+  }
+  li b {
+    font-weight: normal;
+    color: white;
+  }
+  .navbar {
+    border: 0px;
+    border-radius: 0;
+    margin: 0;
+    z-index: 1;
+  }
+  .body {
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-nav>li>a {
+    color: white;
+  }
+  .navbar-nav>li>a:hover {
+    font-weight: 400;
+  }
 }

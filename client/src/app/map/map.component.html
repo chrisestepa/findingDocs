@@ -1,0 +1,18 @@
+<div *ngIf="jobs">
+
+  <div class="map">
+    <agm-map [scrollwheel]="false" [zoom]="zoom" [latitude]=40.415363 [longitude]=-3.707398>
+      <div *ngFor="let job of jobs">
+        <agm-marker *ngIf="control" [latitude]="job.center.location.latitude" [longitude]="job.center.location.longitude"></agm-marker>
+      </div>
+      <agm-marker *ngIf="!control" [latitude]="singleJob.center.location.latitude" [longitude]="singleJob.center.location.longitude"></agm-marker>
+    </agm-map>
+  </div>
+
+  <div class="jobs">
+    <div *ngFor="let job of jobs" class="container">
+      <app-mapinfo [job]="job" (onClick)="getJobInfo($event)" (onApply)="apply($event)"></app-mapinfo>
+    </div>
+  </div>
+
+</div>

@@ -14,6 +14,7 @@ import {JobDetailsComponent} from './job-details/job-details.component';
 import {AlertsComponent} from './alerts/alerts.component';
 import {NewAlertComponent} from './new-alert/new-alert.component';
 import {UsersListComponent} from './users-list/users-list.component';
+import {MapComponent} from './map/map.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -29,5 +30,6 @@ export const routes: Routes = [
     { path: 'alerts', component: AlertsComponent},
     { path: 'newalert', component: NewAlertComponent},
     { path: 'userslist', component: UsersListComponent},
+    { path: 'map', component: MapComponent},
     { path: '**', redirectTo: 'home' }
 ];

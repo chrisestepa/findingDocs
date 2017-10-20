@@ -27,6 +27,8 @@ import { NewAlertComponent } from './new-alert/new-alert.component';
 import { SingleAlertComponent } from './single-alert/single-alert.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
+import { MapinfoComponent } from './mapinfo/mapinfo.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { AgmCoreModule } from '@agm/core';
     AlertsComponent,
     NewAlertComponent,
     SingleAlertComponent,
-    UsersListComponent
+    UsersListComponent,
+    MapComponent,
+    MapinfoComponent
   ],
   imports: [
     BrowserModule,

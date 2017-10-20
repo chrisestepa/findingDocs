@@ -19,5 +19,14 @@ dashRoute.get('/dashboard', (req, res, next) => {
     }));
 });
 
+dashRoute.get('/dashboard/:id', (req, res, next) => {
+  Job.findById(req.params.id)
+    .populate("center")
+    .populate("doctor")
+    .then(job => res.status(200).json(job))
+    .catch(e => res.status(500).json({
+      error: e.message
+    }));
+});
 
 module.exports = dashRoute;

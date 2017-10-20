@@ -3,10 +3,6 @@ import { DashboardService } from '../services/dashboard.service';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 import { AlertsService } from '../services/alerts.service';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
-
-
 
 @Component({
   selector: 'app-dashboard',

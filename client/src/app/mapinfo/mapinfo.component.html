@@ -1,0 +1,17 @@
+<div>
+  <h4>{{job.title}}</h4>
+  <p>{{job.center.title}}</p>
+  <a *ngIf="control" (click)=getInfo()>Mostrar</a>
+  <a *ngIf="!control" (click)=getInfo()>Cerrar</a>
+  <div *ngIf="!control" class="data">
+    <p>Especialidad: {{job.speciality}}</p>
+    <p>Dirección: {{job.center.address.streetaddress}}</p>
+    <p>Localidad: {{job.center.address.locality}}</p>
+    <p>Código postal: {{job.center.address.postalcode}}</p>
+    <p>Fecha de inicio: {{job.datein | date}}</p>
+    <p>Fecha de finalización: {{job.dateout | date}}</p>
+    <p>Descripción: {{job.description}}</p>
+    <a (click)="apply(job._id)">Solicitar puesto</a>
+    <hr>
+  </div>
+</div>
