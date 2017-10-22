@@ -460,7 +460,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "  .background {\n    margin: 0;\n    padding: 0;\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    background-position: top;\n    width: 100%;\n    height: 700px;\n  }\n", ""]);
+exports.push([module.i, "  .background {\n    margin: 0;\n    padding: 0;\n    background-image: url('https://static.pexels.com/photos/263370/pexels-photo-263370.jpeg');\n    background-size: cover;\n    background-position: top;\n    width: 100%;\n    height: 700px;\n  }\n\n  .info {\n    position: absolute;\n    top: 200px;\n    left: 50px;\n    padding: 10px;\n    border: 2px solid navy;\n    background: rgba(240, 248, 255, 0.8);\n  }\n\n  h3 {\n    text-align: center;   \n  }\n\n  .info li {\n    font-size: 20px;\n  }\n", ""]);
 
 // exports
 
@@ -473,7 +473,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"background\">\n</div>\n"
+module.exports = "<div class=\"background\">\n  <div class=\"info\">\n    <h3>Usuarios de prueba</h3>\n    <ul>\n      <li><b>Rol doctor: </b><em>user: </em>doctor // <em>pass: </em>1234</li>\n      <li><b>Rol coordinador: </b><em>user: </em>coordinador // <em>pass: </em>1234</li>\n    </ul>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1005,7 +1005,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@media screen and (min-width: 901px) {\n\n  .map {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n\n}\nagm-map {\n  margin: 0;\n  padding: 0;\n  height: 900px;\n  width: 100%;\n}\n\n.jobs {\n  margin: 10px 0;\n  top: 190px;\n  left: 10px;\n  background: rgba(240, 248, 255, 0.8);\n  /*height: 900px;*/\n  width: 350px;\n  position: absolute;\n}\n\n.container {\n  position: relative;\n  max-height:100%;\n  overflow: scroll;\n}\n\n}\n\n@media screen and (max-width: 900px) {\n  .map {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n\n  }\n  agm-map {\n    margin: 0;\n    padding: 0;\n    height: 900px;\n    width: 100%;\n  }\n\n  .jobs {\n    top: 150px;\n    left: 10px;\n    background: rgba(240, 248, 255, 0.8);\n    width: 200px;\n    font-size: 10px;\n    position: absolute;\n  }\n\n}\n", ""]);
+exports.push([module.i, "@media screen and (min-width: 901px) {\n\n  .map {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n\n}\nagm-map {\n  margin: 0;\n  padding: 0;\n  height: 900px;\n  width: 100%;\n}\n\n.jobs {\n  margin: 10px 0;\n  top: 190px;\n  left: 10px;\n  background: rgba(240, 248, 255, 0.8);\n  /*height: 900px;*/\n  width: 350px;\n  position: absolute;\n}\n\n.container {\n  position: relative;\n  /*max-height:100%;\n  overflow: scroll;*/\n}\n\n}\n\n@media screen and (max-width: 900px) {\n  .map {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n\n  }\n  agm-map {\n    margin: 0;\n    padding: 0;\n    height: 900px;\n    width: 100%;\n  }\n\n  .jobs {\n    top: 150px;\n    left: 10px;\n    background: rgba(240, 248, 255, 0.8);\n    width: 200px;\n    font-size: 10px;\n    position: absolute;\n  }\n\n}\n", ""]);
 
 // exports
 
